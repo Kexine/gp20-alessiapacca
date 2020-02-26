@@ -296,6 +296,8 @@ CMakeFiles/assignment1.dir/src/main.cpp.o
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/doublearea.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/edge_lengths.cpp
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/edge_lengths.h
+ /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/edge_topology.cpp
+ /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/edge_topology.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/facet_components.cpp
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/facet_components.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/file_dialog_open.cpp
@@ -309,6 +311,8 @@ CMakeFiles/assignment1.dir/src/main.cpp.o
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/igl_inline.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/internal_angles.cpp
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/internal_angles.h
+ /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/is_edge_manifold.cpp
+ /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/is_edge_manifold.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/jet.cpp
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/jet.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/list_to_matrix.cpp

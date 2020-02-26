@@ -295,6 +295,8 @@ CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp2
 CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/doublearea.h
 CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/edge_lengths.cpp
 CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/edge_lengths.h
+CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/edge_topology.cpp
+CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/edge_topology.h
 CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/facet_components.cpp
 CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/facet_components.h
 CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/file_dialog_open.cpp
@@ -308,6 +310,8 @@ CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp2
 CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/igl_inline.h
 CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/internal_angles.cpp
 CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/internal_angles.h
+CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/is_edge_manifold.cpp
+CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/is_edge_manifold.h
 CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/jet.cpp
 CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/jet.h
 CMakeFiles/assignment1.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include/igl/list_to_matrix.cpp
