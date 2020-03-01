@@ -7,7 +7,7 @@
       <config projectName="assignment1" targetName="glfw" />
     </generated>
   </component>
-  <component name="CMakeSettings">
+  <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
@@ -15,10 +15,15 @@
   <component name="ChangeListManager">
     <list default="true" id="305287d8-7760-4080-bf6b-c4bb7d649a5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/assignment1" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/assignment1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/libglad.a" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/libglad.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/glfw.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/glfw.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/libglfw3.a" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/libglfw3.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment1/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/src/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,6 +92,7 @@
       <workItem from="1582547647234" duration="15997000" />
       <workItem from="1582626003435" duration="2454000" />
       <workItem from="1582711442975" duration="4116000" />
+      <workItem from="1583073550700" duration="6086000" />
     </task>
     <servers />
   </component>

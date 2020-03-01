@@ -12,6 +12,11 @@
 #include <igl/jet.h>
 
 
+//#include <igl/opengl/glfw/imgui/ImGuiMenu.h>
+//#include <igl/opengl/glfw/imgui/ImGuiHelpers.h>
+
+
+
 
 #include <igl/vertex_triangle_adjacency.h>
 
@@ -113,7 +118,7 @@ bool callback_key_down(Viewer& viewer, unsigned char key, int modifiers) {
         viewer.data().set_mesh(V, F);
         // Add your code for computing per-corner normals here: store in CN.
 
-        int threshold = 100;
+        int threshold = 20;
         igl::per_corner_normals(V,F,threshold,CN);
         //Set the viewer normals
         viewer.data().set_normals(CN);
@@ -173,10 +178,10 @@ bool callback_key_down(Viewer& viewer, unsigned char key, int modifiers) {
 
         for (int i = 0; i < V.rows(); i++) { //for every vertex
             n = VV[i].size(); // number of adjacent vertices for every vertex
+            a = (4 - 2 * cos(2 * M_PI/n)) / 9; //just as defined in the slides
             for (int j = 0; j < n; j++) {
                 p.row(i) = p.row(i) + V.row(VV[i][j]); //VV gives us the index of the vertex we want
             }
-            a = (4 - 2 * cos(2 * M_PI / n)) / 9; //just as defined in the slides
             p.row(i) = p.row(i) / n;
             p.row(i) = a * p.row(i) + (1 - a) * V.row(i);
         }
@@ -212,53 +217,54 @@ bool callback_key_down(Viewer& viewer, unsigned char key, int modifiers) {
         //cout << EF;
 
 
+
+
+
+
         //1.2. Update Fout
-        int id = 0;
+        int counter = 0;
         int numberEdges = EV.rows();
         int lastIndexVertices = V.rows();
-        //IF we are at the border, then EF[1] = -1 or EF[2] = -1
+
         //for every edge, we want to add the new face/faces, depending on the fact that we are or not at the border of the mesh
-        for (int i = 0; i < numberEdges; i++) {
-            //initialize edge vertices indices
-            int A = EV(i,0);
-            int B = EV(i,1);
+        for(int i = 0; i < numberEdges; i++){
+            //the two vertices of the edge
             int tr1 = (EF(i,0));
             int tr2 = (EF(i,1));
+            int A = EV(i,0);
+            int B = EV(i,1);
 
-            //When we are not at the borders: we have to add two faces per edge, and flip the original
-            //edges connecting points in P.
-            //We "flip" it here by adding the two new faces with the correct new vertices
-            if((tr1 != -1)&&(tr2 != -1)){
-                int v1 = tr1 + lastIndexVertices;; //questo dovrebbe essere l'indice che mi da il vertice del triangolo.
-                int v2 = tr2 + lastIndexVertices;;
-                //here we add the two new faces.
-                //one has two barycenters and a vertex of the edge.
-                Eigen::Vector3i newFace1(v2, v1, A);//always counter clock wise
-                Eigen::Vector3i newFace2(v1,v2,B);//always counter clock wise
-                Fout.row(id) = newFace1;
-                id++;
-                Fout.row(id) = newFace2;
-                id++;
+            if((tr1 != -1)&&(tr2 != -1)){ //in this case we are not at the border, cause both of the values are different than -1
+                //in this case, we have to add 2 triangles for that edge
+                //the indices of the barycenters of the two triangles are the indices of the face + V.rows()
+                //We "flip" it here by adding the two new faces with the correct new vertices
+                int b1 = lastIndexVertices + tr1;
+                int b2 = lastIndexVertices + tr2;
+                Eigen::Vector3i newFace1(b2, b1, A);//always counter clock wise
+                Fout.row(counter) = newFace1;
+                counter++;
+                Eigen::Vector3i newFace2(b1, b2, B);
+                Fout.row(counter) =  newFace2;
             }
-            //one of the two faces is -1, so we are at the border.
-            //we don't want to flip the edges at the borders.
-            //so we add one face per edge, connecting the v to the two vertices of the edge
-            else{
-                int bary;
-                if(tr1 == -1){ //left triangle missing
-                    bary = tr2 + lastIndexVertices; //the barycenter corresponding to the right triangle
-                    Eigen::Vector3i newFace1(bary, B, A); //ordered counterclockwise
-                    Fout.row(id) = newFace1;
+            else{ //in this case, we are at the border: we have to add only one new face
+                Eigen::Vector3i newFace1;
+                if(tr1 == -1){ //then we are missing the left face, we only want to add the right one
+                    int b1 = lastIndexVertices + tr2;
+                    Eigen::Vector3i newFace1(b1, B, A);
+                    Fout.row(counter) = newFace1;
                 }
-                if(tr2 == -1){ //right triangle missing
-                    bary = tr1 + lastIndexVertices;; //the barycenter corresponding to the left triangle
-                    Eigen::Vector3i newFace2(bary, A, B); //ordered counterclockwise
-                    Fout.row(id) = newFace2;
+                else if(tr2 == -1){ //then we are missing the right face
+                    int b1 = lastIndexVertices + tr1;
+                    Eigen::Vector3i newFace1(b1, A, B);
+                    Fout.row(counter) = newFace1;
                 }
-                id++;
             }
-
+            counter++;
         }
+
+
+
+
 
         cout << "faces before: " << F.rows() << endl;
         cout << "faces after: " << Fout.rows();
@@ -296,7 +302,7 @@ int main(int argc, char *argv[]) {
         filename = std::string(argv[1]);
     }
     else {
-        filename = std::string("../data/sphere_lo_norm.off");
+        filename = std::string("../data/fandisk.off");
     }
     load_mesh(viewer,filename,V,F);
 

@@ -68,8 +68,8 @@ CMAKE_BINARY_DIR = /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignmen
 # Target rules for target CMakeFiles/assignment1.dir
 
 # All Build rule for target.
-CMakeFiles/assignment1.dir/all: glfw/src/CMakeFiles/glfw.dir/all
 CMakeFiles/assignment1.dir/all: glad/CMakeFiles/glad.dir/all
+CMakeFiles/assignment1.dir/all: glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CMakeFiles/assignment1.dir/build.make CMakeFiles/assignment1.dir/depend
 	$(MAKE) -f CMakeFiles/assignment1.dir/build.make CMakeFiles/assignment1.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target assignment1"

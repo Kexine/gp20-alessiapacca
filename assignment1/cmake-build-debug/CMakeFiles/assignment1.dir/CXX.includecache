@@ -21,8 +21,6 @@ igl/per_corner_normals.h
 -
 igl/adjacency_list.h
 -
-igl/triangle_triangle_adjacency.h
--
 igl/edge_topology.h
 -
 igl/barycenter.h
@@ -32,8 +30,6 @@ igl/facet_components.h
 igl/jet.h
 -
 igl/vertex_triangle_adjacency.h
--
-igl/adjacency_list.h
 -
 
 /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../external/eigen/Eigen/Cholesky
