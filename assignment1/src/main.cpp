@@ -178,11 +178,11 @@ bool callback_key_down(Viewer& viewer, unsigned char key, int modifiers) {
 
         for (int i = 0; i < V.rows(); i++) { //for every vertex
             n = VV[i].size(); // number of adjacent vertices for every vertex
-            a = (4 - 2 * cos(2 * M_PI/n)) / 9; //just as defined in the slides
+            a = (4 - 2 * cos(2 * M_PI/double(n))) / 9; //just as defined in the slides
             for (int j = 0; j < n; j++) {
                 p.row(i) = p.row(i) + V.row(VV[i][j]); //VV gives us the index of the vertex we want
             }
-            p.row(i) = p.row(i) / n;
+            p.row(i) = p.row(i) /double(n);
             p.row(i) = a * p.row(i) + (1 - a) * V.row(i);
         }
 
