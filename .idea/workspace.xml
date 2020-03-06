@@ -2,9 +2,9 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="assignment1" targetName="assignment1" />
       <config projectName="assignment1" targetName="glad" />
       <config projectName="assignment1" targetName="glfw" />
+      <config projectName="assignment1" targetName="assignment1" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -15,7 +15,10 @@
   <component name="ChangeListManager">
     <list default="true" id="305287d8-7760-4080-bf6b-c4bb7d649a5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/assignment1" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/assignment1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/src/main 2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libigl/tutorial/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libigl/tutorial/CMakeCache.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +87,8 @@
       <workItem from="1582626003435" duration="2454000" />
       <workItem from="1582711442975" duration="4116000" />
       <workItem from="1583073550700" duration="6463000" />
-      <workItem from="1583088605062" duration="40000" />
+      <workItem from="1583088605062" duration="72000" />
+      <workItem from="1583489566223" duration="1301000" />
     </task>
     <servers />
   </component>

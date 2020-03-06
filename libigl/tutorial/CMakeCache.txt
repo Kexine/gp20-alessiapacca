@@ -1247,7 +1247,7 @@ PYBIND11_VERSION_PATCH:INTERNAL=dev0
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_INCLUDE_DIR
 PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
-PYTHON_INCLUDE_DIRS:INTERNAL=/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7
+PYTHON_INCLUDE_DIRS:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.6/include/python3.6m
 PYTHON_LIBRARIES:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.6/lib/libpython3.6m.dylib
 //ADVANCED property for variable: PYTHON_LIBRARY
 PYTHON_LIBRARY-ADVANCED:INTERNAL=1
