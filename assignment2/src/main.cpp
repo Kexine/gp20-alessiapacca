@@ -6,6 +6,7 @@
 /*** insert any necessary libigl headers here ***/
 #include <igl/per_face_normals.h>
 #include <igl/copyleft/marching_cubes.h>
+#include <cmath>
 
 using namespace std;
 using Viewer = igl::opengl::glfw::Viewer;
@@ -24,6 +25,8 @@ Eigen::VectorXd constrained_values;
 
 // Parameter: degree of the polynomial
 int polyDegree = 0;
+double diag;
+double stepRate = 0.1;
 
 // Parameter: Wendland weight function radius (make this relative to the size of the mesh)
 double wendlandRadius = 0.1;
@@ -52,6 +55,10 @@ Eigen::MatrixXi F;
 
 // Output: face normals of the reconstructed mesh, #F x3
 Eigen::MatrixXd FN;
+
+//new structure for grid
+std::vector<std::vector<int>> newGrid;
+double minimumDistance = 1000000.0;
 
 // Functions
 void createGrid();
@@ -98,6 +105,143 @@ void createGrid() {
         }
     }
 }
+
+
+void createNewGrid(){
+        //follow the implementation of createGrid,
+        Eigen::RowVector3d dim = P.colwise().maxCoeff() - P.colwise().minCoeff();
+        //diagonal of the bbox
+        int diag = dim.norm();
+        //diag of cube
+        double step = stepRate * diag;
+
+        //number of steps in x
+        int pX = ceil(dim.x() / step);
+        //number of steps in y
+        int pY = ceil(dim.y() / step);
+        //number of steps in z
+        int pZ = ceil(dim.z() / step);
+
+        //total size of the grid
+        int sizeGrid = pX*pY*pZ;
+        int numberPoints = P.rows();
+
+        newGrid = std::vector<std::vector<int>>(sizeGrid);
+        for (int i = 0; i < numberPoints; i++) //For every point in there
+        {
+            // point i
+            Eigen::RowVector3d p = P.row(i);
+            //find distance between p and min bbox, expressed in number of steps
+            Eigen::RowVector3d pDist = (p - P.colwise().minCoeff())/step;
+
+            int X = floor(pDist.x());
+            int Y = floor(pDist.y());
+            int Z = floor(pDist.z());
+            //cout << "\nX of " << i << " = " << X << endl;
+            //cout << "\nY of " << i << " = " << Y << endl;
+            //cout << "\nZ of " << i << " = " << Z << endl;
+
+            //one long vector that has size pX*pY*pZ. every point will have the indices corresponding in P, that lend in that cube
+            int indexI = X + (Y * pX) + (Z * pX * pY);
+            //cout << "\nIndex in the newGrid of " << i << " = " << indexI << endl;
+            newGrid[indexI].push_back(i);
+        }
+        //cout << "\nyey I created the new grid!!" << endl;
+}
+
+
+int closest_point(Eigen::RowVector3d p){
+    Eigen::RowVector3d dim = P.colwise().maxCoeff() - P.colwise().minCoeff();
+    int diag = dim.norm();
+    double step = stepRate * diag; //diag of cube
+
+    Eigen::RowVector3d pDist = (p - P.colwise().minCoeff()) / step;
+    //TODO ask if needs to be positive?
+    int X = (floor(pDist.x())); //needs to be positive?
+    int Y = (floor(pDist.y()));
+    int Z = (floor(pDist.z()));
+    //number of steps in x
+    int pX = ceil(dim.x() / step);
+    //number of steps in y
+    int pY = ceil(dim.y() / step);
+    //number of steps in z
+    int pZ = ceil(dim.z() / step);
+    /*cout << "\nX of the point = " << X << endl;
+    cout << "\nY of the point = " << Y << endl;
+    cout << "\nZ of the point = " << Z << endl;
+    cout << "\nSize of the grid X= " << pX << endl;
+    cout << "\nSize of the grid Y= " << pY << endl;
+    cout << "\nSize of the grid Z= " << pZ << endl;*/
+
+    //in reality we just use 1 for the closest point.
+    int checkDistance = ceil(wendlandRadius/step);
+
+    //FOR THE LOOP we have to make sure we are not accessing wrong indices
+    int minBlockOffsetX;
+    int minBlockOffsetY;
+    int minBlockOffsetZ;
+    int maxBlockOffsetX;
+    int maxBlockOffsetY;
+    int maxBlockOffsetZ;
+
+
+    if(X-checkDistance > 0)
+        minBlockOffsetX = X-checkDistance;
+    else
+        minBlockOffsetX = 0;
+    if(X + 1 + checkDistance < pX)
+        maxBlockOffsetX = X + 1 + checkDistance;
+    else
+        maxBlockOffsetX = pX;
+    if(Y-checkDistance > 0)
+        minBlockOffsetY = Y-checkDistance;
+    else
+        minBlockOffsetY = 0;
+    if(Y + 1 + checkDistance < pY)
+        maxBlockOffsetY = Y + 1 + checkDistance;
+    else
+        maxBlockOffsetY = pY;
+    if(Z-checkDistance > 0)
+        minBlockOffsetZ = Z-checkDistance;
+    else
+        minBlockOffsetZ = 0;
+    if(Z + 1 + checkDistance < pZ)
+        maxBlockOffsetZ = Z + 1 + checkDistance;
+    else
+        maxBlockOffsetZ = pZ;
+    int minDistanceIndex = -1;
+    //here we have to access all the cubes around the one i am, at checkDistance distance
+    for (int i = minBlockOffsetX; i < maxBlockOffsetX; i++){
+        //cout << "\ni =   " << i << endl;
+        //cout << "\nminBlockOffsetX =   " << minBlockOffsetX << endl;
+        //cout << "\nmaxBlockOffsetX =   " << maxBlockOffsetX << endl;
+        for(int j = minBlockOffsetY; j < maxBlockOffsetY; j++){
+            //cout << "\nj =   " << j << endl;
+            //cout << "\nminBlockOffsetY =   " << minBlockOffsetY << endl;
+            //cout << "\nmaxBlockOffsetY =   " << maxBlockOffsetY << endl;
+            for(int t = minBlockOffsetZ; t < maxBlockOffsetZ; t++){
+                //cout << "\nt =   " << t << endl;
+                //cout << "\nminBlockOffsetZ =   " << minBlockOffsetZ << endl;
+                //cout << "\nmaxBlockOffsetZ =   " << maxBlockOffsetZ << endl;
+
+                int indexI = (i) + (j) * pX + (t) * pY * pZ;
+                //add neighbours
+                for (int u = 0; u < newGrid[indexI].size(); u++) //we access every index inside that grid point
+                {
+                    //cout << "\n Index point =  " << newGrid[indexI][u] << endl;
+                    Eigen::RowVector3d dist = p - P.row(newGrid[indexI][u]);
+                    if (dist.norm() < minimumDistance){
+                        minDistanceIndex = (newGrid[indexI][u]);
+                        minimumDistance = dist.norm();
+                        //cout << "\nCurrent minimum distance =  " << minimumDistance << endl;
+                    }
+                }
+            }
+        }
+    }
+    return minDistanceIndex;
+}
+
 
 // Function for explicitly evaluating the implicit function for a sphere of
 // radius r centered at c : f(p) = ||p-c|| - r, where p = (x,y,z).
@@ -161,9 +305,34 @@ void getLines() {
     grid_lines.conservativeResize(numLines, Eigen::NoChange);
 }
 
+
+
+
+
+/*int closest_point(Eigen::RowVector3d p){
+    double dmin = 10000000;
+    double d;
+    int minindex = 0;
+    for(int i = 0; i < P.rows(); i++){
+        d = (P.row(i) - p).norm();
+        if(d < dmin)
+            minindex = i;
+    }
+    return minindex;
+}*/
+
+
+
+
 bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
     if (key == '1') {
         // Show imported points
+        Eigen::RowVector3d bb_min, bb_max;
+        bb_min = P.colwise().minCoeff();
+        bb_max = P.colwise().maxCoeff();
+        Eigen::RowVector3d dim = bb_max - bb_min;
+        diag = dim.norm();
+
         viewer.data().clear();
         viewer.core.align_camera_center(P);
         viewer.data().point_size = 11;
@@ -175,7 +344,84 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
         viewer.data().clear();
         viewer.core.align_camera_center(P);
         // Add your code for computing auxiliary constraint points here
+
+
+        //acc data structure created by me, one array that contains all the points
+        createNewGrid();
+       // normalize normal of every point
+        N.rowwise().normalize();
+
+        int sizeP = P.rows();
+        //constrained values contains the value of every constrain, so it is numberPoints*3
+        constrained_values.resize(sizeP * 3);
+        //constrained points contains the coordinated of the points, so it is numberPoints*3,3
+        constrained_points.resize(sizeP * 3, 3);
+
+        //just like in create grid
+        Eigen::RowVector3d bb_min, bb_max;
+        bb_min = P.colwise().minCoeff();
+        bb_max = P.colwise().maxCoeff();
+        // Bounding box dimensions
+        Eigen::RowVector3d dim = bb_max - bb_min;
+        diag = dim.norm();
+        //define epsilon
+        double eps = 0.01 * diag;
+
+        //now we have to add the constraints, 2 for every point
+        for(int i = 0; i < sizeP; i++){
+            //we add the point we are considering
+            constrained_points.row(i) = P.row(i);
+            constrained_values(i) = 0;
+
+
+
+            //the new constrained point is in i+number points, and it's the point + epsilon*n, just as defined in the slides
+            eps = 0.01 * diag;
+            constrained_points.row(i + sizeP) = P.row(i) + eps * N.row(i);
+            //we have to check that epsilon is sufficiently small, so that p is the closest point to him
+            int count = 0;
+            while (closest_point(P.row(i) + eps * N.row(i)) != i) {
+                //halve epsilon and recompute p until it is the case
+                eps *= 0.5;
+                //cout << "epsilon " << eps <<endl;
+                //cout << "calling the distance function for the " << count << "time" <<endl;
+                count++;
+            }
+            //cout << "alright, finished" <<endl;
+            //add his value that is epsilon
+            constrained_values(i + sizeP) = eps;
+
+
+
+            eps = 0.01 * diag;
+            //the second new constrained point is in i+2*number points, and it's the point + epsilon*n, just as defined in the slides
+            constrained_points.row(i + (2 * sizeP)) = P.row(i) - eps * N.row(i);
+            //we have to check that epsilon is sufficiently small, so that p is the closest point to him
+            count = 0;
+            minimumDistance = 1000000.0;
+            while (closest_point(P.row(i) - eps * N.row(i)) != i) {
+                //halve epsilon and recompute p until it is the case
+                eps *= 0.5;
+                //cout << "epsilon " << eps <<endl;
+                count++;
+            }
+
+            //add his value that is epsilon
+            constrained_values(i + sizeP) = - eps;
+            eps = 0.01 * diag;
+        }
+
+
         // Add code for displaying all points, as above
+        viewer.data().clear();
+        viewer.core.align_camera_center(constrained_points);
+        viewer.data().point_size = 6;
+        //blue
+        viewer.data().add_points(constrained_points.block(0, 0, sizeP, 3), Eigen::RowVector3d(0,0,1));
+        //red
+        viewer.data().add_points(constrained_points.block(sizeP, 0, sizeP, 3), Eigen::RowVector3d(1,0,0));
+        //green
+        viewer.data().add_points(constrained_points.block(sizeP * 2, 0, sizeP, 3), Eigen::RowVector3d(0,1,0));
     }
 
     if (key == '3') {
