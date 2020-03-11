@@ -6,16 +6,16 @@ Edit this 'README.md' file to report all your results. There is no need to write
 
 ### Tasks
 1) Add a text dump of the content of the two data structures for the provided mesh “plane.off”.
+Adjacent faces:<br/>
 
-Adjacent faces
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/img1.png)
 
 
 
 
 
+Adjacent vertices:<br/>
 
-Adjacent vertices
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/img2.png)
 
 
