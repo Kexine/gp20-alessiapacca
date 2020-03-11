@@ -302,7 +302,7 @@ int main(int argc, char *argv[]) {
         filename = std::string(argv[1]);
     }
     else {
-        filename = std::string("../data/fandisk.off");
+        filename = std::string("../data/bumpy_cube.off");
     }
     load_mesh(viewer,filename,V,F);
 
