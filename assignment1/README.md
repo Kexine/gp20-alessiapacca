@@ -11,6 +11,10 @@ Adjacent faces
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/img1.png)
 
 
+
+
+
+
 Adjacent vertices
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/img2.png)
 
