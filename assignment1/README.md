@@ -7,6 +7,14 @@ Edit this 'README.md' file to report all your results. There is no need to write
 ### Tasks
 1) Add a text dump of the content of the two data structures for the provided mesh “plane.off”.
 
+Adjacent faces
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/img1.png)
+
+
+Adjacent vertices
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/img2.png)
+
+
 2) Show three screenshots of the 'fandisk.off' model using 'per-face shading', 'per-vertex shading' and 'per-corner shading'.
 
 3) Show screenshots of the provided meshes with each connected component colored differently. Show the number of connected components and the size of each component (measured in number
