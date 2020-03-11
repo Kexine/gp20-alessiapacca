@@ -35,24 +35,24 @@ Per-corner:<br/>
 
 3) Show screenshots of the provided meshes with each connected component colored differently. Show the number of connected components and the size of each component (measured in number
 of faces) for all the provided models.<br/>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/a6.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/asizecomponent.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/b6.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/bsizecomponent.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/c6.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/csizecomponent.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/d6.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/dsizecomponent.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/e6.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/esizecomponent.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/f6.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/fsizecomponent.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/g6.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/gsizecomponent.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/h6.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/hsizecomponent.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/i6.png)
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/isizecomponent.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/a6.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/asizecomponent.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/b6.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/bsizecomponent.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/c6.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/csizecomponent.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/d6.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/dsizecomponent.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/e6.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/esizecomponent.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/f6.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/fsizecomponent.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/g6.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/gsizecomponent.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/h6.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/hsizecomponent.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/i6.png)<br/>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/isizecomponent.png)<br/>
 
 
 4) Show screenshots of the subdivided meshes.
