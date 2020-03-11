@@ -37,3 +37,23 @@ Per-corner:<br/>
 of faces) for all the provided models.
 
 4) Show screenshots of the subdivided meshes.
+:<br/>
+
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/a1.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/a7.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/b1.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/b7.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/c1.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/c7.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/d1.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/d7.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/e1.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/e7.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/f1.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/f7.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/g1.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/g7.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/h7.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/i1.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/i7.png)
+
