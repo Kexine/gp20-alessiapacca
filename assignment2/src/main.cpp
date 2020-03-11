@@ -157,9 +157,9 @@ int closest_point(Eigen::RowVector3d p){
 
     Eigen::RowVector3d pDist = (p - P.colwise().minCoeff()) / step;
     //TODO ask if needs to be positive?
-    int X = (floor(pDist.x())); //needs to be positive?
-    int Y = (floor(pDist.y()));
-    int Z = (floor(pDist.z()));
+    int X = fabs(floor(pDist.x())); //needs to be positive?
+    int Y = fabs(floor(pDist.y()));
+    int Z = fabs(floor(pDist.z()));
     //number of steps in x
     int pX = ceil(dim.x() / step);
     //number of steps in y
@@ -224,7 +224,7 @@ int closest_point(Eigen::RowVector3d p){
                 //cout << "\nminBlockOffsetZ =   " << minBlockOffsetZ << endl;
                 //cout << "\nmaxBlockOffsetZ =   " << maxBlockOffsetZ << endl;
 
-                int indexI = (i) + (j) * pX + (t) * pY * pZ;
+                int indexI = (i) + (j) * pX + (t) * pY * pX;
                 //add neighbours
                 for (int u = 0; u < newGrid[indexI].size(); u++) //we access every index inside that grid point
                 {
@@ -366,6 +366,8 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
         diag = dim.norm();
         //define epsilon
         double eps = 0.01 * diag;
+        cout << "size of P: " << P.rows()  <<endl;
+
 
         //now we have to add the constraints, 2 for every point
         for(int i = 0; i < sizeP; i++){
@@ -399,7 +401,7 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
             //we have to check that epsilon is sufficiently small, so that p is the closest point to him
             count = 0;
             minimumDistance = 1000000.0;
-            while (closest_point(P.row(i) - eps * N.row(i)) != i) {
+           while (closest_point(P.row(i) - eps * N.row(i)) != i) {
                 //halve epsilon and recompute p until it is the case
                 eps *= 0.5;
                 //cout << "epsilon " << eps <<endl;
@@ -503,7 +505,7 @@ bool callback_load_mesh(Viewer& viewer,string filename)
 int main(int argc, char *argv[]) {
     if (argc != 2) {
       cout << "Usage ex2_bin <mesh.off>" << endl;
-      igl::readOFF("../data/sphere.off",P,F,N);
+      igl::readOFF("../data/cat.off",P,F,N);
     }
 	  else
 	  {
