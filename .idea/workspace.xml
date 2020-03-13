@@ -2,9 +2,10 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="assignment1" targetName="assignment1" />
       <config projectName="assignment1" targetName="glad" />
       <config projectName="assignment1" targetName="glfw" />
+      <config projectName="assignment1" targetName="assignment1" />
+      <config projectName="assignment1" targetName="imgui" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -15,12 +16,52 @@
   <component name="ChangeListManager">
     <list default="true" id="305287d8-7760-4080-bf6b-c4bb7d649a5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/3.14.5/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/3.14.5/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/3.14.5/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/3.14.5/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/3.14.5/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/3.14.5/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/Export/share/libigl/cmake/libigl-export.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/Export/share/libigl/cmake/libigl-export.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/assignment1" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/assignment1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/assignment1.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/assignment1.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/CMakeFiles/glad.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/CMakeFiles/glad.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/CMakeFiles/glad.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/CMakeFiles/glad.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/CMakeFiles/glad.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/CMakeFiles/glad.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/glad.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/glad.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/GLFW.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/GLFW.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/glfw.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/glfw.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/glfw.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/glfw.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/glfw.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/glfw.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/glfw3ConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/glfw3ConfigVersion.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/src/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment2/build/assignment2" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/build/assignment2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment2/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/src/main.cpp" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,22 +76,16 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1YFoLFJSobE3lIaaQozRMZ0O7lT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RunManager" selected="CMake Application.assignment2">
     <configuration name="assignment1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="assignment1" TARGET_NAME="assignment1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="assignment1" RUN_TARGET_NAME="assignment1">
@@ -73,11 +108,17 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="imgui" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="assignment1" TARGET_NAME="imgui" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="CMake Application.assignment2" />
       <item itemvalue="CMake Application.assignment1" />
       <item itemvalue="CMake Application.glad" />
       <item itemvalue="CMake Application.glfw" />
+      <item itemvalue="CMake Application.imgui" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -97,7 +138,8 @@
       <workItem from="1583088605062" duration="72000" />
       <workItem from="1583489566223" duration="1731000" />
       <workItem from="1583656362334" duration="32358000" />
-      <workItem from="1583936326069" duration="1636000" />
+      <workItem from="1583936326069" duration="17378000" />
+      <workItem from="1584111457456" duration="254000" />
     </task>
     <servers />
   </component>
@@ -116,5 +158,39 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="399" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1584111457482">
+      <screen x="45" y="23" width="1395" height="877" />
+    </state>
+    <state x="399" y="282" key="com.intellij.ide.util.TipDialog/45.23.1395.877@45.23.1395.877" timestamp="1584111457482" />
+    <state x="613" y="499" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584111657962">
+      <screen x="45" y="23" width="1395" height="877" />
+    </state>
+    <state x="613" y="499" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/45.23.1395.877@45.23.1395.877" timestamp="1584111657962" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/assignment2/src/main.cpp</url>
+          <line>133</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/assignment2/src/main.cpp</url>
+          <line>608</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/assignment2/src/main.cpp</url>
+          <line>611</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="CidrExceptionBreakpoint" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

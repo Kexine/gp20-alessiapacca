@@ -5,7 +5,7 @@
 		<Option title="assignment1"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\libigl\;CMake Files\..\libigl\external\;CMake Files\..\libigl\external\glfw\;CMake Files\..\libigl\external\glfw\CMake\;CMake Files\..\libigl\external\glfw\CMake\modules\;CMake Files\..\libigl\external\glfw\src\;CMake Files\..\libigl\external\glad\;CMake Files\..\libigl\cmake\;CMake Files\cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\libigl\;CMake Files\..\libigl\external\;CMake Files\..\libigl\external\glfw\;CMake Files\..\libigl\external\glfw\CMake\;CMake Files\..\libigl\external\glfw\CMake\modules\;CMake Files\..\libigl\external\glfw\src\;CMake Files\..\libigl\external\glad\;CMake Files\..\libigl\external\libigl-imgui\;CMake Files\..\libigl\cmake\;CMake Files\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug"/>
@@ -22,16 +22,6 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install/strip">
-				<Option working_dir="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -62,6 +52,16 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -223,6 +223,60 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="imgui">
+				<Option output="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/imgui/libimgui.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/imgui"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/../imgui"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/."/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/.."/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/../imgui/examples"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glfw/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/imgui/Makefile&quot;  VERBOSE=1 imgui"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/imgui/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/imgui/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/imgui/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgui/fast">
+				<Option output="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/imgui/libimgui.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/imgui"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/../imgui"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/."/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/.."/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/../imgui/examples"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glfw/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/imgui/Makefile&quot;  VERBOSE=1 imgui/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/imgui/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/imgui/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/imgui/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/glfw/src/glfw_config.h">
 			<Option target="glfw"/>
@@ -308,6 +362,27 @@
 		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glfw/src/window.c">
 			<Option target="glfw"/>
 		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp">
+			<Option target="imgui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.h">
+			<Option target="imgui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp">
+			<Option target="imgui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/imgui/imgui.h">
+			<Option target="imgui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp">
+			<Option target="imgui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp">
+			<Option target="imgui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/imgui_impl_opengl3.cpp">
+			<Option target="imgui"/>
+		</Unit>
 		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
@@ -331,6 +406,9 @@
 		</Unit>
 		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/../libigl/external/glad/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\..\libigl\external\glad\"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/../libigl/external/libigl-imgui/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\libigl\external\libigl-imgui\"/>
 		</Unit>
 		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/../libigl/cmake/CXXFeatures.cmake">
 			<Option virtualFolder="CMake Files\..\libigl\cmake\"/>

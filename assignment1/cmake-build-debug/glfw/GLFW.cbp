@@ -5,7 +5,7 @@
 		<Option title="GLFW"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\libigl\;CMake Files\..\libigl\external\;CMake Files\..\libigl\external\glfw\;CMake Files\..\libigl\external\glfw\CMake\;CMake Files\..\libigl\external\glfw\CMake\modules\;CMake Files\..\libigl\external\glfw\src\;CMake Files\..\libigl\external\glad\;CMake Files\..\libigl\cmake\;CMake Files\cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\libigl\;CMake Files\..\libigl\external\;CMake Files\..\libigl\external\glfw\;CMake Files\..\libigl\external\glfw\CMake\;CMake Files\..\libigl\external\glfw\CMake\modules\;CMake Files\..\libigl\external\glfw\src\;CMake Files\..\libigl\external\glad\;CMake Files\..\libigl\external\libigl-imgui\;CMake Files\..\libigl\cmake\;CMake Files\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/cmake-build-debug/glfw"/>
@@ -169,6 +169,9 @@
 		</Unit>
 		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/../libigl/external/glad/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\..\libigl\external\glad\"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/../libigl/external/libigl-imgui/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\libigl\external\libigl-imgui\"/>
 		</Unit>
 		<Unit filename="/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment1/../libigl/cmake/CXXFeatures.cmake">
 			<Option virtualFolder="CMake Files\..\libigl\cmake\"/>
