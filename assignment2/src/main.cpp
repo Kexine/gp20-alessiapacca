@@ -371,7 +371,6 @@ void evaluateImplicitFunc() {
 
     createNewGrid(); //now we have newgrid
     int size = newGrid.size();
-    Eigen::MatrixXd closepoints;
     double radius = wendlandRadius * (bb_max - bb_min).minCoeff();
 
     int prova= 0;
@@ -613,6 +612,8 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
         viewer.data().add_points(constrained_points.block(sizeP * 2, 0, sizeP, 3), Eigen::RowVector3d(0,1,0));
     }
 
+
+
     if (key == '3') {
         // Show grid points with colored nodes and connected with lines
         viewer.data().clear();
@@ -657,6 +658,7 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
                               grid_lines.block(0, 3, grid_lines.rows(), 3),
                               Eigen::RowVector3d(0.8, 0.8, 0.8));
         /*** end: sphere example ***/
+
     }
 
     if (key == '4') {
@@ -694,7 +696,7 @@ bool callback_load_mesh(Viewer& viewer,string filename)
 int main(int argc, char *argv[]) {
     if (argc != 2) {
       cout << "Usage ex2_bin <mesh.off>" << endl;
-      igl::readOFF("../data/sphere.off",P,F,N);
+      igl::readOFF("../data/cat.off",P,F,N);
     }
 	  else
 	  {
