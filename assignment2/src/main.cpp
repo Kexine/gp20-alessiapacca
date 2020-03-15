@@ -62,13 +62,14 @@ Eigen::MatrixXd FN;
 std::vector<std::vector<int>> newGrid;
 double minimumDistance = 1000000.0;
 Eigen::VectorXd saveConstrValues;
+Eigen::MatrixXd closepoints;
 
 // Functions
 void createGrid();
 void evaluateImplicitFunc();
 void getLines();
 bool callback_key_down(Viewer& viewer, unsigned char key, int modifiers);
-std::vector<int> neighbors(Eigen::RowVector3d p);
+void neighbors(Eigen::RowVector3d p);
 
 // Creates a grid_points array for the simple sphere example. The points are
 // stacked into a single matrix, ordered first in the x, then in the y and
@@ -129,8 +130,10 @@ void createNewGrid(){
         //total size of the grid
         int sizeGrid = pX*pY*pZ;
         int numberPoints = P.rows();
+        newGrid.clear();
+        newGrid.resize((sizeGrid));
+        int sizeCreatedGrid =  newGrid.size();
 
-        newGrid = std::vector<std::vector<int>>(sizeGrid);
         for (int i = 0; i < numberPoints; i++) //For every point in there
         {
             // point i
@@ -149,6 +152,8 @@ void createNewGrid(){
             int indexI = X + (Y * pX) + (Z * pX * pY);
             //cout << "\nIndex in the newGrid of " << i << " = " << indexI << endl;
             newGrid[indexI].push_back(i);
+            for(int k = 0; k < newGrid[indexI].size(); k++)
+                cout << "at index" << indexI << "we have points: " << newGrid[indexI][k] << endl;
         }
         //cout << "\nyey I created the new grid!!" << endl;
 }
@@ -248,7 +253,8 @@ int closest_point(Eigen::RowVector3d p){
 
 
 
-std::vector<int> neighbors(Eigen::RowVector3d p) {
+void neighbors(Eigen::RowVector3d p) {
+    saveConstrValues.setZero(constrained_points.rows(), 1);
     Eigen::RowVector3d dim = P.colwise().maxCoeff() - P.colwise().minCoeff();
     int diag = dim.norm();
     double step = stepRate * diag; //diag of cube
@@ -296,8 +302,11 @@ std::vector<int> neighbors(Eigen::RowVector3d p) {
     else
         maxBlockOffsetZ = pZ;
 
-    std::vector<int> neighbours;
+    //std::vector<int> neighbours;
+    Eigen::MatrixXd neighbours;
+    neighbours.setZero(constrained_points.rows(), 3);
     int cont = 0;
+    int constrained_pointsSize = constrained_points.rows();
 
     for (int i = minBlockOffsetX; i < maxBlockOffsetX; i++){
         for(int j = minBlockOffsetY; j < maxBlockOffsetY; j++){
@@ -307,20 +316,23 @@ std::vector<int> neighbors(Eigen::RowVector3d p) {
                 {
                     Eigen::RowVector3d dist = p - constrained_points.row(newGrid[indexI][u]);
                     if (dist.norm() < wendlandRadius){
-                        neighbours.push_back(newGrid[indexI][u]);
+                        //neighbours.push_back(newGrid[indexI][u]);
+                        neighbours(cont) = newGrid[indexI][u];
                         saveConstrValues.row(cont) = constrained_values.row(newGrid[indexI][u]);
                         cont++;
                     }
 
                     dist = p - constrained_points.row(P.rows()+newGrid[indexI][u]);
                     if (dist.norm() < wendlandRadius) {
-                        neighbours.push_back(P.rows()+newGrid[indexI][u]);
+                        //neighbours.push_back(P.rows()+newGrid[indexI][u]);
+                        neighbours(cont) = P.rows()+newGrid[indexI][u];
                         saveConstrValues.row(cont) = constrained_values.row(P.rows()+newGrid[indexI][u]);
                         cont++;
                     }
                     dist = constrained_points.row(P.rows()*2+newGrid[indexI][u]) - p;
                     if (dist.norm() < wendlandRadius) {
-                        neighbours.push_back(P.rows()*2+newGrid[indexI][u]);
+                        //neighbours.push_back(P.rows()*2+newGrid[indexI][u]);
+                        neighbours(cont) = P.rows()*2+newGrid[indexI][u];
                         saveConstrValues.row(cont) = constrained_values.row(P.rows()*2 + newGrid[indexI][u]);
                         cont++;
                     }
@@ -328,7 +340,7 @@ std::vector<int> neighbors(Eigen::RowVector3d p) {
             }
         }
     }
-    return neighbours;
+    closepoints = neighbours;
 }
 
 
@@ -358,10 +370,11 @@ void evaluateImplicitFunc() {
     grid_values.setZero(resolution * resolution * resolution);
 
     createNewGrid(); //now we have newgrid
-    vector<int> closepoints;
+    int size = newGrid.size();
+    Eigen::MatrixXd closepoints;
     double radius = wendlandRadius * (bb_max - bb_min).minCoeff();
 
-
+    int prova= 0;
     // Evaluate sphere's signed distance function at each gridpoint.
     for (unsigned int x = 0; x < resolution; ++x) {
         for (unsigned int y = 0; y < resolution; ++y) {
@@ -369,12 +382,13 @@ void evaluateImplicitFunc() {
                 // Linear index of the point at (x,y,z)
                 int index = x + resolution * (y + resolution * z);
 
+
                 Eigen::MatrixXd f;
                 Eigen::MatrixXd b;
                 Eigen::VectorXd weightVec;
 
-                closepoints = neighbors(grid_points.row(index)); //TODO implement neighbors
-                int closepointsSize = closepoints.size();
+                neighbors(grid_points.row(index)); //TODO implement neighbors
+                int closepointsSize = closepoints.rows();
 
 
                 //if no constraint points are within wendlandRadius, asign a large positive (outside) value to the grid point
@@ -384,11 +398,13 @@ void evaluateImplicitFunc() {
                     if(polyDegree == 0) { //a0 . b has size (1)
                         weightVec.setZero(closepointsSize, 1);
                         for (int i = 0; i < closepointsSize; i++) {
-                            weightVec(i) = wendLand((grid_points.row(index) - constrained_points.row(closepoints[i])).norm());
+                            weightVec(i) = wendLand((grid_points.row(index) - constrained_points.row(closepoints(i,0))).norm());
                             b.resize(closepointsSize, 1);
                             b.row(i) << 1;
                         }
                         Eigen::MatrixXd A = weightVec.asDiagonal()*b;
+                        int sizeW = weightVec.rows();
+                        int sizeSave = saveConstrValues.rows();
                         Eigen::VectorXd c = A.colPivHouseholderQr().solve(weightVec.asDiagonal()* saveConstrValues);
                         Eigen::VectorXd finalDot(1);
                         finalDot << 1;
@@ -399,10 +415,10 @@ void evaluateImplicitFunc() {
                         //a0 + a1x + a2y + a3z (4), b has size 4
                         weightVec.setZero(closepointsSize, 1);
                         for (int i = 0; i < closepointsSize; i++) {
-                            weightVec(i) = wendLand((grid_points.row(index) - constrained_points.row(closepoints[i])).norm());
+                            weightVec(i) = wendLand((grid_points.row(index) - constrained_points.row(closepoints(i,0))).norm());
                             b.resize(closepointsSize, 4);
                             f.resize(closepointsSize,1);
-                            b.row(i) << 1, (constrained_points.row(closepoints[i])).x(), (constrained_points.row(closepoints[i])).y(), (constrained_points.row(closepoints[i])).z();
+                            b.row(i) << 1, (constrained_points.row(closepoints(i,0))).x(), (constrained_points.row(closepoints(i,0))).y(), (constrained_points.row(closepoints(i,0))).z();
                         }
                         Eigen::MatrixXd A = weightVec.asDiagonal()*b;
                         Eigen::VectorXd c = A.colPivHouseholderQr().solve(weightVec.asDiagonal()*saveConstrValues);
@@ -414,10 +430,10 @@ void evaluateImplicitFunc() {
                         //a0 + a1x + a2y + a3z + a4x^2 + a5y^2 + a6 z^2 + a7 xy + a8 yz + a9 xz (10), b has size 10
                         weightVec.setZero(closepointsSize, 1);
                         for (int i = 0; i < closepointsSize; i++) {
-                            weightVec(i) = wendLand((grid_points.row(index) - constrained_points.row(closepoints[i])).norm());
+                            weightVec(i) = wendLand((grid_points.row(index) - constrained_points.row(closepoints(i,0))).norm());
                             b.resize(closepointsSize, 10);
                             f.resize(closepointsSize,1);
-                            b.row(i) << 1, (constrained_points.row(closepoints[i])).x(), (constrained_points.row(closepoints[i])).y(), (constrained_points.row(closepoints[i])).z(), pow((constrained_points.row(closepoints[i])).x(),2), pow(constrained_points.row(closepoints[i]).y(),2), pow(constrained_points.row(closepoints[i]).z(), 2),(constrained_points.row(closepoints[i])).x() * (constrained_points.row(closepoints[i])).y(), (constrained_points.row(closepoints[i])).y()*(constrained_points.row(closepoints[i])).z(), (constrained_points.row(closepoints[i])).x()*(constrained_points.row(closepoints[i])).z();
+                            b.row(i) << 1, (constrained_points.row(closepoints(i,0))).x(), (constrained_points.row(closepoints(i,0))).y(), (constrained_points.row(closepoints(i,0))).z(), pow((constrained_points.row(closepoints(i,0))).x(),2), pow(constrained_points.row(closepoints(i,0)).y(),2), pow(constrained_points.row(closepoints(i,0)).z(), 2),(constrained_points.row(closepoints(i,0))).x() * (constrained_points.row(closepoints(i,0))).y(), (constrained_points.row(closepoints(i,0))).y()*(constrained_points.row(closepoints(i,0))).z(), (constrained_points.row(closepoints(i,0))).x()*(constrained_points.row(closepoints(i,0))).z();
                         }
                         Eigen::MatrixXd A = weightVec.asDiagonal()*b;
                         Eigen::VectorXd c = A.colPivHouseholderQr().solve(weightVec.asDiagonal()*saveConstrValues);
@@ -435,6 +451,8 @@ void evaluateImplicitFunc() {
             }
         }
     }
+
+    cout << "\ndebug print" << endl;
 }
 
 
@@ -604,6 +622,8 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
         // Add code for displaying points and lines
         // You can use the following example:
 
+        if (constrained_points.rows() == 0)
+            callback_key_down(viewer, '2', 0);
         /*** begin: sphere example, replace (at least partially) with your code ***/
         // Make grid
         createGrid();
