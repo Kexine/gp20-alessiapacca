@@ -311,7 +311,7 @@ void neighbors(Eigen::RowVector3d p) {
     for (int i = minBlockOffsetX; i < maxBlockOffsetX; i++){
         for(int j = minBlockOffsetY; j < maxBlockOffsetY; j++){
             for(int t = minBlockOffsetZ; t < maxBlockOffsetZ; t++){
-                int indexI = (i) + (j) * pX + (t) * pY * pZ;
+                int indexI = (i) + (j) * pX + (t) * pY * pX;
                 for (int u = 0; u < newGrid[indexI].size(); u++) //we access every index inside that grid point
                 {
                     Eigen::RowVector3d dist = p - constrained_points.row(newGrid[indexI][u]);
@@ -616,6 +616,8 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
 
     if (key == '3') {
         // Show grid points with colored nodes and connected with lines
+        if (constrained_points.rows() == 0)
+            callback_key_down(viewer, '2', 0);
         viewer.data().clear();
         viewer.core.align_camera_center(P);
         // Add code for creating a grid
@@ -623,8 +625,7 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
         // Add code for displaying points and lines
         // You can use the following example:
 
-        if (constrained_points.rows() == 0)
-            callback_key_down(viewer, '2', 0);
+
         /*** begin: sphere example, replace (at least partially) with your code ***/
         // Make grid
         createGrid();
@@ -650,7 +651,6 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
                     grid_colors(i, 0) = 1;
             }
         }
-
         // Draw lines and points
         viewer.data().point_size = 8;
         viewer.data().add_points(grid_points, grid_colors);
