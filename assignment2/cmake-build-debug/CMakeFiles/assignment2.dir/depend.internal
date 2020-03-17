@@ -262,6 +262,12 @@ CMakeFiles/assignment2.dir/src/main.cpp.o
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/unsupported/Eigen/SparseExtra
+ /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/unsupported/Eigen/src/SparseExtra/BlockOfDynamicSparseMatrix.h
+ /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/unsupported/Eigen/src/SparseExtra/DynamicSparseMatrix.h
+ /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/unsupported/Eigen/src/SparseExtra/MarketIO.h
+ /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/unsupported/Eigen/src/SparseExtra/MatrixMarketIterator.h
+ /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/unsupported/Eigen/src/SparseExtra/RandomSetter.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/include/KHR/khrplatform.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/include/glad/glad.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glfw/include/GLFW/glfw3.h
@@ -380,6 +386,8 @@ CMakeFiles/assignment2.dir/src/main.cpp.o
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/repmat.cpp
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/repmat.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/serialize.h
+ /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/slice.cpp
+ /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/slice.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/snap_to_canonical_view_quat.cpp
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/snap_to_canonical_view_quat.h
  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/snap_to_fixed_up.cpp

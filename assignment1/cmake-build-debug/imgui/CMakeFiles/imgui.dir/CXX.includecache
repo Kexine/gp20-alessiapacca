@@ -112,6 +112,8 @@ GLFW/glfw3native.h
 
 /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.h
 
+/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_opengl3.h
+
 /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/imgui/imconfig.h
 
 /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp
@@ -241,28 +243,6 @@ string.h
 -
 string.h
 -
-
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/../imgui/examples/imgui_impl_opengl3.h
-
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/../imgui/imconfig.h
-
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/../imgui/imgui.h
-imconfig.h
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/../imgui/imconfig.h
-float.h
--
-stdarg.h
--
-stddef.h
--
-string.h
--
-assert.h
--
-stdint.h
--
-imgui_user.h
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/../imgui/imgui_user.h
 
 /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/imgui_impl_opengl3.cpp
 imgui.h

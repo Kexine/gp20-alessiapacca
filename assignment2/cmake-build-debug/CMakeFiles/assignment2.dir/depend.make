@@ -261,6 +261,12 @@ CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp2
 CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/Eigen/src/plugins/CommonCwiseUnaryOps.h
 CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/unsupported/Eigen/SparseExtra
+CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/unsupported/Eigen/src/SparseExtra/BlockOfDynamicSparseMatrix.h
+CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/unsupported/Eigen/src/SparseExtra/DynamicSparseMatrix.h
+CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/unsupported/Eigen/src/SparseExtra/MarketIO.h
+CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/unsupported/Eigen/src/SparseExtra/MatrixMarketIterator.h
+CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/unsupported/Eigen/src/SparseExtra/RandomSetter.h
 CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/include/KHR/khrplatform.h
 CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/include/glad/glad.h
 CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glfw/include/GLFW/glfw3.h
@@ -379,6 +385,8 @@ CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp2
 CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/repmat.cpp
 CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/repmat.h
 CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/serialize.h
+CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/slice.cpp
+CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/slice.h
 CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/snap_to_canonical_view_quat.cpp
 CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/snap_to_canonical_view_quat.h
 CMakeFiles/assignment2.dir/src/main.cpp.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/snap_to_fixed_up.cpp
