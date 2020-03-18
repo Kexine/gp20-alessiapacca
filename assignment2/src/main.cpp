@@ -29,7 +29,7 @@ Eigen::VectorXd constrained_values;
 // Parameter: degree of the polynomial
 int polyDegree = 0;
 double diag;
-double stepRate = 0.1;
+double stepRate = 0.01;
 double scale = 1.3;
 
 // Parameter: Wendland weight function radius (make this relative to the size of the mesh)
@@ -396,7 +396,7 @@ void evaluateImplicitFunc() {
                         Eigen::VectorXd c = A.colPivHouseholderQr().solve(weightVec.asDiagonal()* saveConstrValues);
                         //cout << "product" << weightVec.asDiagonal()* saveConstrValues << endl;
 
-                        cout << c;
+                        //cout << c;
 
                         Eigen::VectorXd finalDot(1);
                         finalDot << 1;
@@ -444,7 +444,7 @@ void evaluateImplicitFunc() {
         }
     }
 
-    cout << "\ndebug print" << endl;
+    //cout << "\ndebug print" << endl;
 }
 
 
@@ -690,7 +690,7 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
         cout << "Saved reconstructed " << shapeName << endl;
     }
 
-return true;
+    return true;
 }
 
 bool callback_load_mesh(Viewer& viewer,string filename)
