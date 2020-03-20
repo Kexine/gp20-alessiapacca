@@ -27,7 +27,7 @@ Eigen::MatrixXd constrained_points;
 Eigen::VectorXd constrained_values;
 
 // Parameter: degree of the polynomial
-int polyDegree = 2;
+int polyDegree = 0;
 double diag;
 double stepRate = 0.1;
 double scale = 1.2;
@@ -67,7 +67,7 @@ Eigen::MatrixXd FN;
 std::vector<std::vector<int>> newGrid;
 int size_newGrid_x, size_newGrid_y, size_newGrid_z;
 double newGrid_step;
-bool PCA = false;
+bool PCA = true;
 
 double minimumDistance = 1000000.0;
 Eigen::VectorXd saveConstrValues;
@@ -94,6 +94,8 @@ void init_global_variable(){
     tempN = N;
 
     if(PCA && singleton_PCA) {
+        cout << "PCA: " << PCA << endl;
+
         Eigen::MatrixXd centerPoints = P.rowwise() - P.colwise().mean();
         Eigen::MatrixXd cov = centerPoints.adjoint() * centerPoints;
         //cov = cov / (P.rows() - 1);
@@ -110,7 +112,7 @@ void init_global_variable(){
 
     bb_min = P.colwise().minCoeff();
     bb_max = P.colwise().maxCoeff();
-    dim = (bb_max-bb_min);
+    dim = (bb_max-bb_min)*scale;
     diag = dim.norm();
     wendlandRadiusDiag = wendlandRadius*diag;
 }
@@ -141,13 +143,13 @@ void createGrid() {
 
 
     //Global variable
-    grid_step_x = dim[0] / (double)(resolution - 2);
-    grid_step_y = dim[1] / (double)(resolution - 2);
-    grid_step_z = dim[2] / (double)(resolution - 2);
+    grid_step_x = dim[0] / (double)(resolution - 1);
+    grid_step_y = dim[1] / (double)(resolution - 1);
+    grid_step_z = dim[2] / (double)(resolution - 1);
 
     //enlarge the grid
     Eigen::RowVector3d diff(3);
-    diff << 0.5 * grid_step_x, 0.5 * grid_step_y, 0.5 * grid_step_z;
+    diff << 1.1 * grid_step_x, 1.1 * grid_step_y, 1.1 * grid_step_z;
 
     grid_points.resize(resolution*resolution*resolution, 3);
     for (int i = 0; i < resolution; ++i) {
@@ -309,7 +311,7 @@ void evaluateImplicitFunc(){
                     else if(polyDegree == 1){
                         b.resize(closepointsSize, 4);
                         for (int i = 0; i < closepointsSize; i++) {
-                            b.row(i) << 1, grid_points(grid_index,0), grid_points(grid_index,1), grid_points(grid_index,2);
+                            b.row(i) <<  1, constrained_points(neighbors_points(i), 0), constrained_points(neighbors_points(i), 1),constrained_points(neighbors_points(i), 2);
                         }
                         finalDot.resize(4);
                         finalDot << 1, grid_points(grid_index,0), grid_points(grid_index,1), grid_points(grid_index,2);
@@ -317,9 +319,10 @@ void evaluateImplicitFunc(){
                     else if(polyDegree == 2){
                         b.resize(closepointsSize, 10);
                         for (int i = 0; i < closepointsSize; i++) {
-                            b.row(i) << 1, grid_points(grid_index,0), grid_points(grid_index,1), grid_points(grid_index,2),
-                                    pow(grid_points(grid_index,0),2),  pow(grid_points(grid_index,1),2),  pow(grid_points(grid_index,0), 2),
-                                    grid_points(grid_index,0)* grid_points(grid_index,1),  grid_points(grid_index,1)* grid_points(grid_index,2),  grid_points(grid_index,0)* grid_points(grid_index,2);
+                            b.row(i) << 1, constrained_points(neighbors_points(i), 0), constrained_points(neighbors_points(i), 1), constrained_points(neighbors_points(i), 2),
+                                    pow(constrained_points(neighbors_points(i), 0),2), pow(constrained_points(neighbors_points(i), 1),2), pow(constrained_points(neighbors_points(i), 2),2),
+                                    constrained_points(neighbors_points(i), 0)*constrained_points(neighbors_points(i), 1), constrained_points(neighbors_points(i), 1)*constrained_points(neighbors_points(i), 2),
+                                    constrained_points(neighbors_points(i), 0) *constrained_points(neighbors_points(i), 2);
                         }
                         finalDot.resize(10);
                         finalDot << 1, grid_points(grid_index,0), grid_points(grid_index,1), grid_points(grid_index,2),
@@ -484,6 +487,7 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
 
     if (key == '4') {
         // Show reconstructed mesh
+        cout << "PCA: " << PCA << endl;
         viewer.data().clear();
         // Code for computing the mesh (V,F) from grid_points and grid_values
         if ((grid_points.rows() == 0) || (grid_values.rows() == 0)) {
@@ -500,6 +504,8 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
             cerr << "Marching Cubes failed!" << endl;
             return true;
         }
+        cout << "PCA: " << PCA << endl;
+
 
         igl::per_face_normals(V, F, FN);
         viewer.data().set_mesh(V, F);
@@ -527,7 +533,7 @@ bool callback_load_mesh(Viewer& viewer,string filename)
 int main(int argc, char *argv[]){
     if (argc != 2) {
         cout << "Usage ex2_bin <mesh.off>" << endl;
-        igl::readOFF("../data/bunny-500.off",P,F,N);
+        igl::readOFF("../data/luigi.off",P,F,N);
     }
     else
     {
@@ -554,6 +560,7 @@ int main(int argc, char *argv[]){
             ImGui::InputInt("polyDegree", &polyDegree, 0, 0);
             ImGui::InputDouble("Wendland Radius Default", &wendlandRadius, 0, 0);
             ImGui::Checkbox("Use PCA", &PCA);
+            ImGui::Checkbox("Use Normal Constrain", &N_CONSTRAINT);
 
             if (ImGui::Button("Reset Grid", ImVec2(-1,0)))
             {
