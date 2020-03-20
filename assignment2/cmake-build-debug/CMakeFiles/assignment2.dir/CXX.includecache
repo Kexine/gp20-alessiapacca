@@ -17,8 +17,6 @@ igl/opengl/glfw/imgui/ImGuiHelpers.h
 -
 imgui/imgui.h
 -
-igl/floor.h
--
 igl/per_face_normals.h
 -
 igl/copyleft/marching_cubes.h
@@ -26,8 +24,6 @@ igl/copyleft/marching_cubes.h
 cmath
 -
 igl/slice.h
--
-igl/readOFF.h
 -
 
 /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/eigen/Eigen/Cholesky
@@ -1733,22 +1729,6 @@ string
 -
 file_dialog_save.cpp
 /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/file_dialog_save.cpp
-
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/floor.cpp
-floor.h
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/floor.h
-cmath
--
-iostream
--
-
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/floor.h
-igl_inline.h
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/igl_inline.h
-Eigen/Dense
--
-floor.cpp
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/floor.cpp
 
 /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/include/igl/frustum.cpp
 frustum.h
