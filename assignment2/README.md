@@ -7,6 +7,8 @@ Edit this 'README.md' file to report all your results. There is no need to write
 ### Mandatory Tasks
 1) Show the visualization of the constrained points for the 'cat.off' point cloud.
 
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment1/results/cat.png)
+
 2) Show screenshots of the grid with nodes colored according to their implicit function values (cat.off and luigi.off).
 
 3) Show screenshots of the reconstructed surfaces. Experiment with different parameter settings: grid resolution (also anisotropic in the 3 axes), Wendland function radius, polynomial degree. Add all these settings to the GUI to ease experimentation. Briefly summarize your observations and save the reconstructed models in the off format for every point-cloud dataset provided (assignment2/results).
