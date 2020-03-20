@@ -27,7 +27,7 @@ Eigen::MatrixXd constrained_points;
 Eigen::VectorXd constrained_values;
 
 // Parameter: degree of the polynomial
-int polyDegree = 0;
+int polyDegree = 2;
 double diag;
 double stepRate = 0.1;
 double scale = 1.2;
@@ -39,6 +39,7 @@ double wendlandRadiusDiag;
 
 // Parameter: grid resolution
 int resolution = 20;
+bool N_CONSTRAINT = false;
 
 // Intermediate result: grid points, at which the implicit function will be evaluated, #G x3
 Eigen::MatrixXd grid_points;
@@ -71,7 +72,7 @@ bool PCA = false;
 double minimumDistance = 1000000.0;
 Eigen::VectorXd saveConstrValues;
 Eigen::MatrixXd closepoints;
-Eigen::VectorXd neighbors_points;
+Eigen::VectorXi neighbors_points;
 string shapeName;
 Eigen::MatrixXd tempP, tempN;
 Eigen::Matrix3d temp;
@@ -325,6 +326,14 @@ void evaluateImplicitFunc(){
                                 pow(grid_points(grid_index,0),2),  pow(grid_points(grid_index,1),2),  pow(grid_points(grid_index,0), 2),
                                 grid_points(grid_index,0)* grid_points(grid_index,1),  grid_points(grid_index,1)* grid_points(grid_index,2),  grid_points(grid_index,0)* grid_points(grid_index,2);
                     }
+
+                    //TODO CHECK HAT VECTORXI IS OK
+                    if(N_CONSTRAINT) {
+                        for(int i=0; i<saveConstrValues.size(); i++) {
+                            saveConstrValues(i) += (grid_points.row(grid_index) - constrained_points.row(neighbors_points(i))).dot(N.row(neighbors_points(i)%N.rows()));
+                        }
+                    }
+
                     Eigen::MatrixXd A = weightVec.asDiagonal()*b;
                     Eigen::VectorXd c = A.colPivHouseholderQr().solve(weightVec.asDiagonal()*saveConstrValues);
                     grid_values[grid_index] = finalDot.dot(c);
@@ -478,8 +487,10 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
         viewer.data().clear();
         // Code for computing the mesh (V,F) from grid_points and grid_values
         if ((grid_points.rows() == 0) || (grid_values.rows() == 0)) {
-            cerr << "Not enough data for Marching Cubes !" << endl;
-            return true;
+           /* cerr << "Not enough data for Marching Cubes !" << endl;
+            return true;*/
+            callback_key_down(viewer, '3', 0);
+            viewer.data().clear();
         }
 
 
@@ -516,7 +527,7 @@ bool callback_load_mesh(Viewer& viewer,string filename)
 int main(int argc, char *argv[]){
     if (argc != 2) {
         cout << "Usage ex2_bin <mesh.off>" << endl;
-        igl::readOFF("../data/cat.off",P,F,N);
+        igl::readOFF("../data/bunny-500.off",P,F,N);
     }
     else
     {
