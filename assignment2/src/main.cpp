@@ -73,10 +73,11 @@ Eigen::VectorXd saveConstrValues;
 Eigen::MatrixXd closepoints;
 Eigen::VectorXd neighbors_points;
 string shapeName;
-
+Eigen::MatrixXd tempP, tempN;
+Eigen::Matrix3d temp;
 // Global variable for grid bounds
 Eigen::RowVector3d  bb_min, bb_max, dim;
-
+bool singleton_PCA = true;
 std::vector<double> distanceVector;
 
 // Functions
@@ -87,6 +88,25 @@ bool callback_key_down(Viewer& viewer, unsigned char key, int modifiers);
 void neighbors(Eigen::RowVector3d p);
 
 void init_global_variable(){
+
+    tempP = P;
+    tempN = N;
+
+    if(PCA && singleton_PCA) {
+        Eigen::MatrixXd centerPoints = P.rowwise() - P.colwise().mean();
+        Eigen::MatrixXd cov = centerPoints.adjoint() * centerPoints;
+        //cov = cov / (P.rows() - 1);
+        Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> eigen(cov);
+        Eigen::MatrixXd eigenVectors = eigen.eigenvectors();
+        eigenVectors = eigenVectors.rightCols(3);
+        tempP = (P * eigenVectors);
+        tempN = (N * eigenVectors);
+        singleton_PCA = false;
+    }
+
+    P = tempP;
+    N = tempN;
+
     bb_min = P.colwise().minCoeff();
     bb_max = P.colwise().maxCoeff();
     dim = (bb_max-bb_min);
@@ -118,16 +138,6 @@ void createGrid() {
     F.resize(0, 3);
     FN.resize(0, 3);
 
-    if (PCA) {
-        //PCA
-        Eigen::MatrixXd centerPoints = P.rowwise() - P.colwise().mean();
-        Eigen::MatrixXd cov = centerPoints.adjoint() * centerPoints;
-        //cov = cov / (P.rows() - 1);
-        Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> eigen(cov);
-        Eigen::MatrixXd eigenVectors = eigen.eigenvectors();
-        eigenVectors = eigenVectors.rightCols(3);
-        P = centerPoints * eigenVectors;
-    }
 
     //Global variable
     grid_step_x = dim[0] / (double)(resolution - 2);
@@ -136,7 +146,7 @@ void createGrid() {
 
     //enlarge the grid
     Eigen::RowVector3d diff(3);
-    diff << 0.3 * grid_step_x, 0.3 * grid_step_y, 0.3 * grid_step_z;
+    diff << 0.5 * grid_step_x, 0.5 * grid_step_y, 0.5 * grid_step_z;
 
     grid_points.resize(resolution*resolution*resolution, 3);
     for (int i = 0; i < resolution; ++i) {
@@ -146,6 +156,7 @@ void createGrid() {
             }
         }
     }
+
 }
 
 int newGrid_index(Eigen::RowVector3d p){
@@ -505,7 +516,7 @@ bool callback_load_mesh(Viewer& viewer,string filename)
 int main(int argc, char *argv[]){
     if (argc != 2) {
         cout << "Usage ex2_bin <mesh.off>" << endl;
-        igl::readOFF("../data/luigi.off",P,F,N);
+        igl::readOFF("../data/cat.off",P,F,N);
     }
     else
     {
@@ -531,6 +542,8 @@ int main(int argc, char *argv[]){
             ImGui::InputInt("Resolution", &resolution, 0, 0);
             ImGui::InputInt("polyDegree", &polyDegree, 0, 0);
             ImGui::InputDouble("Wendland Radius Default", &wendlandRadius, 0, 0);
+            ImGui::Checkbox("Use PCA", &PCA);
+
             if (ImGui::Button("Reset Grid", ImVec2(-1,0)))
             {
                 std::cout << "ResetGrid\n";
