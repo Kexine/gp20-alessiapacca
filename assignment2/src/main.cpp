@@ -32,6 +32,7 @@ double diag;
 double stepRate = 0.1;
 double scale = 1.2;
 double grid_step_x, grid_step_y, grid_step_z;
+double offset_view = 2.5;
 
 // Parameter: Wendland weight function radius (make this relative to the size of the mesh)
 double wendlandRadius = 0.1;
@@ -149,7 +150,7 @@ void createGrid() {
 
     //enlarge the grid
     Eigen::RowVector3d diff(3);
-    diff << 1.1 * grid_step_x, 1.1 * grid_step_y, 1.1 * grid_step_z;
+    diff << offset_view * grid_step_x, offset_view * grid_step_y, offset_view * grid_step_z;
 
     grid_points.resize(resolution*resolution*resolution, 3);
     for (int i = 0; i < resolution; ++i) {
@@ -326,7 +327,7 @@ void evaluateImplicitFunc(){
                         }
                         finalDot.resize(10);
                         finalDot << 1, grid_points(grid_index,0), grid_points(grid_index,1), grid_points(grid_index,2),
-                                pow(grid_points(grid_index,0),2),  pow(grid_points(grid_index,1),2),  pow(grid_points(grid_index,0), 2),
+                                pow(grid_points(grid_index,0),2),  pow(grid_points(grid_index,1),2),  pow(grid_points(grid_index,2), 2),
                                 grid_points(grid_index,0)* grid_points(grid_index,1),  grid_points(grid_index,1)* grid_points(grid_index,2),  grid_points(grid_index,0)* grid_points(grid_index,2);
                     }
 
@@ -338,7 +339,8 @@ void evaluateImplicitFunc(){
                     }
 
                     Eigen::MatrixXd A = weightVec.asDiagonal()*b;
-                    Eigen::VectorXd c = A.colPivHouseholderQr().solve(weightVec.asDiagonal()*saveConstrValues);
+                    //Eigen::VectorXd c = A.fullPivHouseholderQr().solve(weightVec.asDiagonal()*saveConstrValues);
+                    Eigen::VectorXd c = (b.transpose() * weightVec.asDiagonal() * b).ldlt().solve(A.transpose() * weightVec.asDiagonal() * saveConstrValues);
                     grid_values[grid_index] = finalDot.dot(c);
                 }
             }
@@ -476,7 +478,7 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
             }
         }
         // Draw lines and points
-        viewer.data().point_size = 7;
+        viewer.data().point_size = 8;
         viewer.data().add_points(grid_points, grid_colors);
         viewer.data().add_edges(grid_lines.block(0, 0, grid_lines.rows(), 3),
                                 grid_lines.block(0, 3, grid_lines.rows(), 3),
@@ -487,12 +489,11 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
 
     if (key == '4') {
         // Show reconstructed mesh
-        cout << "PCA: " << PCA << endl;
         viewer.data().clear();
         // Code for computing the mesh (V,F) from grid_points and grid_values
         if ((grid_points.rows() == 0) || (grid_values.rows() == 0)) {
-           /* cerr << "Not enough data for Marching Cubes !" << endl;
-            return true;*/
+            /* cerr << "Not enough data for Marching Cubes !" << endl;
+             return true;*/
             callback_key_down(viewer, '3', 0);
             viewer.data().clear();
         }
@@ -504,7 +505,6 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
             cerr << "Marching Cubes failed!" << endl;
             return true;
         }
-        cout << "PCA: " << PCA << endl;
 
 
         igl::per_face_normals(V, F, FN);
@@ -533,7 +533,7 @@ bool callback_load_mesh(Viewer& viewer,string filename)
 int main(int argc, char *argv[]){
     if (argc != 2) {
         cout << "Usage ex2_bin <mesh.off>" << endl;
-        igl::readOFF("../data/luigi.off",P,F,N);
+        igl::readOFF("../data/cat.off",P,F,N);
     }
     else
     {
@@ -561,6 +561,7 @@ int main(int argc, char *argv[]){
             ImGui::InputDouble("Wendland Radius Default", &wendlandRadius, 0, 0);
             ImGui::Checkbox("Use PCA", &PCA);
             ImGui::Checkbox("Use Normal Constrain", &N_CONSTRAINT);
+            ImGui::InputDouble("offset view", &offset_view, 0, 0);
 
             if (ImGui::Button("Reset Grid", ImVec2(-1,0)))
             {
