@@ -32,7 +32,8 @@ double diag;
 double stepRate = 0.1;
 double scale = 1.2;
 double grid_step_x, grid_step_y, grid_step_z;
-double offset_view = 2.5;
+double offset_view = 1.1;
+double epsConst = 0.05;
 
 // Parameter: Wendland weight function radius (make this relative to the size of the mesh)
 double wendlandRadius = 0.1;
@@ -95,8 +96,6 @@ void init_global_variable(){
     tempN = N;
 
     if(PCA && singleton_PCA) {
-        cout << "PCA: " << PCA << endl;
-
         Eigen::MatrixXd centerPoints = P.rowwise() - P.colwise().mean();
         Eigen::MatrixXd cov = centerPoints.adjoint() * centerPoints;
         //cov = cov / (P.rows() - 1);
@@ -339,14 +338,17 @@ void evaluateImplicitFunc(){
                     }
 
                     Eigen::MatrixXd A = weightVec.asDiagonal()*b;
-                    //Eigen::VectorXd c = A.fullPivHouseholderQr().solve(weightVec.asDiagonal()*saveConstrValues);
-                    Eigen::VectorXd c = (b.transpose() * weightVec.asDiagonal() * b).ldlt().solve(A.transpose() * weightVec.asDiagonal() * saveConstrValues);
+                    Eigen::VectorXd c = A.colPivHouseholderQr().solve((weightVec).asDiagonal()*saveConstrValues);
                     grid_values[grid_index] = finalDot.dot(c);
+
+
+                    //Eigen::VectorXd c = (b.transpose() * weightVec.asDiagonal() * weightVec.asDiagonal() * b).ldlt().solve(A.transpose() * weightVec.asDiagonal() * saveConstrValues);
                 }
             }
         }
     }
 }
+
 
 // Code to display the grid lines given a grid structure of the given form.
 // Assumes grid_points have been correctly assigned
@@ -409,7 +411,7 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
         //just like in create grid
 
         //define epsilon
-        double eps = 0.01 * diag;
+        double eps = epsConst * diag;
         for (int i = 0; i < sizeP; ++i) {
             constrained_points.row(i) = P.row(i);
             constrained_values(i) = 0;
@@ -419,7 +421,7 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
             }
             constrained_points.row(i+sizeP) = P.row(i) + eps*N.row(i);
             constrained_values(i+sizeP) = eps;
-            eps = 0.01 * diag;
+            eps = epsConst * diag;
             constrained_points.row(i+2*sizeP) = P.row(i) - eps*N.row(i);
             while (closest_point(P.row(i) - eps*N.row(i)) != i){
                 eps *= 0.5;
@@ -562,6 +564,7 @@ int main(int argc, char *argv[]){
             ImGui::Checkbox("Use PCA", &PCA);
             ImGui::Checkbox("Use Normal Constrain", &N_CONSTRAINT);
             ImGui::InputDouble("offset view", &offset_view, 0, 0);
+            ImGui::InputDouble("Epsilon", &epsConst, 0, 0);
 
             if (ImGui::Button("Reset Grid", ImVec2(-1,0)))
             {
