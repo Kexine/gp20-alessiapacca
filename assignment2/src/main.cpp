@@ -40,7 +40,9 @@ double wendlandRadius = 0.1;
 double wendlandRadiusDiag;
 
 // Parameter: grid resolution
-int resolution = 20;
+int resolutionX = 20;
+int resolutionY = 20;
+int resolutionZ = 20;
 bool N_CONSTRAINT = false;
 
 // Intermediate result: grid points, at which the implicit function will be evaluated, #G x3
@@ -69,7 +71,7 @@ Eigen::MatrixXd FN;
 std::vector<std::vector<int>> newGrid;
 int size_newGrid_x, size_newGrid_y, size_newGrid_z;
 double newGrid_step;
-bool PCA = true;
+bool PCA = false;
 
 double minimumDistance = 1000000.0;
 Eigen::VectorXd saveConstrValues;
@@ -122,7 +124,7 @@ int newGrid_coordinates_to_idx(int x, int y, int z)
 }
 int grid_coordinates_to_idx(int x, int y, int z)
 {
-    return x + resolution*y + resolution*resolution*z;
+    return x + resolutionX*y + resolutionX*resolutionY*z;
 }
 
 //returns the wendLand function
@@ -143,18 +145,18 @@ void createGrid() {
 
 
     //Global variable
-    grid_step_x = dim[0] / (double)(resolution - 1);
-    grid_step_y = dim[1] / (double)(resolution - 1);
-    grid_step_z = dim[2] / (double)(resolution - 1);
+    grid_step_x = dim[0] / (double)(resolutionX - 1);
+    grid_step_y = dim[1] / (double)(resolutionY - 1);
+    grid_step_z = dim[2] / (double)(resolutionZ - 1);
 
     //enlarge the grid
     Eigen::RowVector3d diff(3);
     diff << offset_view * grid_step_x, offset_view * grid_step_y, offset_view * grid_step_z;
 
-    grid_points.resize(resolution*resolution*resolution, 3);
-    for (int i = 0; i < resolution; ++i) {
-        for (int j = 0; j < resolution; ++j) {
-            for (int k = 0; k < resolution; ++k) {
+    grid_points.resize(resolutionX*resolutionY*resolutionZ, 3);
+    for (int i = 0; i < resolutionX; ++i) {
+        for (int j = 0; j < resolutionY; ++j) {
+            for (int k = 0; k < resolutionZ; ++k) {
                 grid_points.row(grid_coordinates_to_idx(i, j, k)) = bb_min -diff + Eigen::RowVector3d(i * grid_step_x, j * grid_step_y, k * grid_step_z);
             }
         }
@@ -281,12 +283,12 @@ void neighbors(Eigen::RowVector3d p){
 
 void evaluateImplicitFunc(){
 
-    grid_values.resize(resolution*resolution*resolution);
-    grid_values.setZero(resolution*resolution*resolution);
+    grid_values.resize(resolutionX*resolutionY*resolutionZ);
+    grid_values.setZero(resolutionX*resolutionY*resolutionZ);
 
-    for (int i = 0; i < resolution; ++i) {
-        for (int j = 0; j < resolution; ++j) {
-            for (int k = 0; k < resolution; ++k) {
+    for (int i = 0; i < resolutionX; ++i) {
+        for (int j = 0; j < resolutionY; ++j) {
+            for (int k = 0; k < resolutionZ; ++k) {
                 int grid_index = grid_coordinates_to_idx(i,j,k);
 
                 Eigen::MatrixXd b;
@@ -358,20 +360,20 @@ void getLines() {
     grid_lines.resize(3 * nnodes, 6);
     int numLines = 0;
 
-    for (unsigned int x = 0; x<resolution; ++x) {
-        for (unsigned int y = 0; y < resolution; ++y) {
-            for (unsigned int z = 0; z < resolution; ++z) {
-                int index = x + resolution * (y + resolution * z);
-                if (x < resolution - 1) {
-                    int index1 = (x + 1) + y * resolution + z * resolution * resolution;
+    for (unsigned int x = 0; x<resolutionX; ++x) {
+        for (unsigned int y = 0; y < resolutionY; ++y) {
+            for (unsigned int z = 0; z < resolutionZ; ++z) {
+                int index = x + resolutionX * (y + resolutionY * z);
+                if (x < resolutionX - 1) {
+                    int index1 = (x + 1) + y * resolutionX + z * resolutionX * resolutionY;
                     grid_lines.row(numLines++) << grid_points.row(index), grid_points.row(index1);
                 }
-                if (y < resolution - 1) {
-                    int index1 = x + (y + 1) * resolution + z * resolution * resolution;
+                if (y < resolutionY - 1) {
+                    int index1 = x + (y + 1) * resolutionX + z * resolutionX * resolutionY;
                     grid_lines.row(numLines++) << grid_points.row(index), grid_points.row(index1);
                 }
-                if (z < resolution - 1) {
-                    int index1 = x + y * resolution + (z + 1) * resolution * resolution;
+                if (z < resolutionZ - 1) {
+                    int index1 = x + y * resolutionX + (z + 1) * resolutionX * resolutionY;
                     grid_lines.row(numLines++) << grid_points.row(index), grid_points.row(index1);
                 }
             }
@@ -502,7 +504,7 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
 
 
         // Run marching cubes
-        igl::copyleft::marching_cubes(grid_values, grid_points, resolution, resolution, resolution, V, F);
+        igl::copyleft::marching_cubes(grid_values, grid_points, resolutionX, resolutionY, resolutionZ, V, F);
         if (V.rows() == 0) {
             cerr << "Marching Cubes failed!" << endl;
             return true;
@@ -535,7 +537,7 @@ bool callback_load_mesh(Viewer& viewer,string filename)
 int main(int argc, char *argv[]){
     if (argc != 2) {
         cout << "Usage ex2_bin <mesh.off>" << endl;
-        igl::readOFF("../data/cat.off",P,F,N);
+        igl::readOFF("../data/sphere.off",P,F,N);
     }
     else
     {
@@ -558,7 +560,9 @@ int main(int argc, char *argv[]){
         if (ImGui::CollapsingHeader("Reconstruction Options", ImGuiTreeNodeFlags_DefaultOpen))
         {
             // Expose variable directly ...
-            ImGui::InputInt("Resolution", &resolution, 0, 0);
+            ImGui::InputInt("Resolution X", &resolutionX, 0, 0);
+            ImGui::InputInt("Resolution Y", &resolutionY, 0, 0);
+            ImGui::InputInt("Resolution Z", &resolutionZ, 0, 0);
             ImGui::InputInt("polyDegree", &polyDegree, 0, 0);
             ImGui::InputDouble("Wendland Radius Default", &wendlandRadius, 0, 0);
             ImGui::Checkbox("Use PCA", &PCA);
