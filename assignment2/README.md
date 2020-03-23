@@ -54,7 +54,7 @@ Theory question
 
 ### Theory question: Save your notes to assignment2/results and add a link to this page.
 
-1) Save your notes and add a link to this page.
+1) Save your notes and add a link to this page.<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/es1.jpg) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/es2.jpg) <br><br>
 
