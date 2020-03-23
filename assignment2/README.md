@@ -66,12 +66,24 @@ I used Meshlab and his Screened Poisson implementation, obtaining this result: <
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hond3.jpg) <br><br>
 
 
-3) Compare your MLS reconstruction results to the surfaces obtained with Screened Poisson Reconstruction and RIMLS, and try to understand the differences. Report your findings.<br>
+3) Compare your MLS reconstruction results to the surfaces obtained with Screened Poisson Reconstruction and RIMLS, and try to understand the differences. Report your findings.<br><br>
+Here are some results found with Screened Poisson reconstruction:<br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/catpoisson.jpg) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horsepoisson.jpg) <br><br>
 Screened Poisson, when used with low resolutions, has an accuracy which exceeds the one of our MLS reconstruction, and has significantly faster processing times. Therefore, it can be used with much higher resolutions (200 in this case), resulting in a reconstruction which is much more detailed and precise. This means that it can handle large
 models in less time. <br> As the paper explains, this is probably because of hierarchical clustering of the points and of a conforming octree structure, that enable a multigrid algorithm with linear complexity on the number of input points <br>
 Moreover, the accuracy of our MLS method is also influenced by the sensitivity to outliers and the smoothing out of
 small features.<br><br>
-Another solution to MLS was developed with RIMLS, which is a robust Implicit MLS, that aims to preserve sharp edges and to be robust to outliers. In this case, the results better preserve fine details and handle sharp features. The reason is that this method uses robust kernel regression combined with MLS. 
+
+Another solution to MLS was developed with RIMLS, which is a robust Implicit MLS, that aims to preserve sharp edges and to be robust to outliers. In this case, the results better preserve fine details and handle sharp features. The reason is that this method uses robust kernel regression combined with MLS. <br>
+Here are some results found with RIMLS:<br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/catmarch.jpg) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horsemarch.jpg) <br><br>
+In particular, we can look at the reconstruction of Luigi with this method: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/luigimarch.jpg) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/luigi1march.jpg) <br><br>
+In this case it's clear that this approach preserves the shape in a better way, and this can be seen from the legs which are more separated, or from the nose which is less mashed into the face of Luigi.  
+<br>
 
 4) Append to your report a description of the method (normal constrain) and how it compares to the original point-value based approach. <br>
 The method, instead of using the MLS method to blend between constant values associated with each polygon/point, blends between functions associated with them. It does that by updating the vector of the constrained values of the neighboring points, on the right part of the equation, by a factor that depends on the normal of the point in consideration. 
