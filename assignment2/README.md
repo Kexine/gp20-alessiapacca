@@ -22,8 +22,8 @@ By trying with polyDegree = 0, we get: <br>
 By trying with polyDegree = 1, we get: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/sphere_poly1_1.png) <br><br>
 By trying with polyDegree = 2, we get: <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/sphere_poly2_2.png) <br><br>
-We can see that with higher degree, we have some artifacts, that are more visible in other more complex shapes. <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/sphere_poly2_2.png) <br><br><br>
+We can see that with higher degree, we have some artifacts, that are more visible in other more complex shapes. <br>
 We can see the example of the bunny. <br>
 By trying with polyDegree = 0, we get: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_0.png) <br><br>
@@ -33,6 +33,11 @@ By trying with polyDegree = 1, we already get some artifacts, compared to the sp
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_2.png) <br><br>
 By trying with polyDegree = 2, I had to change a bit the values of the wendLandRadius and of the initial epsilon: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_3.png) <br><br>
+Here are the results by using bunny_1000,horse and hound.off with polyDegree = 0: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_0.png) <br><br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horse_0.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hound_0.png) <br><br>
+
 
 Theory question
 
