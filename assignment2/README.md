@@ -56,11 +56,17 @@ Theory question
 
 1) Save your notes and add a link to this page.
 
-2) Show screenshots comparing the 'hound.off' of the normal based reconstruction to the point based reconstruction of the mandatory task.
+2) Show screenshots comparing the 'hound.off' of the normal based reconstruction to the point based reconstruction of the mandatory task.<br>
+I used Meshlab and his Screened Poisson implementation, obtaining this result: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hound1.jpg) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hound2.jpg) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hound3.jpg) <br><br>
+If we compare it to the result from the mandatory task, we can first say that Meshlab uses a much higher resolution (200 in this case), therefore the final reconstruction is much more detailed and precise.<br> 
+
 
 3) Compare your MLS reconstruction results to the surfaces obtained with Screened Poisson Reconstruction and RIMLS, and try to understand the differences. Report your findings.
 
-4) I ---descrizione metodo--. 
+4) I ---descrizione metodo--. <br>
 We can see differences in Luigi shape: 
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/collage.jpg) <br><br>
 
