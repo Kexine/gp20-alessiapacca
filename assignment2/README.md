@@ -34,9 +34,19 @@ By trying with polyDegree = 1, we already get some artifacts, compared to the sp
 By trying with polyDegree = 2, I had to change a bit the values of the wendLandRadius and of the initial epsilon: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_3.png) <br><br>
 Here are the results by using bunny_1000,horse and hound.off with polyDegree = 0: <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_0.png) <br><br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_0.png) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horse_0.png) <br><br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hound_0.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hound_0.png) <br><br><br>
+I also experimented with the cat shape.<br>
+First I tried polyDegree = 0 with different resolutions of the cat: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly0_0.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly0_1.png) <br><br>
+With higher resolutions, we are able to have smoother shapes, and less sharp edges.<br>
+By using polyDegree = 1, the result is: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly1_2.png) <br><br>
+The artifacts can be limited if we increase the wendLandRadius rate, obtaining a "blob" shape: 
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly1_3.png) <br><br>
+
 
 
 Theory question
