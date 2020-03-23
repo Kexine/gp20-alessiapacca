@@ -66,11 +66,11 @@ If we compare it to the result from the mandatory task, we can first say that Me
 
 3) Compare your MLS reconstruction results to the surfaces obtained with Screened Poisson Reconstruction and RIMLS, and try to understand the differences. Report your findings.
 
-4) Append to your report a description of the method and how it compares to the original point-value based approach. <br>
+4) Append to your report a description of the method (normal constrain) and how it compares to the original point-value based approach. <br>
 The method, instead of using the MLS method to blend between constant values associated with each polygon/point, blends between functions associated with them. It does that by updating the vector of the constrained values of the neighboring points, on the right part of the equation, by a factor that depends on the normal of the point in consideration. 
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/screen.png) <br><br>
-We can see differences in Luigi shape:
-On the left, Luigi reconstructed without the normal constraint; on the right, Luigi reconstructed with the normal constraint.<br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/collage.jpg) <br><br>
+We can see differences in Luigi shape:<br>
+On the left, Luigi reconstructed without the normal constrain; on the right, Luigi reconstructed with the normal constrain Some features, like the hat or the arms of the shape, are better reconstructed with the constrain.<br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/collage.jpg) <br>
 This method exhibits little undesirable oscillation, and it's also way more precise. 
 
