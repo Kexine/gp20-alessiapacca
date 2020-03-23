@@ -61,4 +61,6 @@ Theory question
 3) Compare your MLS reconstruction results to the surfaces obtained with Screened Poisson Reconstruction and RIMLS, and try to understand the differences. Report your findings.
 
 4) I ---descrizione metodo--. 
-We can see differences: 
+We can see differences in Luigi shape: 
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/collage.jpg) <br><br>
+
