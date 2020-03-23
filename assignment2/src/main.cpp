@@ -332,7 +332,6 @@ void evaluateImplicitFunc(){
                                 grid_points(grid_index,0)* grid_points(grid_index,1),  grid_points(grid_index,1)* grid_points(grid_index,2),  grid_points(grid_index,0)* grid_points(grid_index,2);
                     }
 
-                    //TODO CHECK HAT VECTORXI IS OK
                     if(N_CONSTRAINT) {
                         for(int i=0; i<saveConstrValues.size(); i++) {
                             saveConstrValues(i) += (grid_points.row(grid_index) - constrained_points.row(neighbors_points(i))).dot(N.row(neighbors_points(i)%N.rows()));
