@@ -58,7 +58,6 @@ Theory question
 
 2) Show screenshots comparing the 'hound.off' of the normal based reconstruction to the point based reconstruction of the mandatory task.<br>
 I used Meshlab and his Screened Poisson implementation, obtaining this result: <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hond1.jpg) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hond2.jpg) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hond3.jpg) <br><br>
 
