@@ -40,8 +40,8 @@ Here are the results by using bunny_1000,horse and hound.off with polyDegree = 0
 I also experimented with the cat shape.<br>
 First I tried polyDegree = 0 with different resolutions of the cat: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly0_0.png) <br><br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly0_1.png) <br><br>
-With higher resolutions, we are able to have smoother shapes, and less sharp edges.<br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly0_1.png) <br>
+With higher resolutions, we are able to have smoother shapes. <br>
 By using polyDegree = 1, the result is: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly1_2.png) <br><br>
 The artifacts can be limited if we increase the wendLandRadius rate, obtaining a "blob" shape: 
@@ -59,3 +59,6 @@ Theory question
 2) Show screenshots comparing the 'hound.off' of the normal based reconstruction to the point based reconstruction of the mandatory task.
 
 3) Compare your MLS reconstruction results to the surfaces obtained with Screened Poisson Reconstruction and RIMLS, and try to understand the differences. Report your findings.
+
+4) I ---descrizione metodo--. 
+We can see differences: 
