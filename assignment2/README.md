@@ -78,9 +78,9 @@ Another solution to MLS was developed with RIMLS, which is a robust Implicit MLS
 Here are some results found with RIMLS:<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/catmarch.png) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horsemarch.png) <br><br>
-In particular, we can look at the reconstruction of Luigi with this method: <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/luigimarch.jpg) <br><br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/luigi1march.jpg) <br><br>
+In particular, we can look at the reconstruction of Luigi with this method. On the left, there is the reconstruction with our method, on the right, the reconstruction with RIMLS: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/luigiconfronto1.jpg) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/luigiconfronto2.jpg) <br><br>
 In this case it's clear that this approach preserves the shape in a better way, and this can be seen from the legs which are more separated, or from the nose which is less mashed into the face of Luigi.  
 <br>
 
