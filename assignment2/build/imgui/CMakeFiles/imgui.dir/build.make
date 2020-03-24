@@ -43,10 +43,10 @@ RM = /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packag
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2
+CMAKE_SOURCE_DIR = /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build
+CMAKE_BINARY_DIR = /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build
 
 # Include any dependencies generated for this target.
 include imgui/CMakeFiles/imgui.dir/depend.make
@@ -59,68 +59,68 @@ include imgui/CMakeFiles/imgui.dir/flags.make
 
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.o: imgui/CMakeFiles/imgui.dir/flags.make
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.o: /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.o"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.o -c /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.o"
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.o -c /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp
 
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.i"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp > CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.i
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp > CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.i
 
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.s"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.s
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.s
 
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.o: imgui/CMakeFiles/imgui.dir/flags.make
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.o: /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.o"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.o -c /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.o"
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.o -c /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp
 
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.i"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp > CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.i
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp > CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.i
 
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.s"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.s
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.s
 
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.o: imgui/CMakeFiles/imgui.dir/flags.make
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.o: /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.o"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.o -c /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.o"
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.o -c /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp
 
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.i"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp > CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.i
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp > CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.i
 
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.s"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.s
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.s
 
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.o: imgui/CMakeFiles/imgui.dir/flags.make
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.o: /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.o"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.o -c /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.o"
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.o -c /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp
 
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.i"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp > CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.i
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp > CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.i
 
 imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.s"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.s
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp -o CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.s
 
 imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o: imgui/CMakeFiles/imgui.dir/flags.make
 imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o: /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/libigl-imgui/imgui_impl_opengl3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o -c /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/libigl-imgui/imgui_impl_opengl3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o"
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o -c /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/libigl-imgui/imgui_impl_opengl3.cpp
 
 imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.i"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/libigl-imgui/imgui_impl_opengl3.cpp > CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.i
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/libigl-imgui/imgui_impl_opengl3.cpp > CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.i
 
 imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.s"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/libigl-imgui/imgui_impl_opengl3.cpp -o CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.s
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/libigl-imgui/imgui_impl_opengl3.cpp -o CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.s
 
 # Object files for target imgui
 imgui_OBJECTS = \
@@ -140,9 +140,9 @@ imgui/libimgui.a: imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp
 imgui/libimgui.a: imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o
 imgui/libimgui.a: imgui/CMakeFiles/imgui.dir/build.make
 imgui/libimgui.a: imgui/CMakeFiles/imgui.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libimgui.a"
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && $(CMAKE_COMMAND) -P CMakeFiles/imgui.dir/cmake_clean_target.cmake
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/imgui.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libimgui.a"
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && $(CMAKE_COMMAND) -P CMakeFiles/imgui.dir/cmake_clean_target.cmake
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/imgui.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 imgui/CMakeFiles/imgui.dir/build: imgui/libimgui.a
@@ -150,10 +150,10 @@ imgui/CMakeFiles/imgui.dir/build: imgui/libimgui.a
 .PHONY : imgui/CMakeFiles/imgui.dir/build
 
 imgui/CMakeFiles/imgui.dir/clean:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui && $(CMAKE_COMMAND) -P CMakeFiles/imgui.dir/cmake_clean.cmake
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui && $(CMAKE_COMMAND) -P CMakeFiles/imgui.dir/cmake_clean.cmake
 .PHONY : imgui/CMakeFiles/imgui.dir/clean
 
 imgui/CMakeFiles/imgui.dir/depend:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2 /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/libigl-imgui /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui/CMakeFiles/imgui.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2 /Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/libigl-imgui /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui/CMakeFiles/imgui.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : imgui/CMakeFiles/imgui.dir/depend
 

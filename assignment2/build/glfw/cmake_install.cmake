@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/glfw/src/cmake_install.cmake")
+  include("/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/glfw/src/cmake_install.cmake")
 
 endif()
 

@@ -48,10 +48,10 @@ RM = /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packag
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2
+CMAKE_SOURCE_DIR = /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build
+CMAKE_BINARY_DIR = /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,14 +126,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/CMakeFiles /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/imgui/CMakeFiles/progress.marks
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f CMakeFiles/Makefile2 imgui/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build/CMakeFiles 0
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/CMakeFiles /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/imgui/CMakeFiles/progress.marks
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f CMakeFiles/Makefile2 imgui/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f CMakeFiles/Makefile2 imgui/clean
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f CMakeFiles/Makefile2 imgui/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f CMakeFiles/Makefile2 imgui/preinstall
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f CMakeFiles/Makefile2 imgui/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f CMakeFiles/Makefile2 imgui/preinstall
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f CMakeFiles/Makefile2 imgui/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 imgui/CMakeFiles/imgui.dir/rule:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f CMakeFiles/Makefile2 imgui/CMakeFiles/imgui.dir/rule
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f CMakeFiles/Makefile2 imgui/CMakeFiles/imgui.dir/rule
 .PHONY : imgui/CMakeFiles/imgui.dir/rule
 
 # Convenience name for target.
@@ -168,7 +168,7 @@ imgui: imgui/CMakeFiles/imgui.dir/rule
 
 # fast build rule for target.
 imgui/fast:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/build
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/build
 .PHONY : imgui/fast
 
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.o: Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.o
@@ -177,7 +177,7 @@ Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/example
 
 # target to build an object file
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.o:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.o
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.o
 .PHONY : Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.o
 
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.i: Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.i
@@ -186,7 +186,7 @@ Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/example
 
 # target to preprocess a source file
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.i:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.i
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.i
 .PHONY : Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.i
 
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.s: Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.s
@@ -195,7 +195,7 @@ Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/example
 
 # target to generate assembly for a file
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.s:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.s
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.s
 .PHONY : Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.s
 
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.o: Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.o
@@ -204,7 +204,7 @@ Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.o
 
 # target to build an object file
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.o:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.o
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.o
 .PHONY : Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.o
 
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.i: Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.i
@@ -213,7 +213,7 @@ Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.i
 
 # target to preprocess a source file
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.i:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.i
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.i
 .PHONY : Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.i
 
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.s: Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.s
@@ -222,7 +222,7 @@ Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.s
 
 # target to generate assembly for a file
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.s:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.s
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.s
 .PHONY : Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.s
 
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.o: Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.o
@@ -231,7 +231,7 @@ Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_d
 
 # target to build an object file
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.o:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.o
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.o
 .PHONY : Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.o
 
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.i: Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.i
@@ -240,7 +240,7 @@ Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_d
 
 # target to preprocess a source file
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.i:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.i
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.i
 .PHONY : Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.i
 
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.s: Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.s
@@ -249,7 +249,7 @@ Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_d
 
 # target to generate assembly for a file
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.s:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.s
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.s
 .PHONY : Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.s
 
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.o: Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.o
@@ -258,7 +258,7 @@ Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_d
 
 # target to build an object file
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.o:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.o
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.o
 .PHONY : Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.o
 
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.i: Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.i
@@ -267,7 +267,7 @@ Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_d
 
 # target to preprocess a source file
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.i:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.i
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.i
 .PHONY : Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.i
 
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.s: Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.s
@@ -276,7 +276,7 @@ Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_d
 
 # target to generate assembly for a file
 Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.s:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.s
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.s
 .PHONY : Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.s
 
 imgui_impl_opengl3.o: imgui_impl_opengl3.cpp.o
@@ -285,7 +285,7 @@ imgui_impl_opengl3.o: imgui_impl_opengl3.cpp.o
 
 # target to build an object file
 imgui_impl_opengl3.cpp.o:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o
 .PHONY : imgui_impl_opengl3.cpp.o
 
 imgui_impl_opengl3.i: imgui_impl_opengl3.cpp.i
@@ -294,7 +294,7 @@ imgui_impl_opengl3.i: imgui_impl_opengl3.cpp.i
 
 # target to preprocess a source file
 imgui_impl_opengl3.cpp.i:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.i
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.i
 .PHONY : imgui_impl_opengl3.cpp.i
 
 imgui_impl_opengl3.s: imgui_impl_opengl3.cpp.s
@@ -303,7 +303,7 @@ imgui_impl_opengl3.s: imgui_impl_opengl3.cpp.s
 
 # target to generate assembly for a file
 imgui_impl_opengl3.cpp.s:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.s
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.s
 .PHONY : imgui_impl_opengl3.cpp.s
 
 # Help Target
@@ -345,6 +345,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

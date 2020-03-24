@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/glfw")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/Users/alessiapaccagnella/desktop/gp20-alessiapacca/assignment2/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment2/build")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)
