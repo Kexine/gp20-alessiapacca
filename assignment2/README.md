@@ -83,9 +83,11 @@ Here are some results found with RIMLS:<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/catmarch.png) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horsemarch.png) <br><br>
 In particular, we can look at the reconstruction of Luigi with this method. On the left, there is the reconstruction with our method, on the right, the reconstruction with RIMLS: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/luigiconfronto.jpg) <br><br>
+By changing some parameters:<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/luigiconfronto1.jpg) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/luigiconfronto2.jpg) <br><br>
-In this case it's clear that this approach preserves the shape in a better way, and this can be seen from the legs which are more separated, or from the nose which is less mashed into the face of Luigi. Most important, it's evident that the corners are better preserved with RIMLS, while with our method the shape is more smoothed.
+In this case it's clear that this approach preserves the shape in a better way, without instabilities, and this can be seen from the legs which are more separated, or from the nose which is less mashed into the face of Luigi, and from the hat's reconstruction which is more stable. Most important, it's evident that the corners are better preserved with RIMLS, while with our method the shape is more smoothed.
 <br>
 
 
