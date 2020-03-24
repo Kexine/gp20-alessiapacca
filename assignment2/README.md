@@ -37,6 +37,7 @@ Here are the results by using bunny_1000,horse and hound.off with polyDegree = 0
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_0.png) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horse_0.png) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hound_0.png) <br><br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hound_0_1.png) <br><br><br>
 I also experimented with the cat shape.<br>
 First I tried polyDegree = 0 with different resolutions of the cat: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly0_0.png) <br><br>
@@ -47,9 +48,6 @@ By using polyDegree = 1, the result is: <br>
 The artifacts can be limited if we increase the wendLandRadius rate, obtaining a "blob" shape: 
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly1_3.png) <br><br>
 
-
-
-Theory question
 
 
 ### Theory question: Save your notes to assignment2/results and add a link to this page.
