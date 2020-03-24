@@ -69,9 +69,8 @@ I used Meshlab and his Screened Poisson implementation, obtaining this result: <
 3) Compare your MLS reconstruction results to the surfaces obtained with Screened Poisson Reconstruction and RIMLS, and try to understand the differences. Report your findings.<br><br>
 Here are some results found with Screened Poisson reconstruction:<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/catpoisson.png) <br><br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horsepoisson.png) <br><br>
-Screened Poisson, even if used with low resolutions, has an accuracy which exceeds the one of our MLS reconstruction. Moreover, it has significantly faster processing times. Therefore, it can be used with much higher resolutions (200 in this case), resulting in a reconstruction which is much more detailed and precise. This means that it can handle large
-models in less time. <br> As the paper explains, this is probably because of hierarchical clustering of the points and of a conforming octree structure, that enable a multigrid algorithm with linear complexity on the number of input points <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horsepoisson.png) <br>
+Screened Poisson, even if used with low resolutions, has an accuracy which exceeds the one of our MLS reconstruction. Moreover, it has significantly faster processing times. Therefore, it can handle large models in less time, resulting in a reconstruction which is much more detailed and precise.<br> As the paper explains, this is probably because of hierarchical clustering of the points and of a conforming octree structure, that enable a multigrid algorithm with linear complexity on the number of input points <br>
 Moreover, the accuracy of our MLS method is also influenced by the sensitivity to outliers and the smoothing out of
 small features.<br><br>
 Another solution to MLS was developed with RIMLS, which is a robust Implicit MLS, that aims to preserve sharp edges and to be robust to outliers. In this case, the results better preserve fine details and handle sharp features. The reason is that this method uses robust kernel regression combined with MLS. <br>
