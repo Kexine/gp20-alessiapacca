@@ -231,54 +231,93 @@ int closest_point(Eigen::RowVector3d p){
 }
 
 void neighbors(Eigen::RowVector3d p){
-    saveConstrValues.setZero(constrained_points.rows(), 1);
-    neighbors_points.setZero(constrained_points.rows());
-    distanceVector.clear();
-    std::vector<int> xyz = p_to_coordinates_newGrid(p);
-    int X = xyz[0];
-    int Y = xyz[1];
-    int Z = xyz[2];
-    int checkDistance = floor(wendlandRadiusDiag/newGrid_step)+1;
-    int minBlockOffsetX = max(0, X-checkDistance);
-    int maxBlockOffsetX = min(X + 1 + checkDistance, size_newGrid_x);
-    int minBlockOffsetY = max(0, Y-checkDistance);
-    int maxBlockOffsetY = min(Y + 1 + checkDistance, size_newGrid_y);
-    int minBlockOffsetZ = max(0, Z-checkDistance);
-    int maxBlockOffsetZ = min(Z + 1 + checkDistance, size_newGrid_z);
+    if(!N_CONSTRAINT){
+        saveConstrValues.setZero(constrained_points.rows(), 1);
+        neighbors_points.setZero(constrained_points.rows());
+        distanceVector.clear();
+        std::vector<int> xyz = p_to_coordinates_newGrid(p);
+        int X = xyz[0];
+        int Y = xyz[1];
+        int Z = xyz[2];
+        int checkDistance = floor(wendlandRadiusDiag/newGrid_step)+1;
+        int minBlockOffsetX = max(0, X-checkDistance);
+        int maxBlockOffsetX = min(X + 1 + checkDistance, size_newGrid_x);
+        int minBlockOffsetY = max(0, Y-checkDistance);
+        int maxBlockOffsetY = min(Y + 1 + checkDistance, size_newGrid_y);
+        int minBlockOffsetZ = max(0, Z-checkDistance);
+        int maxBlockOffsetZ = min(Z + 1 + checkDistance, size_newGrid_z);
 
-    int cont = 0;
-    for (int i = minBlockOffsetX; i < maxBlockOffsetX ; ++i) {
-        for (int j = minBlockOffsetY; j < maxBlockOffsetY; ++j) {
-            for (int k = minBlockOffsetZ; k < maxBlockOffsetZ ; ++k) {
-                int indexI = newGrid_coordinates_to_idx(i, j, k);
-                for (int u = 0; u < newGrid[indexI].size(); ++u) {
-                    double dist = (p - constrained_points.row(newGrid[indexI][u])).norm();
-                    if (dist < wendlandRadiusDiag){
-                        distanceVector.push_back(dist);
-                        neighbors_points(cont) = newGrid[indexI][u];
-                        saveConstrValues.row(cont) = constrained_values.row(newGrid[indexI][u]);
-                        cont++;
-                    }
-                    dist = (p - constrained_points.row(P.rows() + newGrid[indexI][u])).norm();
-                    if (dist < wendlandRadiusDiag){
-                        distanceVector.push_back(dist);
-                        neighbors_points(cont) = P.rows() + newGrid[indexI][u];
-                        saveConstrValues.row(cont) = constrained_values.row(P.rows() + newGrid[indexI][u]);
-                        cont++;
-                    }
-                    dist = (p - constrained_points.row(2*P.rows() + newGrid[indexI][u])).norm();
-                    if (dist < wendlandRadiusDiag){
-                        distanceVector.push_back(dist);
-                        neighbors_points(cont) = 2*P.rows() + newGrid[indexI][u];
-                        saveConstrValues.row(cont) = constrained_values.row(2*P.rows() + newGrid[indexI][u]);
-                        cont++;
+        int cont = 0;
+        for (int i = minBlockOffsetX; i < maxBlockOffsetX ; ++i) {
+            for (int j = minBlockOffsetY; j < maxBlockOffsetY; ++j) {
+                for (int k = minBlockOffsetZ; k < maxBlockOffsetZ ; ++k) {
+                    int indexI = newGrid_coordinates_to_idx(i, j, k);
+                    for (int u = 0; u < newGrid[indexI].size(); ++u) {
+                        double dist = (p - constrained_points.row(newGrid[indexI][u])).norm();
+                        if (dist < wendlandRadiusDiag){
+                            distanceVector.push_back(dist);
+                            neighbors_points(cont) = newGrid[indexI][u];
+                            saveConstrValues.row(cont) = constrained_values.row(newGrid[indexI][u]);
+                            cont++;
+                        }
+                        dist = (p - constrained_points.row(P.rows() + newGrid[indexI][u])).norm();
+                        if (dist < wendlandRadiusDiag){
+                            distanceVector.push_back(dist);
+                            neighbors_points(cont) = P.rows() + newGrid[indexI][u];
+                            saveConstrValues.row(cont) = constrained_values.row(P.rows() + newGrid[indexI][u]);
+                            cont++;
+                        }
+                        dist = (p - constrained_points.row(2*P.rows() + newGrid[indexI][u])).norm();
+                        if (dist < wendlandRadiusDiag){
+                            distanceVector.push_back(dist);
+                            neighbors_points(cont) = 2*P.rows() + newGrid[indexI][u];
+                            saveConstrValues.row(cont) = constrained_values.row(2*P.rows() + newGrid[indexI][u]);
+                            cont++;
+                        }
                     }
                 }
             }
         }
+        neighbors_points.conservativeResize(cont);
+        saveConstrValues.conservativeResize(cont, 1);
     }
-    neighbors_points.conservativeResize(cont);
-    saveConstrValues.conservativeResize(cont, 1);
+    else{
+        saveConstrValues.setZero(P.rows(), 1);
+        neighbors_points.setZero(P.rows());
+        distanceVector.clear();
+        std::vector<int> xyz = p_to_coordinates_newGrid(p);
+        int X = xyz[0];
+        int Y = xyz[1];
+        int Z = xyz[2];
+        int checkDistance = floor(wendlandRadiusDiag/newGrid_step)+1;
+        int minBlockOffsetX = max(0, X-checkDistance);
+        int maxBlockOffsetX = min(X + 1 + checkDistance, size_newGrid_x);
+        int minBlockOffsetY = max(0, Y-checkDistance);
+        int maxBlockOffsetY = min(Y + 1 + checkDistance, size_newGrid_y);
+        int minBlockOffsetZ = max(0, Z-checkDistance);
+        int maxBlockOffsetZ = min(Z + 1 + checkDistance, size_newGrid_z);
+
+        int cont = 0;
+        for (int i = minBlockOffsetX; i < maxBlockOffsetX ; ++i) {
+            for (int j = minBlockOffsetY; j < maxBlockOffsetY; ++j) {
+                for (int k = minBlockOffsetZ; k < maxBlockOffsetZ ; ++k) {
+                    int indexI = newGrid_coordinates_to_idx(i, j, k);
+                    for (int u = 0; u < newGrid[indexI].size(); ++u) {
+                        double dist = (p - P.row(newGrid[indexI][u])).norm();
+                        if (dist < wendlandRadiusDiag){
+                            distanceVector.push_back(dist);
+                            neighbors_points(cont) = newGrid[indexI][u];
+                            saveConstrValues.row(cont) = constrained_values.row(newGrid[indexI][u]);
+                            cont++;
+                        }
+                    }
+                }
+            }
+        }
+        neighbors_points.conservativeResize(cont);
+        saveConstrValues.conservativeResize(cont, 1);
+    }
+
 }
 
 void evaluateImplicitFunc(){
@@ -313,7 +352,14 @@ void evaluateImplicitFunc(){
                     else if(polyDegree == 1){
                         b.resize(closepointsSize, 4);
                         for (int i = 0; i < closepointsSize; i++) {
-                            b.row(i) <<  1, constrained_points(neighbors_points(i), 0), constrained_points(neighbors_points(i), 1),constrained_points(neighbors_points(i), 2);
+                            if(!N_CONSTRAINT) {
+                                b.row(i) << 1, constrained_points(neighbors_points(i), 0), constrained_points(
+                                        neighbors_points(i), 1), constrained_points(neighbors_points(i), 2);
+                            }
+                            else{
+                                b.row(i) << 1, P(neighbors_points(i), 0), P(
+                                        neighbors_points(i), 1), P(neighbors_points(i), 2);
+                            }
                         }
                         finalDot.resize(4);
                         finalDot << 1, grid_points(grid_index,0), grid_points(grid_index,1), grid_points(grid_index,2);
@@ -321,10 +367,32 @@ void evaluateImplicitFunc(){
                     else if(polyDegree == 2){
                         b.resize(closepointsSize, 10);
                         for (int i = 0; i < closepointsSize; i++) {
-                            b.row(i) << 1, constrained_points(neighbors_points(i), 0), constrained_points(neighbors_points(i), 1), constrained_points(neighbors_points(i), 2),
-                                    pow(constrained_points(neighbors_points(i), 0),2), pow(constrained_points(neighbors_points(i), 1),2), pow(constrained_points(neighbors_points(i), 2),2),
-                                    constrained_points(neighbors_points(i), 0)*constrained_points(neighbors_points(i), 1), constrained_points(neighbors_points(i), 1)*constrained_points(neighbors_points(i), 2),
-                                    constrained_points(neighbors_points(i), 0) *constrained_points(neighbors_points(i), 2);
+                            if(!N_CONSTRAINT) {
+                                b.row(i) << 1, constrained_points(neighbors_points(i), 0), constrained_points(
+                                        neighbors_points(i), 1), constrained_points(neighbors_points(i), 2),
+                                        pow(constrained_points(neighbors_points(i), 0), 2), pow(
+                                        constrained_points(neighbors_points(i), 1), 2), pow(
+                                        constrained_points(neighbors_points(i), 2), 2),
+                                        constrained_points(neighbors_points(i), 0) *
+                                        constrained_points(neighbors_points(i), 1),
+                                        constrained_points(neighbors_points(i), 1) *
+                                        constrained_points(neighbors_points(i), 2),
+                                        constrained_points(neighbors_points(i), 0) *
+                                        constrained_points(neighbors_points(i), 2);
+                            }
+                            else{
+                                b.row(i) << 1, P(neighbors_points(i), 0), P(
+                                        neighbors_points(i), 1), P(neighbors_points(i), 2),
+                                        pow(P(neighbors_points(i), 0), 2), pow(
+                                        P(neighbors_points(i), 1), 2), pow(
+                                        P(neighbors_points(i), 2), 2),
+                                        P(neighbors_points(i), 0) *
+                                        P(neighbors_points(i), 1),
+                                        P(neighbors_points(i), 1) *
+                                        P(neighbors_points(i), 2),
+                                        P(neighbors_points(i), 0) *
+                                        P(neighbors_points(i), 2);
+                            }
                         }
                         finalDot.resize(10);
                         finalDot << 1, grid_points(grid_index,0), grid_points(grid_index,1), grid_points(grid_index,2),
@@ -334,7 +402,7 @@ void evaluateImplicitFunc(){
 
                     if(N_CONSTRAINT) {
                         for(int i=0; i<saveConstrValues.size(); i++) {
-                            saveConstrValues(i) += (grid_points.row(grid_index) - constrained_points.row(neighbors_points(i))).dot(N.row(neighbors_points(i)%N.rows()));
+                            saveConstrValues(i) += (grid_points.row(grid_index) - P.row(neighbors_points(i))).dot(N.row(neighbors_points(i)%N.rows()));
                         }
                     }
 
