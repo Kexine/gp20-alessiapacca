@@ -36,8 +36,9 @@ By trying with polyDegree = 2, I had to change a bit the values of the wendLandR
 Here are the results by using bunny_1000,horse and hound.off with polyDegree = 0: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_0.png) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horse_0.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horse_0_1.png) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hound_0.png) <br><br><br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hound_0_1.png) <br><br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hound_0_1.jpg) <br><br><br>
 I also experimented with the cat shape.<br>
 First I tried polyDegree = 0 with different resolutions of the cat: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly0_0.png) <br><br>
