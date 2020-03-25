@@ -66,7 +66,8 @@ Let's see the comparison between the two methods, with the hound shape.<br>
 By using the right parameters, we see a small difference in the neck, in the mouth and in the ears. <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/normalconfronto.jpg) <br><br>
 We can also see differences in Luigi shape:<br>
-On the left, Luigi reconstructed without the normal constrain; on the right, Luigi reconstructed with the normal constrain Some features, like the hat or the arms of the shape, are better reconstructed with the constrain.<br>
+On the left, Luigi reconstructed without the normal constrain; on the right, Luigi reconstructed with the normal constrain.
+Some features, like the hat or the arms of the shape, are better reconstructed with the constrain. <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/collage.jpg) <br>
 This method exhibits little oscillation, and it's also way more precise. 
 
