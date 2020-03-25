@@ -59,14 +59,15 @@ The artifacts can be limited if we increase the wendLandRadius rate, obtaining a
 
 
 2) Show screenshots comparing the 'hound.off' of the normal based reconstruction to the point based reconstruction of the mandatory task.<br>
-The method, instead of using the MLS method to blend between constant values associated with each polygon/point, blends between functions associated with them. It does that by updating the vector of the values of the neighboring point cloud points (not the constrained ones), on the right part of the system we solve, by a factor that depends on the normal of the point in consideration. 
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/screen.png) <br><br>
+The method, instead of using MLS to blend between constant values associated with each polygon/point, blends between functions associated with them. It does that by updating the vector of the values of the neighboring point cloud points (not the constrained ones), on the right part of the system we solve, by a factor that depends on the normal of the point in consideration. 
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/screen.png) <br>
+One advantage of this approach is not having to use offset constraints, which is faster. Moreover, using the additional constraints in MLS cause undesirable oscillatory behaviour when the evaluation point is away from the surface.<br>
 By using the right parameters, we see a small difference in the neck, in the mouth and in the ears of the hound. <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/normalconfronto.jpg) <br><br>
 We can also see differences in Luigi shape:<br>
 On the left, Luigi reconstructed without the normal constrain; on the right, Luigi reconstructed with the normal constrain Some features, like the hat or the arms of the shape, are better reconstructed with the constrain.<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/collage.jpg) <br>
-This method exhibits little undesirable oscillation, and it's also way more precise. 
+This method exhibits little oscillation, and it's also way more precise. 
 
 
 3) Compare your MLS reconstruction results to the surfaces obtained with Screened Poisson Reconstruction and RIMLS, and try to understand the differences. Report your findings.<br><br>
