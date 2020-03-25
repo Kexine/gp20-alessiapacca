@@ -17,7 +17,7 @@ This is instead the grid of cat.off: <br>
 3) Show screenshots of the reconstructed surfaces. Experiment with different parameter settings: grid resolution (also anisotropic in the 3 axes), Wendland function radius, polynomial degree. Add all these settings to the GUI to ease experimentation. Briefly summarize your observations and save the reconstructed models in the off format for every point-cloud dataset provided (assignment2/results). <br><br>
 The best results were obtained with the simplest shape, the sphere. <br>
 I used resolution = 30 for all of the axis, wendLandRadius rate = 0.1, and initial epsilon = 0.03. WendLandRadius rate was multiplied for the diagonal of the bounding box, in order to be adapted to every shape. <br>
-By trying with polyDegree = 0, we get: <br>
+By trying with ```polyDegree``` = 0, we get: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/sphere_poly0_0.png) <br><br>
 By trying with ```polyDegree``` = 1, we get: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/sphere_poly1_1.png) <br><br>
