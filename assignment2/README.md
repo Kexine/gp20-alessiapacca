@@ -27,11 +27,11 @@ We can see that with higher degree, we have some artifacts, that are more visibl
 We can see the example of the bunny. <br>
 By trying with polyDegree = 0, we get: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_0.png) <br><br>
-I also tried to use anisotropic resolutions for the axis, but it did not change the result in a relevant way: <br>
+I also tried to use anisotropic resolutions for the axis, which gives us a "stretched" shape: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_1.png) <br><br>
 By trying with polyDegree = 1, we already get some artifacts, compared to the sphere's result: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_2.png) <br><br>
-By trying with polyDegree = 2, I had to change a bit the values of the wendLandRadius and of the initial epsilon: <br>
+By trying with polyDegree = 2, changing the values of wendLandRadius Rate and of the initial epsilon: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_3.png) <br><br>
 Here are the results by using bunny_1000,horse and hound.off with polyDegree = 0: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_0.png) <br><br>
