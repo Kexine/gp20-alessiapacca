@@ -5,11 +5,11 @@ Edit this 'README.md' file to report all your results. There is no need to write
 ## Required results
 
 ### Mandatory Tasks
-1) Show the visualization of the constrained points for the 'cat.off' point cloud.
+1) Show the visualization of the constrained points for the 'cat.off' point cloud.<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat.png)
 
-2) Show screenshots of the grid with nodes colored according to their implicit function values (cat.off and luigi.off).
-This is the grid of luigi.off, using PCA in order to align it. <br><br>
+2) Show screenshots of the grid with nodes colored according to their implicit function values (cat.off and luigi.off).<br>
+This is the grid of luigi.off, using PCA in order to align it. <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/luigi.png) <br><br>
 This is instead the grid of cat.off: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/catgrid.png) <br>
