@@ -35,6 +35,7 @@ By trying with polyDegree = 2, changing the values of wendLandRadius Rate and of
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_3.png) <br><br>
 Here are the results by using bunny_1000,horse and hound.off with polyDegree = 0: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/bunny_500_0.png) <br><br>
+Here are the results by using horse.off and hound.off: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horse_0.png) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/horse_0_1.png) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/hound_0.png) <br><br><br>
