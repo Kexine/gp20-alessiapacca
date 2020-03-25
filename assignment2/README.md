@@ -59,10 +59,11 @@ The artifacts can be limited if we increase the wendLandRadius rate, obtaining a
 
 
 2) Show screenshots comparing the 'hound.off' of the normal based reconstruction to the point based reconstruction of the mandatory task.<br>
-The method, instead of using MLS to blend between constant values associated with each polygon/point, blends between functions associated with them. It does that by updating the vector of the values of the neighboring point cloud points (not the constrained ones), on the right part of the system we solve, by a factor that depends on the normal of the point in consideration. 
+The method, instead of using MLS to blend between the constrained values linked to each polygon/point, blends between functions associated with them. It does that by updating the vector of the values of the neighboring point cloud points (not the constrained ones), on the right part of the system we solve, by a factor that depends on the normal of the point in consideration. 
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/screen.png) <br>
-One advantage of this approach is not having to use offset constraints, which is faster. Moreover, using the additional constraints in MLS cause undesirable oscillatory behaviour when the evaluation point is away from the surface.<br>
-By using the right parameters, we see a small difference in the neck, in the mouth and in the ears of the hound. <br>
+One advantage of this approach is not having to use offset constraints, which is faster when solving. Moreover, using the additional constraints in MLS cause an oscillatory behaviour when the evaluation point is away from the surface. The reason for this side effect is that the distance between the evaluation point and the point on the surface is larger than the offset distance, leading the inside and outside contraints to cancel out.<br>
+Let's see the comparison between the two methods, with the hound shape.<br>
+By using the right parameters, we see a small difference in the neck, in the mouth and in the ears. <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/normalconfronto.jpg) <br><br>
 We can also see differences in Luigi shape:<br>
 On the left, Luigi reconstructed without the normal constrain; on the right, Luigi reconstructed with the normal constrain Some features, like the hat or the arms of the shape, are better reconstructed with the constrain.<br>
