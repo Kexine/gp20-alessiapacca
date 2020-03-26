@@ -64,12 +64,12 @@ With the normal based reconstruction method, instead of using MLS to blend betwe
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/screen.png) <br>
 One advantage of this approach is not having to use offset constraints, which is faster when solving. Moreover, using the additional constraints in MLS cause an oscillatory behaviour when the evaluation point is away from the surface. This side effect lays on the fact that the distance between the evaluation point and the point on the surface is larger than the offset distance, leading the inside and outside contraints to cancel out.<br>
 Let's see the comparison between the two methods, with the hound shape.<br>
-By using the same parameters, we see a small difference in the neck, in the mouth and in the ears which, when using the normal constrain, result in a better shaped reconstruction. <br>
+By using the same parameters, we see a small difference in the neck, in the mouth and in the ears which, when using the normal constraint, result in a better shaped reconstruction. The neck in particular is more filled. Indeed, in the paper it's explained that when the polygonal surface contains gaps or holes, it's likely that the implicit surface will be extended beyond the input polygons in order to generate a closed surface. <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/normalconfronto.jpg) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/normalconfronto2.jpg) <br><br>
 We can also see differences in Luigi shape:<br>
-On the left, Luigi reconstructed without the normal constrain; on the right, Luigi reconstructed with the normal constrain.
-Some features, like the hat or the arms of the shape, are better reconstructed with the constrain. <br>
+On the left, Luigi reconstructed without the normal constraint; on the right, Luigi reconstructed with the normal constraint.
+Some features, like the hat or the arms of the shape, are better reconstructed with the constraint. <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/collage.jpg) <br>
 This method exhibits little oscillation, and it's also way more precise. 
 
