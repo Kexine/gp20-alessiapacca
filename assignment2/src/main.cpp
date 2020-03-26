@@ -307,7 +307,7 @@ void neighbors(Eigen::RowVector3d p){
                         if (dist < wendlandRadiusDiag){
                             distanceVector.push_back(dist);
                             neighbors_points(cont) = newGrid[indexI][u];
-                            saveConstrValues.row(cont) = constrained_values.row(newGrid[indexI][u]);
+                            saveConstrValues.row(cont) = constrained_values.row(newGrid[indexI][u]); 
                             cont++;
                         }
                     }
