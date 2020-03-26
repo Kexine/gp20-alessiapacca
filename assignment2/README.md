@@ -63,7 +63,7 @@ The method, instead of using MLS to blend between the constrained values linked 
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/screen.png) <br>
 One advantage of this approach is not having to use offset constraints, which is faster when solving. Moreover, using the additional constraints in MLS cause an oscillatory behaviour when the evaluation point is away from the surface. The reason for this side effect is that the distance between the evaluation point and the point on the surface is larger than the offset distance, leading the inside and outside contraints to cancel out.<br>
 Let's see the comparison between the two methods, with the hound shape.<br>
-By using the right parameters, we see a small difference in the neck, in the mouth and in the ears. <br>
+By using the same parameters, we see a small difference in the neck, in the mouth and in the ears which, when using the normal constrain, result in a better shaped reconstruction. <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/normalconfronto.jpg) <br><br>
 We can also see differences in Luigi shape:<br>
 On the left, Luigi reconstructed without the normal constrain; on the right, Luigi reconstructed with the normal constrain.
