@@ -9,9 +9,14 @@ Follow the [instructions](#workflow) to updated your private repository.
 
 ## Assignments Overview
 
-[Assignment 1](assignment1) (Due date: 13.03.2020 08:00) <br>
-[Assignment 2](assignment2) (Due date: 27.03.2020 10:00) 
+[Assignment 1](assignment1) (Due date: 13.03.2020 08:00)  
+[Assignment 2](assignment2) (Due date: 03.04.2020 10:00)  
+[Assignment 3](assignment3) (Optional)  
+[Assignment 4](assignment4) (Due date: 01.05.2020 10:00)  
 
+## Update
+- We refer to the notes in https://libigl.github.io/tutorial/ for compiling issue of libigl. 
+- Please ask questions in the "issues" page here so that others could also benefit from it.
 
 ## General Rules and Instructions
 
