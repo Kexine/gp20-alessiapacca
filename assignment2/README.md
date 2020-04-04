@@ -4,7 +4,6 @@ Edit this 'README.md' file to report all your results. There is no need to write
 
 ## Required results
 
-<<<<<<< HEAD
 ### Mandatory Tasks
 1) Show the visualization of the constrained points for the 'cat.off' point cloud.<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat.png)
@@ -49,11 +48,6 @@ By using ```polyDegree``` = 1, the result is: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly1_2.png) <br><br>
 The artifacts can be limited if we increase the wendLandRadius rate, obtaining a "blob" shape: 
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment2/results/cat_poly1_3.png) <br><br>
-=======
-### Coding Tasks
-1) Show the visualization of the constrained points for the 'cat.off' point cloud.
->>>>>>> 523497ce46cbdabd07f4ece8cebcadc11306a458
-
 
 
 ### Theory question: Save your notes to assignment2/results and add a link to this page.
