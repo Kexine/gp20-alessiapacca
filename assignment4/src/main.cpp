@@ -22,6 +22,8 @@
 #include <igl/speye.h>
 #include <igl/repdiag.h>
 #include <igl/cat.h>
+#include <igl/dijkstra.h>
+#include <igl/adjacency_matrix.h>
 
 using namespace std;
 using namespace Eigen;
@@ -125,7 +127,30 @@ void ConvertConstraintsToMatrixForm(VectorXi indices, MatrixXd positions, Eigen:
 {
 	// Convert the list of fixed indices and their fixed positions to a linear system
 	// Hint: The matrix C should contain only one non-zero element per row and d should contain the positions in the correct order.
+
+	//first, resize the matrices
+    int numberVertices = V.rows();
+    int rowsIndices = indices.rows();
+    d.setZero(2 * rowsIndices);
+    C.resize(rowsIndices * 2, numberVertices * 2);
+
+    std::vector<Eigen::Triplet<double>> _triplet;
+    //fill C with a 1 in those particular indices, where we want to fix the values
+    for (int i = 0; i < rowsIndices; i++) {
+        _triplet.push_back(Eigen::Triplet<double>(i, indices(i),1));
+        _triplet.push_back(Eigen::Triplet<double>(rowsIndices+i,numberVertices+indices(i),1));
+    }
+    C.setFromTriplets(_triplet.begin(), _triplet.end());
+
+    //fill d
+    for (int i = 0; i < rowsIndices; i++)
+    {
+        d(i) = positions(i, 0);
+        d(i + rowsIndices) = positions(i, 1);
+    }
+
 }
+
 
 void computeParameterization(int type)
 {
@@ -141,11 +166,52 @@ void computeParameterization(int type)
 	{
 		// The boundary vertices should be fixed to positions on the unit disc. Find these position and
 		// save them in the #V x 2 matrix fixed_UV_position.
+
+		// F is the list of mesh faces
+		// fixed_UV_indices is the L ordered list of boundary vertices
+        igl::boundary_loop(F, fixed_UV_indices);
+        igl::map_vertices_to_circle(V, fixed_UV_indices, fixed_UV_positions);
+        //cout << fixed_UV_positions;
 	}
 	else
 	{
 		// Fix two UV vertices. This should be done in an intelligent way. Hint: The two fixed vertices should be the two most distant one on the mesh.
-	}
+
+
+		//we will only have 2 fixed vertices now
+        fixed_UV_indices.resize(2);
+        fixed_UV_positions.resize(2,2);
+		//we could also use the function dijkstra
+        //INPUTS: source(index of source vertex), targets (target vector set), VV (adjacency list)
+        //OUTPUTS: min_distance (#V by 1 list of the minimum distances from source to all vertices),previous(#V by 1 list of the previous visited vertices)
+
+        int index1, index2;
+        index1 = -1;
+        index2 = -1;
+        double distMax = 0.0;
+        int numberVertices = V.rows();
+        VectorXd tempVec;
+        double temp;
+
+        for(int i = 0; i < numberVertices - 1; i++){
+            for(int j = 0; j < numberVertices; j++) {
+                tempVec = V.row(i) - V.row(j);
+                temp = tempVec.norm();
+                //now we have the distance between vertex i and vertex j
+                if(temp > distMax){
+                    //we found a distance major than the prior one
+                    distMax = temp;
+                    index1 = i;
+                    index2 = j;
+                }
+            }
+        }
+
+        //we have to fill fixed_UV_positions
+        fixed_UV_indices << index1, index2;
+        //between 0 and 1
+        fixed_UV_positions << -1, 0, 1, 0;
+    }
 
 	ConvertConstraintsToMatrixForm(fixed_UV_indices, fixed_UV_positions, C, d);
 
@@ -155,16 +221,89 @@ void computeParameterization(int type)
 	if (type == '1') {
 		// Add your code for computing uniform Laplacian for Tutte parameterization
 		// Hint: use the adjacency matrix of the mesh
-	}
 
+
+		// size of b: 2 * number of vertices, indeed we multiply it with A
+        b.setZero(2 * V.rows(), 1);
+
+        Eigen::SparseMatrix<double> AA;
+        igl::adjacency_matrix(F, AA);
+        // sum each row
+        SparseVector<double> Asum;
+        igl::sum(AA,1,Asum);
+
+        // Convert row sums into diagonal of sparse matrix
+        Eigen::SparseMatrix<double> Adiag;
+        igl::diag(Asum,Adiag);
+        // Build uniform laplacian
+        SparseMatrix<double> U;
+        U = AA-Adiag;
+        // we need it for u and for v, so we have to repeat it twice
+        igl::repdiag(U, 2, A);
+
+    }
+
+	// ha i constraints
 	if (type == '2') {
 		// Add your code for computing cotangent Laplacian for Harmonic parameterization
 		// Use can use a function "cotmatrix" from libIGL, but ~~~~***READ THE DOCUMENTATION***~~~~
+
+        b.setZero(2 * V.rows(), 1);
+        Eigen::SparseMatrix<double> L;
+        // cot stiffness matrix
+        igl::cotmatrix(V, F, L);
+
+        //repeat the cot matrix for u and v
+        igl::repdiag(L, 2, A);
 	}
 
+	// solo 2 punti constrained?
 	if (type == '3') {
 		// Add your code for computing the system for LSCM parameterization
 		// Note that the libIGL implementation is different than what taught in the tutorial! Do not rely on it!!
+
+        b.setZero(2 * V.rows(), 1);
+
+		Eigen::SparseMatrix<double> Dx, Dy;
+        SparseMatrix<double> A_double (F.rows(), F.rows());
+        VectorXd doubleArea;
+        Eigen::SparseMatrix<double> el1, el2, el3, zeros;
+        SparseMatrix<double> res1, res2;
+
+
+        //compute the gradients
+        computeSurfaceGradientMatrix(Dx, Dy);
+
+        //compute double area
+        igl::doublearea(V, F, doubleArea);
+
+        //copy into A_Resized (#f x #f)
+        for(int i = 0; i < doubleArea.size(); i++){
+            A_double.insert(i,i) = (doubleArea(i));
+        }
+
+
+        // see class derivation
+        el1 = (Dx.transpose() * A_double * Dx) + (Dy.transpose() * A_double * Dy);
+        el2 = (-Dx.transpose() * A_double * Dy) + (Dy.transpose() * A_double * Dx);
+        el3 = (-Dy.transpose() * A_double * Dx) + (Dx.transpose() * A_double * Dy);
+
+        zeros.resize(el1.rows(), el1.cols());
+        zeros.setZero();
+
+        //concatenate matrices
+        igl::cat(2, el1, el2, res1);
+        igl::cat(2, el3, el1, res2);
+        igl::cat(1, res1, res2, A);
+
+        /*
+        Eigen::SparseMatrix<double> A1;
+        igl::cat(2, el1, zeros, res1);
+        igl::cat(2, zeros, el1, res2);
+        igl::cat(1, res1, res2, A1);
+
+        cout << "seconda matrice: \n";
+        cout << A.isApprox(A1) << endl;*/
 	}
 
 	if (type == '4') {
@@ -177,11 +316,37 @@ void computeParameterization(int type)
 	// Construct the system as discussed in class and the assignment sheet
 	// Use igl::cat to concatenate matrices
 	// Use Eigen::SparseLU to solve the system. Refer to tutorial 3 for more detail
+	Eigen::SparseMatrix<double> first_block;
+    Eigen::SparseLU <Eigen::SparseMatrix<double>> solver;
+    Eigen::SparseMatrix<double> result_1;
+    Eigen::SparseMatrix<double> result_2;
+    Eigen::SparseMatrix<double> Ctranspose = C.transpose();
+    Eigen::SparseMatrix<double> zeros_vec(C.rows(), C.rows());
+    igl::cat(2, A, Ctranspose, result_1); //[A C']
+    igl::cat(2, C, zeros_vec, result_2); //[C 0]
+    igl::cat(1, result_1, result_2, first_block);
+    // Compute the ordering permutation vector from the structural pattern of A
+
+
+    VectorXd x_vector, b_vector;
+    b_vector.resize(b.rows() + d.rows()); //b, d in column
+    //fill b_vector
+    b_vector.segment(0, b.rows()) << b;
+    b_vector.segment(b.rows(), d.rows()) << d;
+
+    solver.analyzePattern(first_block);
+    solver.factorize(first_block);
+    x_vector = solver.solve(b_vector);
+
 
 	// The solver will output a vector
 	UV.resize(V.rows(), 2);
-	//UV.col(0) =
-	//UV.col(1) =
+
+	//the first col starts at element 0 and contains the first V.rows elements (u)
+	UV.col(0) = x_vector.segment(0, V.rows());
+    //the first col starts at element V.rows() and contains the second V.rows elements (v)
+	UV.col(1) = x_vector.segment(V.rows(), V.rows());
+
 }
 
 bool callback_key_pressed(Viewer &viewer, unsigned char key, int modifiers) {
