@@ -50,6 +50,7 @@ bool anglePreservation = false;
 bool areaPreservation = false;
 Eigen::MatrixXd colors;
 bool five = false;
+bool cotagentLaplacianMethod = false;
 
 
 void Redraw()
@@ -261,8 +262,23 @@ void computeParameterization(int type)
 
         b.setZero(2 * V.rows(), 1);
         Eigen::SparseMatrix<double> L;
+        Eigen::SparseMatrix<double> Dx, Dy;
+        VectorXd doubleArea;
+        SparseMatrix<double> A_double (F.rows(), F.rows());
+
+        //simple call to igl method
+        if(!cotagentLaplacianMethod){
+           igl::cotmatrix(V, F, L);
+        }
         // cot stiffness matrix
-        igl::cotmatrix(V, F, L);
+        else{
+            computeSurfaceGradientMatrix(Dx, Dy);
+            igl::doublearea(V, F, doubleArea);
+            for(int i = 0; i < doubleArea.size(); i++) {
+                A_double.insert(i, i) = (doubleArea(i));
+            }
+            L = (Dx.transpose() * A_double * Dx + Dy.transpose() * A_double * Dy);
+        }
 
         //repeat the cot matrix for u and v
         igl::repdiag(L, 2, A);
@@ -380,7 +396,7 @@ void calculateDistortion(){
    	F = Dy * UV.col(0);
    	F1 = Dx * UV.col(1);
    	G = Dy * UV.col(1);
-   	
+
     //for every face
     for(int i = 0; i < F.rows(); i++){
         /*Eigen::MatrixXd vec = Eigen::MatrixXd(2,V.rows());
@@ -402,8 +418,8 @@ void calculateDistortion(){
             MatrixXd mat;
             double det;
             SSVD2x2(J_vi, U_vi, S_vi, V_vi);
-            UV = U_vi * Vtr;
-            R_vi = UV.transpose();
+            UV_vi = U_vi * Vtr;
+            R_vi = UV_vi.transpose();
             J_vi = J_vi - R_vi;
             distorsion = J_vi.norm();
         }
@@ -420,7 +436,8 @@ void calculateDistortion(){
     colors.col(1) << ones - J;
     colors.col(2) << ones - J;
     //if J(i) is 0, it means that we have a smallVec   1 1 1  white
-    // if J(i) is 1, it means that we have a bigVec    1 0 0  red
+    // if J(i) is 1, it means that we have a bigVec    1 0 0  red         */
+    
 }
 
 bool callback_key_pressed(Viewer &viewer, unsigned char key, int modifiers) {
@@ -513,6 +530,7 @@ int main(int argc,char *argv[]) {
 			ImGui::Checkbox("Free boundary", &freeBoundary);
 			ImGui::Checkbox("Angle Preservation ", &anglePreservation);
             ImGui::Checkbox("Length Preservation ", &lengthPreservation);
+            ImGui::Checkbox("Cotangent Laplacian calculation", &cotagentLaplacianMethod);
 		}
 	};
 
