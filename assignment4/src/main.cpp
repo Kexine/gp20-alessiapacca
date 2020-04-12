@@ -45,6 +45,11 @@ bool freeBoundary = false;
 double TextureResolution = 10;
 igl::opengl::ViewerCore temp3D;
 igl::opengl::ViewerCore temp2D;
+bool lengthPreservation = false;
+bool anglePreservation = false;
+bool areaPreservation = false;
+Eigen::MatrixXd colors;
+
 
 void Redraw()
 {
@@ -349,6 +354,62 @@ void computeParameterization(int type)
 
 }
 
+void calculateDistortion(){
+
+    Eigen::Matrix2d identityMatrix = Eigen::MatrixXd::Identity(2,2);
+    //color each face
+    colors.resize(F.rows(), 3);
+    Eigen::VectorXd J = Eigen::VectorXd(F.rows());
+    double eigSmallWhite, eigBigRed;
+    Eigen::VectorXd ones = Eigen::VectorXd(F.rows());
+    Eigen::SparseMatrix<double> Dx, Dy;
+    ones.setOnes();
+    Eigen::VectorXd smallVec = Eigen::VectorXd(F.rows());
+    computeSurfaceGradientMatrix(Dx, Dy);
+    MatrixXd J_vi(2, 2);
+    double distorsion;
+
+
+    //for every face
+    for(int i = 0; i < F.rows(); i++){
+        Eigen::MatrixXd vec = Eigen::MatrixXd(2,V.rows());
+        vec.row(0) = Dx.row(i);
+        vec.row(1) = Dy.row(i);
+        J_vi = vec * UV;
+
+        //conformal parametrization LCSM
+        if(anglePreservation){
+            J_vi = J_vi + J_vi.trace() * identityMatrix;
+            distorsion = J_vi.norm();
+        }
+        //ARAP
+        else if(lengthPreservation){
+            Matrix2d U,V,R,S,UV;
+            MatrixXd Vtr = V.transpose();
+            MatrixXd mat;
+            double det;
+            SSVD2x2(J_vi, U, S, V);
+            UV = U * Vtr;
+            R = UV.transpose();
+            J_vi = J_vi - R;
+            distorsion = J_vi.norm();
+        }
+        J(i) = distorsion;
+    }
+
+
+    eigSmallWhite = J.minCoeff();
+    eigBigRed = J.maxCoeff();
+    smallVec.setConstant(eigSmallWhite);
+    J = J-smallVec;
+    J = J/eigBigRed;
+    colors.col(0) << ones;
+    colors.col(1) << ones - J;
+    colors.col(2) << ones - J;
+    //if J(i) is 0, it means that we have a smallVec   1 1 1  white
+    // if J(i) is 1, it means that we have a bigVec    1 0 0  red
+}
+
 bool callback_key_pressed(Viewer &viewer, unsigned char key, int modifiers) {
 	switch (key) {
 	case '1':
@@ -360,6 +421,8 @@ bool callback_key_pressed(Viewer &viewer, unsigned char key, int modifiers) {
 	case '5':
 			// Add your code for detecting and displaying flipped triangles in the
 			// UV domain here
+			calculateDistortion();
+			viewer.data().set_colors(colors);
 		break;
 	case '+':
 		TextureResolution /= 2;
@@ -387,6 +450,7 @@ bool callback_key_pressed(Viewer &viewer, unsigned char key, int modifiers) {
     break;
 	}
 	Redraw();
+
 	return true;
 }
 
@@ -433,8 +497,8 @@ int main(int argc,char *argv[]) {
 		{
 			// Expose variable directly ...
 			ImGui::Checkbox("Free boundary", &freeBoundary);
-
-			// TODO: Add more parameters to tweak here...
+			ImGui::Checkbox("Angle Preservation ", &anglePreservation);
+            ImGui::Checkbox("Length Preservation ", &lengthPreservation);
 		}
 	};
 
