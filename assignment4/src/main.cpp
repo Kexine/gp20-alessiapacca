@@ -49,6 +49,7 @@ bool lengthPreservation = false;
 bool anglePreservation = false;
 bool areaPreservation = false;
 Eigen::MatrixXd colors;
+bool five = false;
 
 
 void Redraw()
@@ -70,6 +71,11 @@ void Redraw()
 	{
 		viewer.data().show_texture = false;
 		viewer.data().set_mesh(UV, F);
+	}
+
+	if(five){
+	    viewer.data().show_texture = false;
+	    viewer.data().set_colors(colors);
 	}
 }
 
@@ -369,13 +375,20 @@ void calculateDistortion(){
     MatrixXd J_vi(2, 2);
     double distorsion;
 
-
+    Eigen::VectorXd E, F, F1, G;
+    E = Dx * UV.col(0);
+   	F = Dy * UV.col(0);
+   	F1 = Dx * UV.col(1);
+   	G = Dy * UV.col(1);
+   	
     //for every face
     for(int i = 0; i < F.rows(); i++){
-        Eigen::MatrixXd vec = Eigen::MatrixXd(2,V.rows());
+        /*Eigen::MatrixXd vec = Eigen::MatrixXd(2,V.rows());
         vec.row(0) = Dx.row(i);
         vec.row(1) = Dy.row(i);
-        J_vi = vec * UV;
+        J_vi << vec.row(0)*UV.col(0), vec.row(1)*UV.col(0), vec.row(0)*UV.col(1), vec.row(1)*UV.col(1);    */
+        J_vi << E[i], F[i], F1[i], G[i];
+        //J_vi = vec * UV;
 
         //conformal parametrization LCSM
         if(anglePreservation){
@@ -384,14 +397,14 @@ void calculateDistortion(){
         }
         //ARAP
         else if(lengthPreservation){
-            Matrix2d U,V,R,S,UV;
-            MatrixXd Vtr = V.transpose();
+            Matrix2d U_vi,V_vi,R_vi,S_vi,UV_vi;
+            MatrixXd Vtr = V_vi.transpose();
             MatrixXd mat;
             double det;
-            SSVD2x2(J_vi, U, S, V);
-            UV = U * Vtr;
-            R = UV.transpose();
-            J_vi = J_vi - R;
+            SSVD2x2(J_vi, U_vi, S_vi, V_vi);
+            UV = U_vi * Vtr;
+            R_vi = UV.transpose();
+            J_vi = J_vi - R_vi;
             distorsion = J_vi.norm();
         }
         J(i) = distorsion;
@@ -417,12 +430,13 @@ bool callback_key_pressed(Viewer &viewer, unsigned char key, int modifiers) {
 	case '3':
 	case '4':
 		computeParameterization(key);
+		five = false;
 		break;
 	case '5':
 			// Add your code for detecting and displaying flipped triangles in the
 			// UV domain here
 			calculateDistortion();
-			viewer.data().set_colors(colors);
+			five = true;
 		break;
 	case '+':
 		TextureResolution /= 2;
