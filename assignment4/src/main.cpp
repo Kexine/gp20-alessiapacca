@@ -51,6 +51,7 @@ bool areaPreservation = false;
 Eigen::MatrixXd colors;
 bool five = false;
 bool cotagentLaplacianMethod = false;
+bool notInitialized = true;
 
 
 void Redraw()
@@ -234,6 +235,7 @@ void computeParameterization(int type)
 		// Add your code for computing uniform Laplacian for Tutte parameterization
 		// Hint: use the adjacency matrix of the mesh
 
+        notInitialized = false;
 
 		// size of b: 2 * number of vertices, indeed we multiply it with A
         b.setZero(2 * V.rows(), 1);
@@ -259,6 +261,8 @@ void computeParameterization(int type)
 	if (type == '2') {
 		// Add your code for computing cotangent Laplacian for Harmonic parameterization
 		// Use can use a function "cotmatrix" from libIGL, but ~~~~***READ THE DOCUMENTATION***~~~~
+
+        notInitialized = false;
 
         b.setZero(2 * V.rows(), 1);
         Eigen::SparseMatrix<double> L;
@@ -288,6 +292,8 @@ void computeParameterization(int type)
 	if (type == '3') {
 		// Add your code for computing the system for LSCM parameterization
 		// Note that the libIGL implementation is different than what taught in the tutorial! Do not rely on it!!
+
+        notInitialized = false;
 
         b.setZero(2 * V.rows(), 1);
 
@@ -337,6 +343,86 @@ void computeParameterization(int type)
 		// Add your code for computing ARAP system and right-hand side
 		// Implement a function that computes the local step first
 		// Then construct the matrix with the given rotation matrices
+
+		//first, initialize
+		if(notInitialized){
+                computeParameterization('3');
+                notInitialized = false;
+		}
+
+        SparseMatrix<double> Dx, Dy;
+        SparseMatrix<double> L(V.rows(), V.rows());
+        VectorXd doubleArea;
+        //rotation matrix, 2x2 for every face
+        MatrixXd R(4 * F.rows(), 1);
+        computeSurfaceGradientMatrix(Dx, Dy);
+
+        Eigen::VectorXd E, F, F1, G;
+        E = Dx * UV.col(0);
+        F = Dy * UV.col(0);
+        F1 = Dx * UV.col(1);
+        G = Dy * UV.col(1);
+
+
+        SparseMatrix<double> A_double (F.rows(), F.rows());
+        //second, for every face compute the jacobian and find the closest rotation
+        for (int i = 0; i < F.rows(); i++)
+        {
+            Matrix2d U_vi,V_vi,R_vi,S_vi,UV_vi, J_vi;
+            MatrixXd Vtr = V_vi.transpose();
+            MatrixXd mat;
+            Matrix2d sign;
+            J_vi << E[i], F[i], F1[i], G[i];
+            SSVD2x2(J_vi, U_vi, S_vi, V_vi);
+            //check if the determinant is negative, to remove reflections
+            if(signbit((U_vi * Vtr).determinant() == 1))
+                sign << 1, 0, 0, -1;
+            else
+                sign << 1, 0, 0, 1;
+
+            UV_vi = U_vi * sign * Vtr;
+            R = UV_vi.transpose();
+
+            //rotation matrix
+            R(i) = R_vi(0,0);
+            R(i + F.rows()) = R_vi(0,1);
+            R(i + F.rows() * 2) = R_vi(1,0);
+            R(i + F.rows() * 3) = R_vi(1,1);
+        }
+
+        //third, minimize the energies.
+
+        // double of the faces areas
+        igl::doublearea(V, F, doubleArea);
+        doubleArea = doubleArea/2;
+        for(int i = 0; i < doubleArea.size(); i++){
+            A_double.insert(i,i) = (doubleArea(i));
+        }
+        L = (Dx.transpose() * A_double * Dx) + (Dy.transpose() * A_double * Dy);
+
+        // Construct matrix
+        /*SparseMatrix<double> zero_n(V.rows(), V.rows());
+        SparseMatrix<double> zero_mn(F.rows(), V.rows());
+        SparseMatrix<double> temp_1, temp_2, temp_3, temp_4, temp_5, temp_6, temp_7, temp_8, temp_9, temp_10;
+
+        igl::cat(2, L, zero_n, temp_1);
+        igl::cat(2, zero_n, L, temp_2);
+        igl::cat (1, temp_1, temp_2, A);
+
+        temp_3 = A_double * Dx;
+        temp_4 = A_double * Dy;
+
+        igl::cat(2, temp_3, zero_mn, temp_5);
+        igl::cat(2, temp_4, zero_mn, temp_6);
+        igl::cat(2, zero_mn, temp_3, temp_7);
+        igl::cat(2, zero_mn, temp_4, temp_8);
+        igl::cat(1, temp_5, temp_6, temp_9);
+        igl::cat(1, temp_7, temp_8, temp_10);
+
+        SparseMatrix<double> A_m(F.rows() * 4, V.rows() * 2);
+        igl::cat(1, temp_9, temp_10, A_m);
+
+        b = A_m.transpose() * R;*/
 	}
 
 	// Solve the linear system.
@@ -373,7 +459,6 @@ void computeParameterization(int type)
 	UV.col(0) = x_vector.segment(0, V.rows());
     //the first col starts at element V.rows() and contains the second V.rows elements (v)
 	UV.col(1) = x_vector.segment(V.rows(), V.rows());
-
 }
 
 void calculateDistortion(){
@@ -416,9 +501,15 @@ void calculateDistortion(){
             Matrix2d U_vi,V_vi,R_vi,S_vi,UV_vi;
             MatrixXd Vtr = V_vi.transpose();
             MatrixXd mat;
-            double det;
+            Matrix2d sign;
             SSVD2x2(J_vi, U_vi, S_vi, V_vi);
-            UV_vi = U_vi * Vtr;
+            //check if the determinant is negative
+            if(signbit((U_vi * Vtr).determinant() == 1))
+                sign << 1, 0, 0, -1;
+            else
+                sign << 1, 0, 0, 1;
+
+            UV_vi = U_vi * sign * Vtr;
             R_vi = UV_vi.transpose();
             J_vi = J_vi - R_vi;
             distorsion = J_vi.norm();
@@ -437,7 +528,7 @@ void calculateDistortion(){
     colors.col(2) << ones - J;
     //if J(i) is 0, it means that we have a smallVec   1 1 1  white
     // if J(i) is 1, it means that we have a bigVec    1 0 0  red         */
-    
+
 }
 
 bool callback_key_pressed(Viewer &viewer, unsigned char key, int modifiers) {
