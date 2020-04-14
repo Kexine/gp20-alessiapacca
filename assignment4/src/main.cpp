@@ -205,6 +205,7 @@ void checkDeterminant(Matrix2d & U_vi, Matrix2d & Vtr, Matrix2d & sign){
 }
 
 
+
 void computeParameterization(int type)
 {
 	VectorXi fixed_UV_indices;
@@ -459,17 +460,32 @@ void computeParameterization(int type)
 	UV.col(1) = x_vector.segment(V.rows(), V.rows());
 }
 
-void calculateDistortion(){
+void setColorsMatrix(Eigen::VectorXd & J, const Eigen::VectorXd & ones){
+    double eigSmallWhite, eigBigRed;
+    Eigen::VectorXd smallVec = Eigen::VectorXd(F.rows());
 
+    colors.setZero();
+    eigSmallWhite = J.minCoeff();
+    eigBigRed = J.maxCoeff();
+    smallVec.setConstant(eigSmallWhite);
+    J = J - smallVec;
+    J = J / eigBigRed;
+    colors.col(0) << ones;
+    colors.col(1) << ones - J;
+    colors.col(2) << ones - J;
+//if J(i) is 0, it means that we have a smallVec   1 1 1  white
+// if J(i) is 1, it means that we have a bigVec    1 0 0  red
+}
+
+
+void calculateDistortion(){
     Eigen::Matrix2d identityMatrix = Eigen::MatrixXd::Identity(2,2);
     //color each face
     colors.resize(F.rows(), 3);
     Eigen::VectorXd J = Eigen::VectorXd(F.rows());
-    double eigSmallWhite, eigBigRed;
     Eigen::VectorXd ones = Eigen::VectorXd(F.rows());
     Eigen::SparseMatrix<double> Dx, Dy;
     ones.setOnes();
-    Eigen::VectorXd smallVec = Eigen::VectorXd(F.rows());
     computeSurfaceGradientMatrix(Dx, Dy);
     MatrixXd J_vi(2, 2);
     double distorsion;
@@ -504,20 +520,7 @@ void calculateDistortion(){
         }
         J(i) = distorsion;
     }
-
-
-    colors.setZero();
-    eigSmallWhite = J.minCoeff();
-    eigBigRed = J.maxCoeff();
-    smallVec.setConstant(eigSmallWhite);
-    J = J-smallVec;
-    J = J/eigBigRed;
-    colors.col(0) << ones;
-    colors.col(1) << ones - J;
-    colors.col(2) << ones - J;
-    //if J(i) is 0, it means that we have a smallVec   1 1 1  white
-    // if J(i) is 1, it means that we have a bigVec    1 0 0  red         */
-
+    setColorsMatrix(J, ones);
 }
 
 bool callback_key_pressed(Viewer &viewer, unsigned char key, int modifiers) {
