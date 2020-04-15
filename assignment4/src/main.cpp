@@ -387,7 +387,7 @@ void computeParameterization(int type)
         SparseMatrix<double> A_double (F.rows(), F.rows());
         VectorXd doubleArea;
 
-        computeA_double(A_double, doubleArea, Dx, Dy);
+        computeA_double_half(A_double, doubleArea, Dx, Dy);
         fill_A_LSCM(A, A_double, Dx, Dy);
 	}
 
