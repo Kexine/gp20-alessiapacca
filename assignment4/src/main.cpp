@@ -52,7 +52,6 @@ Eigen::MatrixXd colors;
 bool five = false;
 bool cotagentLaplacianMethod = false;
 bool notInitialized = true;
-bool considerOnlyBoundary = false;
 
 
 void Redraw()
@@ -259,35 +258,17 @@ void compute_Dijkstra(VectorXi & fixed_UV_indices, MatrixXd & fixed_UV_positions
 
     vector<int> boundaryIndices;
 
+    for (int i = 0; i < V.rows(); i++)
+    {
+        igl::dijkstra(i, targets, VV, min_distance, previous);
 
 
-    if(!considerOnlyBoundary){
-        for (int i = 0; i < V.rows(); i++)
+        maxDist = min_distance.maxCoeff(&indexMaxDist);
+        if (maxDist > maxGlobalDist)
         {
-            igl::dijkstra(i, targets, VV, min_distance, previous);
-
-
-            maxDist = min_distance.maxCoeff(&indexMaxDist);
-            if (maxDist > maxGlobalDist)
-            {
-                maxGlobalDist = maxDist;
-                indexMaxGlobalDist1 = indexMaxDist;
-                indexMaxGlobalDist2 = i;
-            }
-        }
-    }
-    else{
-        //cout << "Now we consider only boundary vertices" << endl;
-        igl::boundary_loop(F, boundaryIndices);
-        for (int i = 0; i < boundaryIndices.size(); i++) {
-            igl::dijkstra(boundaryIndices[i], targets, VV, min_distance, previous);
-            maxDist = min_distance.maxCoeff(&indexMaxDist);
-            if (maxDist > maxGlobalDist)
-            {
-                maxGlobalDist = maxDist;
-                indexMaxGlobalDist1 = indexMaxDist;
-                indexMaxGlobalDist2 = boundaryIndices[i];
-            }
+            maxGlobalDist = maxDist;
+            indexMaxGlobalDist1 = indexMaxDist;
+            indexMaxGlobalDist2 = i;
         }
     }
 
@@ -333,7 +314,6 @@ void computeParameterization(int type)
         fixed_UV_indices.resize(2);
         fixed_UV_positions.resize(2,2);
 		compute_Dijkstra(fixed_UV_indices, fixed_UV_positions);
-
 		//we will only have 2 fixed vertices now
     }
 
@@ -655,7 +635,6 @@ int main(int argc,char *argv[]) {
 		{
 			// Expose variable directly ...
 			ImGui::Checkbox("Free boundary", &freeBoundary);
-            ImGui::Checkbox("Consider only boundary vertices for distance", &considerOnlyBoundary);
 			ImGui::Checkbox("Angle Preservation ", &anglePreservation);
             ImGui::Checkbox("Length Preservation ", &lengthPreservation);
             ImGui::Checkbox("Cotangent Laplacian calculation", &cotagentLaplacianMethod);
