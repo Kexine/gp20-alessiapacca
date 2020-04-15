@@ -52,6 +52,7 @@ Eigen::MatrixXd colors;
 bool five = false;
 bool cotagentLaplacianMethod = false;
 bool notInitialized = true;
+bool considerOnlyBoundary = false;
 
 
 void Redraw()
@@ -165,6 +166,18 @@ void ConvertConstraintsToMatrixForm(VectorXi indices, MatrixXd positions, Eigen:
 }
 
 
+void computeA_double_half(Eigen::SparseMatrix<double> & A_double, VectorXd & doubleArea, Eigen::SparseMatrix<double> & Dx, Eigen::SparseMatrix<double> & Dy){
+    //compute the gradients
+    //compute double area
+    //copy into A_Resized (#f x #f)
+    computeSurfaceGradientMatrix(Dx, Dy);
+    igl::doublearea(V, F, doubleArea);
+    doubleArea = doubleArea/2;
+    for(int i = 0; i < doubleArea.size(); i++) {
+        A_double.insert(i, i) = (doubleArea(i));
+    }
+}
+
 void computeA_double(Eigen::SparseMatrix<double> & A_double, VectorXd & doubleArea, Eigen::SparseMatrix<double> & Dx, Eigen::SparseMatrix<double> & Dy){
     //compute the gradients
     //compute double area
@@ -206,6 +219,89 @@ void checkDeterminant(Matrix2d & U_vi, Matrix2d & Vtr, Matrix2d & sign){
 
 
 
+void computeRotation(MatrixXd & R, const Eigen::SparseMatrix<double> & Dx, const Eigen::SparseMatrix<double> & Dy){
+    for (int i = 0; i < F.rows(); i++)
+    {
+        Matrix2d U_vi,V_vi,R_vi,S_vi,UV_vi;
+        Matrix2d J_vi;
+        MatrixXd D_vi(2, V.rows());
+        //jacobian matrix construction
+        D_vi.row(0) = Dx.row(i);
+        D_vi.row(1) = Dy.row(i);
+        J_vi = D_vi * UV;
+        //SVD with the function SSVD2x2
+        SSVD2x2(J_vi, U_vi, S_vi, V_vi);
+
+        Matrix2d sign;
+        Matrix2d Vtr = V_vi.transpose();
+        checkDeterminant(U_vi, Vtr, sign);
+        UV_vi = U_vi * sign * V_vi.transpose();
+        R_vi = UV_vi.transpose();
+
+        R(i,0) = R_vi(0,0);
+        R(i + F.rows(), 0) = R_vi(0,1);
+        R(i + F.rows() * 2, 0) = R_vi(1,0);
+        R(i + F.rows() * 3, 0) = R_vi(1,1);
+    }
+}
+
+
+void compute_Dijkstra(VectorXi & fixed_UV_indices, MatrixXd & fixed_UV_positions){
+    vector<vector<int>> VV;
+    igl::adjacency_list(F, VV);
+    VectorXd min_distance(V.rows());
+    VectorXi previous(V.rows());
+    set<int> targets;
+    int indexMaxDist;
+    int indexMaxGlobalDist1, indexMaxGlobalDist2;
+    double maxDist = 0;
+    double maxGlobalDist = 0;
+
+    vector<int> boundaryIndices;
+
+
+
+    if(!considerOnlyBoundary){
+        for (int i = 0; i < V.rows(); i++)
+        {
+            igl::dijkstra(i, targets, VV, min_distance, previous);
+
+
+            maxDist = min_distance.maxCoeff(&indexMaxDist);
+            if (maxDist > maxGlobalDist)
+            {
+                maxGlobalDist = maxDist;
+                indexMaxGlobalDist1 = indexMaxDist;
+                indexMaxGlobalDist2 = i;
+            }
+        }
+    }
+    else{
+        //cout << "Now we consider only boundary vertices" << endl;
+        igl::boundary_loop(F, boundaryIndices);
+        for (int i = 0; i < boundaryIndices.size(); i++) {
+            igl::dijkstra(boundaryIndices[i], targets, VV, min_distance, previous);
+            maxDist = min_distance.maxCoeff(&indexMaxDist);
+            if (maxDist > maxGlobalDist)
+            {
+                maxGlobalDist = maxDist;
+                indexMaxGlobalDist1 = indexMaxDist;
+                indexMaxGlobalDist2 = boundaryIndices[i];
+            }
+        }
+    }
+
+    fixed_UV_indices.setZero(2);
+    fixed_UV_indices << indexMaxGlobalDist2, indexMaxGlobalDist1;
+
+    //cout << "indices with dikstra are: " << indexMaxGlobalDist2 << "and" << indexMaxGlobalDist1 << endl;
+    //cout << "max distance is" << maxGlobalDist << endl;
+    igl::map_vertices_to_circle(V, fixed_UV_indices, fixed_UV_positions);
+
+    //cout << "positions map to circle: " << fixed_UV_positions << endl;
+}
+
+
 void computeParameterization(int type)
 {
 	VectorXi fixed_UV_indices;
@@ -231,40 +327,14 @@ void computeParameterization(int type)
 	{
 		// Fix two UV vertices. This should be done in an intelligent way. Hint: The two fixed vertices should be the two most distant one on the mesh.
 
-
-		//we will only have 2 fixed vertices now
-        fixed_UV_indices.resize(2);
-        fixed_UV_positions.resize(2,2);
-		//we could also use the function dijkstra
+        //we could also use the function dijkstra
         //INPUTS: source(index of source vertex), targets (target vector set), VV (adjacency list)
         //OUTPUTS: min_distance (#V by 1 list of the minimum distances from source to all vertices),previous(#V by 1 list of the previous visited vertices)
+        fixed_UV_indices.resize(2);
+        fixed_UV_positions.resize(2,2);
+		compute_Dijkstra(fixed_UV_indices, fixed_UV_positions);
 
-        int index1, index2;
-        index1 = -1;
-        index2 = -1;
-        double distMax = 0.0;
-        int numberVertices = V.rows();
-        VectorXd tempVec;
-        double temp;
-
-        for(int i = 0; i < numberVertices - 1; i++){
-            for(int j = 0; j < numberVertices; j++) {
-                tempVec = V.row(i) - V.row(j);
-                temp = tempVec.norm();
-                //now we have the distance between vertex i and vertex j
-                if(temp > distMax){
-                    //we found a distance major than the prior one
-                    distMax = temp;
-                    index1 = i;
-                    index2 = j;
-                }
-            }
-        }
-
-        //we have to fill fixed_UV_positions
-        fixed_UV_indices << index1, index2;
-        //between 0 and 1
-        fixed_UV_positions << -1, 0, 1, 0;
+		//we will only have 2 fixed vertices now
     }
 
 	ConvertConstraintsToMatrixForm(fixed_UV_indices, fixed_UV_positions, C, d);
@@ -318,7 +388,7 @@ void computeParameterization(int type)
         }
         // cot stiffness matrix
         else{
-            computeA_double(A_double, doubleArea, Dx, Dy);
+            computeA_double_half(A_double, doubleArea, Dx, Dy);
             L = (Dx.transpose() * A_double * Dx + Dy.transpose() * A_double * Dy);
         }
 
@@ -361,45 +431,19 @@ void computeParameterization(int type)
         SparseMatrix<double> result1, result2, result3, result4, result5, result6, result7, result8, result9, result10;
         zeros.setZero();
 
-        //rotation matrix, 2x2 for every face
+        //rotation matrix, 2x2 for every face (4x1 vec)
         MatrixXd R(4 * F.rows(), 1);
         computeSurfaceGradientMatrix(Dx, Dy);
 
 
         SparseMatrix<double> A_double (F.rows(), F.rows());
+
         //second, for every face compute the jacobian and find the closest rotation
-        for (int i = 0; i < F.rows(); i++)
-        {
-            Matrix2d U_vi,V_vi,R_vi,S_vi,UV_vi;
-            Matrix2d J_vi;
-            MatrixXd D_vi(2, V.rows());
-            //jacobian matrix construction
-            D_vi.row(0) = Dx.row(i);
-            D_vi.row(1) = Dy.row(i);
-            J_vi = D_vi * UV;
-            //SVD with the function SSVD2x2
-            SSVD2x2(J_vi, U_vi, S_vi, V_vi);
-
-            Matrix2d sign;
-            Matrix2d Vtr = V_vi.transpose();
-            checkDeterminant(U_vi, Vtr, sign);
-            UV_vi = U_vi * sign * V_vi.transpose();
-            R_vi = UV_vi.transpose();
-
-            R(i) = R_vi(0,0);
-            R(i + F.rows()) = R_vi(0,1);
-            R(i + F.rows() * 2) = R_vi(1,0);
-            R(i + F.rows() * 3) = R_vi(1,1);
-        }
+        computeRotation(R, Dx, Dy);
 
         //third, minimize the energies.
-
         // double of the faces areas
-        igl::doublearea(V, F, doubleArea);
-        doubleArea = doubleArea * 0.5;
-        for(int i = 0; i < doubleArea.size(); i++){
-            A_double.insert(i,i) = (doubleArea(i));
-        }
+        computeA_double_half(A_double, doubleArea, Dx, Dy);
 
         //A_corsive_transpose * A_corsive
         L = (Dx.transpose() * A_double * Dx) + (Dy.transpose() * A_double * Dy);
@@ -611,6 +655,7 @@ int main(int argc,char *argv[]) {
 		{
 			// Expose variable directly ...
 			ImGui::Checkbox("Free boundary", &freeBoundary);
+            ImGui::Checkbox("Consider only boundary vertices for distance", &considerOnlyBoundary);
 			ImGui::Checkbox("Angle Preservation ", &anglePreservation);
             ImGui::Checkbox("Length Preservation ", &lengthPreservation);
             ImGui::Checkbox("Cotangent Laplacian calculation", &cotagentLaplacianMethod);
