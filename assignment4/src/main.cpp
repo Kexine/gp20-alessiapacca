@@ -147,14 +147,6 @@ void ConvertConstraintsToMatrixForm(VectorXi indices, MatrixXd positions, Eigen:
     d.setZero(2 * rowsIndices);
     C.resize(rowsIndices * 2, numberVertices * 2);
 
-    std::vector<Eigen::Triplet<double>> _triplet;
-    //fill C with a 1 in those particular indices, where we want to fix the values
-    for (int i = 0; i < rowsIndices; i++) {
-        _triplet.push_back(Eigen::Triplet<double>(i, indices(i),1));
-        _triplet.push_back(Eigen::Triplet<double>(rowsIndices+i,numberVertices+indices(i),1));
-    }
-    C.setFromTriplets(_triplet.begin(), _triplet.end());
-
     //fill d
     for (int i = 0; i < rowsIndices; i++)
     {
@@ -162,6 +154,13 @@ void ConvertConstraintsToMatrixForm(VectorXi indices, MatrixXd positions, Eigen:
         d(i + rowsIndices) = positions(i, 1);
     }
 
+    std::vector<Eigen::Triplet<double>> t;
+    //fill C with a 1 in those particular indices, where we want to fix the values
+    for (int i = 0; i < rowsIndices; i++) {
+        t.push_back(Eigen::Triplet<double>(i, indices(i),1));
+        t.push_back(Eigen::Triplet<double>(rowsIndices+i,numberVertices+indices(i),1));
+    }
+    C.setFromTriplets(t.begin(), t.end());
 }
 
 
@@ -223,11 +222,22 @@ void computeRotation(MatrixXd & R, const Eigen::SparseMatrix<double> & Dx, const
     {
         Matrix2d U_vi,V_vi,R_vi,S_vi,UV_vi;
         Matrix2d J_vi;
-        MatrixXd D_vi(2, V.rows());
-        //jacobian matrix construction
-        D_vi.row(0) = Dx.row(i);
-        D_vi.row(1) = Dy.row(i);
-        J_vi = D_vi * UV;
+
+        J_vi(0,0) = (Dx.row(i)).dot(UV.col(0));
+        J_vi(0,1) = (Dx.row(i)).dot(UV.col(1));
+        J_vi(1,0) = (Dy.row(i)).dot(UV.col(0));
+        J_vi(1,1) = (Dy.row(i)).dot(UV.col(1));
+
+        /*cout << "printing vi" << J_vi << endl;
+        cout << "printing vi1" << (J_vi1) << endl;
+
+        cout << "dimensioni di Dx = " << Dx.rows() << ", " << Dx.cols() << endl;
+        cout << "dimensioni di Dy = " << Dy.rows() << ", " << Dy.cols()<< endl;
+        cout << "dimensioni di UV = " << UV.rows() << ", " << UV.cols()<< endl;
+        cout << "numero di facce = " << F.rows()<< endl;
+        cout << "numero di vertici = " << V.rows()<< endl;*/
+
+
         //SVD with the function SSVD2x2
         SSVD2x2(J_vi, U_vi, S_vi, V_vi);
 
@@ -461,22 +471,20 @@ void computeParameterization(int type)
     Eigen::SparseMatrix<double> result_2;
     Eigen::SparseMatrix<double> Ctranspose = C.transpose();
     Eigen::SparseMatrix<double> zeros_vec(C.rows(), C.rows());
+    VectorXd x_vector, b_vector;
+    b_vector.resize(b.rows() + d.rows()); //b, d in column
+
+    //fill the first block
     igl::cat(2, A, Ctranspose, result_1); //[A C']
     igl::cat(2, C, zeros_vec, result_2); //[C 0]
     igl::cat(1, result_1, result_2, first_block);
-    // Compute the ordering permutation vector from the structural pattern of A
 
-
-    VectorXd x_vector, b_vector;
-    b_vector.resize(b.rows() + d.rows()); //b, d in column
     //fill b_vector
-    b_vector.segment(0, b.rows()) << b;
-    b_vector.segment(b.rows(), d.rows()) << d;
+    b_vector << b, d;
 
     solver.analyzePattern(first_block);
     solver.factorize(first_block);
     x_vector = solver.solve(b_vector);
-
 
 	// The solver will output a vector
 	UV.resize(V.rows(), 2);
@@ -521,9 +529,10 @@ void calculateDistortion(){
 
     //for every face
     for(int i = 0; i < F.rows(); i++){
-        D_vi.row(0) = Dx.row(i);
-        D_vi.row(1) = Dy.row(i);
-        J_vi = D_vi * UV;
+        J_vi(0,0) = (Dx.row(i)).dot(UV.col(0));
+        J_vi(0,1) = (Dx.row(i)).dot(UV.col(1));
+        J_vi(1,0) = (Dy.row(i)).dot(UV.col(0));
+        J_vi(1,1) = (Dy.row(i)).dot(UV.col(1));
 
 
         //conformal parametrization LCSM
