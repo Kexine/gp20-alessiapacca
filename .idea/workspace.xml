@@ -15,129 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="305287d8-7760-4080-bf6b-c4bb7d649a5e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/assignment1.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/assignment1" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/assignment1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/CMakeFiles/glad.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/CMakeFiles/glad.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/CMakeFiles/glad.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/CMakeFiles/glad.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/libglad.a" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glad/libglad.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/glfw.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/glfw.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/glfw.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/CMakeFiles/glfw.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/libglfw3.a" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/glfw/src/libglfw3.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/imgui/CMakeFiles/imgui.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/imgui/CMakeFiles/imgui.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/imgui/CMakeFiles/imgui.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/imgui/CMakeFiles/imgui.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/imgui/CMakeFiles/imgui.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/imgui/CMakeFiles/imgui.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/cmake-build-debug/imgui/libimgui.a" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/cmake-build-debug/imgui/libimgui.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/3.14.4/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/build/CMakeFiles/3.14.4/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/3.14.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/build/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/Export/share/libigl/cmake/libigl-export.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/src/main.cpp 2.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/assignment2.dir/src/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/build/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/assignment2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/assignment2 2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/glad.dir/C.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/glad.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/glad.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/glad.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/glad.dir/cmake_clean_target.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/glad.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/glad.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/glad.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/glad.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/glad.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/glad.dir/src/glad.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glad/libglad.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/C.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/cmake_clean_target.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/context.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/init.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/input.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/monitor.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/glfw.dir/window.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/glfw3.pc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/glfw3Config.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/glfw3ConfigVersion.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/glfw_config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/glfw/src/libglfw3.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/examples/imgui_impl_glfw.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_demo.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/Users/alessiapaccagnella/desktop/gp20-alessiapacca/libigl/external/imgui/imgui_draw.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/cmake_clean_target.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/imgui.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/imgui/libimgui.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/libigl-config.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/build/libigl-export.cmake" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/libigl/external/imgui/examples/imgui_examples.sln" beforeDir="false" afterPath="$PROJECT_DIR$/libigl/external/imgui/examples/imgui_examples.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -227,6 +105,7 @@
       <workItem from="1584119437508" duration="87000" />
       <workItem from="1584119608346" duration="14000" />
       <workItem from="1584119706559" duration="353000" />
+      <workItem from="1587196879763" duration="804000" />
     </task>
     <servers />
   </component>
@@ -251,10 +130,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="115" key="#Options/0.0.1440.900@0.0.1440.900" timestamp="1584112782180" />
-    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584116830733">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587197692786">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1584116830733" />
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1587197692786" />
     <state x="468" y="293" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1584113814843">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -322,11 +201,6 @@
           <url>file://$PROJECT_DIR$/assignment2/src/main.cpp</url>
           <line>611</line>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/assignment2/src/main.cpp</url>
-          <line>251</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

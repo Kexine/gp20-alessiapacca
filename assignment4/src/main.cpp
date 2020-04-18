@@ -210,7 +210,7 @@ void fill_A_LSCM(Eigen::SparseMatrix<double> & A, const Eigen::SparseMatrix<doub
 
 
 void checkDeterminant(Matrix2d & U_vi, Matrix2d & Vtr, Matrix2d & sign){
-    if(signbit((U_vi * Vtr).determinant() == 1))
+    if(signbit((U_vi * Vtr).determinant()) == true) //then arg is negative, we have to change the sign
         sign << 1, 0, 0, -1;
     else
         sign << 1, 0, 0, 1;
@@ -282,6 +282,18 @@ void compute_Dijkstra(VectorXi & fixed_UV_indices, MatrixXd & fixed_UV_positions
     //cout << "positions map to circle: " << fixed_UV_positions << endl;
 }
 
+void compute_A_italic_transpose(SparseMatrix<double>  & zeros, SparseMatrix<double>  & A_double, SparseMatrix<double> & Dx, SparseMatrix<double>  & Dy, SparseMatrix<double>  & A_corsive){
+    SparseMatrix<double> result3, result4, result5, result6, result7, result8, result9, result10;
+    result3 = A_double * Dx;
+    result4 = A_double * Dy;
+    igl::cat(2, result3, zeros, result5);
+    igl::cat(2, result4, zeros, result6);
+    igl::cat(2, zeros, result3, result7);
+    igl::cat(2, zeros, result4, result8);
+    igl::cat(1, result5, result6, result9);
+    igl::cat(1, result7, result8, result10);
+    igl::cat(1, result9, result10, A_corsive);
+}
 
 void computeParameterization(int type)
 {
@@ -415,7 +427,6 @@ void computeParameterization(int type)
         MatrixXd R(4 * F.rows(), 1);
         computeSurfaceGradientMatrix(Dx, Dy);
 
-
         SparseMatrix<double> A_double (F.rows(), F.rows());
 
         //second, for every face compute the jacobian and find the closest rotation
@@ -431,18 +442,10 @@ void computeParameterization(int type)
         igl::cat(2, zeros, L, result2);
         igl::cat(1, result1, result2, A);
 
-        //now we want to find C_transpose, so then we can find b
 
+        //now we want to find A_corsive_transpose, so then we can find b
         zeros.resize(F.rows(), V.rows());
-        result3 = A_double * Dx;
-        result4 = A_double * Dy;
-        igl::cat(2, result3, zeros, result5);
-        igl::cat(2, result4, zeros, result6);
-        igl::cat(2, zeros, result3, result7);
-        igl::cat(2, zeros, result4, result8);
-        igl::cat(1, result5, result6, result9);
-        igl::cat(1, result7, result8, result10);
-        igl::cat(1, result9, result10, A_corsive);
+        compute_A_italic_transpose(zeros, A_double, Dx, Dy, A_corsive);
 
         A_corsive_tr = A_corsive.transpose();
         b = A_corsive_tr * R;
@@ -525,7 +528,7 @@ void calculateDistortion(){
 
         //conformal parametrization LCSM
         if(anglePreservation){
-            J_vi = J_vi + J_vi.trace() * identityMatrix;
+            J_vi = J_vi + J_vi.transpose() - J_vi.trace() * identityMatrix;
             distorsion = J_vi.norm();
         }
         //ARAP
