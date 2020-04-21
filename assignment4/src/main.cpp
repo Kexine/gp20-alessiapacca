@@ -154,8 +154,8 @@ void ConvertConstraintsToMatrixForm(VectorXi indices, MatrixXd positions, Eigen:
         d(i + rowsIndices) = positions(i, 1);
     }
 
+    //fill the sparse matrix C with a 1 in those particular indices, where we want to fix the values
     std::vector<Eigen::Triplet<double>> t;
-    //fill C with a 1 in those particular indices, where we want to fix the values
     for (int i = 0; i < rowsIndices; i++) {
         t.push_back(Eigen::Triplet<double>(i, indices(i),1));
         t.push_back(Eigen::Triplet<double>(rowsIndices+i,numberVertices+indices(i),1));
@@ -170,7 +170,8 @@ void computeA_double_half(Eigen::SparseMatrix<double> & A_double, VectorXd & dou
     //copy into A_Resized (#f x #f)
     computeSurfaceGradientMatrix(Dx, Dy);
     igl::doublearea(V, F, doubleArea);
-    doubleArea = doubleArea/2;
+    doubleArea = doubleArea * 0.5;
+    //fill the sparse matrix
     for(int i = 0; i < doubleArea.size(); i++) {
         A_double.insert(i, i) = (doubleArea(i));
     }
@@ -201,8 +202,9 @@ void fill_A_LSCM(Eigen::SparseMatrix<double> & A, const Eigen::SparseMatrix<doub
     zeros.setZero();
 
     //concatenate matrices
-    igl::cat(2, el1, el2, res1);
     igl::cat(2, el3, el1, res2);
+    igl::cat(2, el1, el2, res1);
+
     igl::cat(1, res1, res2, A);
 }
 
@@ -216,17 +218,19 @@ void checkDeterminant(Matrix2d & U_vi, Matrix2d & Vtr, Matrix2d & sign){
 }
 
 
+void initializeJ_vi(Matrix2d & J_vi, const Eigen::SparseMatrix<double> & Dx, const Eigen::SparseMatrix<double> & Dy, int i){
+    J_vi(0,0) = (Dx.row(i)).dot(UV.col(0));
+    J_vi(0,1) = (Dx.row(i)).dot(UV.col(1));
+    J_vi(1,0) = (Dy.row(i)).dot(UV.col(0));
+    J_vi(1,1) = (Dy.row(i)).dot(UV.col(1));
+}
 
 void computeRotation(MatrixXd & R, const Eigen::SparseMatrix<double> & Dx, const Eigen::SparseMatrix<double> & Dy){
     for (int i = 0; i < F.rows(); i++)
     {
         Matrix2d U_vi,V_vi,R_vi,S_vi,UV_vi;
         Matrix2d J_vi;
-
-        J_vi(0,0) = (Dx.row(i)).dot(UV.col(0));
-        J_vi(0,1) = (Dx.row(i)).dot(UV.col(1));
-        J_vi(1,0) = (Dy.row(i)).dot(UV.col(0));
-        J_vi(1,1) = (Dy.row(i)).dot(UV.col(1));
+        initializeJ_vi(J_vi, Dx, Dy, i);
 
         /*cout << "printing vi" << J_vi << endl;
         cout << "printing vi1" << (J_vi1) << endl;
@@ -271,8 +275,6 @@ void compute_Dijkstra(VectorXi & fixed_UV_indices, MatrixXd & fixed_UV_positions
     for (int i = 0; i < V.rows(); i++)
     {
         igl::dijkstra(i, targets, VV, min_distance, previous);
-
-
         maxDist = min_distance.maxCoeff(&indexMaxDist);
         if (maxDist > maxGlobalDist)
         {
@@ -351,7 +353,7 @@ void computeParameterization(int type)
         notInitialized = false;
 
 		// size of b: 2 * number of vertices, indeed we multiply it with A
-        b.setZero(2 * V.rows(), 1);
+        b.setZero(2 * V.rows());
 
         //just as described in the documentation
         Eigen::SparseMatrix<double> AA;
@@ -378,7 +380,7 @@ void computeParameterization(int type)
 
         notInitialized = false;
 
-        b.setZero(2 * V.rows(), 1);
+        b.setZero(2 * V.rows());
         Eigen::SparseMatrix<double> L;
         Eigen::SparseMatrix<double> Dx, Dy;
         VectorXd doubleArea;
@@ -403,12 +405,11 @@ void computeParameterization(int type)
 		// Note that the libIGL implementation is different than what taught in the tutorial! Do not rely on it!!
 
         notInitialized = false;
-        b.setZero(2 * V.rows(), 1);
+        b.setZero(2 * V.rows());
 
 		Eigen::SparseMatrix<double> Dx, Dy;
         SparseMatrix<double> A_double (F.rows(), F.rows());
         VectorXd doubleArea;
-
         computeA_double_half(A_double, doubleArea, Dx, Dy);
         fill_A_LSCM(A, A_double, Dx, Dy);
 	}
@@ -431,13 +432,12 @@ void computeParameterization(int type)
         SparseMatrix<double> A_corsive_tr(F.rows() * 4, V.rows() * 2);
         SparseMatrix<double> zeros(V.rows(), V.rows());
         SparseMatrix<double> result1, result2, result3, result4, result5, result6, result7, result8, result9, result10;
-        zeros.setZero();
-
+        SparseMatrix<double> A_double (F.rows(), F.rows());
         //rotation matrix, 2x2 for every face (4x1 vec)
         MatrixXd R(4 * F.rows(), 1);
-        computeSurfaceGradientMatrix(Dx, Dy);
 
-        SparseMatrix<double> A_double (F.rows(), F.rows());
+        zeros.setZero();
+        computeSurfaceGradientMatrix(Dx, Dy);
 
         //second, for every face compute the jacobian and find the closest rotation
         computeRotation(R, Dx, Dy);
@@ -451,7 +451,6 @@ void computeParameterization(int type)
         igl::cat(2, L, zeros, result1);
         igl::cat(2, zeros, L, result2);
         igl::cat(1, result1, result2, A);
-
 
         //now we want to find A_corsive_transpose, so then we can find b
         zeros.resize(F.rows(), V.rows());
@@ -522,18 +521,13 @@ void calculateDistortion(){
     Eigen::SparseMatrix<double> Dx, Dy;
     ones.setOnes();
     computeSurfaceGradientMatrix(Dx, Dy);
-    MatrixXd J_vi(2, 2);
+    Matrix2d J_vi;
     double distorsion;
-    MatrixXd D_vi(2, V.rows());
-
+    MatrixXd Dxy(2, V.rows());
 
     //for every face
     for(int i = 0; i < F.rows(); i++){
-        J_vi(0,0) = (Dx.row(i)).dot(UV.col(0));
-        J_vi(0,1) = (Dx.row(i)).dot(UV.col(1));
-        J_vi(1,0) = (Dy.row(i)).dot(UV.col(0));
-        J_vi(1,1) = (Dy.row(i)).dot(UV.col(1));
-
+        initializeJ_vi(J_vi, Dx, Dy, i);
 
         //conformal parametrization LCSM
         if(anglePreservation){

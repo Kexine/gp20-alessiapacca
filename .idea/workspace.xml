@@ -2,9 +2,9 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
+      <config projectName="assignment1" targetName="assignment1" />
       <config projectName="assignment1" targetName="glad" />
       <config projectName="assignment1" targetName="glfw" />
-      <config projectName="assignment1" targetName="assignment1" />
       <config projectName="assignment1" targetName="imgui" />
     </generated>
   </component>
@@ -15,7 +15,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="305287d8-7760-4080-bf6b-c4bb7d649a5e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/CMakeFiles/assignment4.dir/src/main.cpp-b9e73cc9.o.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment4/cmake-build-release/assignment4" beforeDir="false" afterPath="$PROJECT_DIR$/assignment4/cmake-build-release/assignment4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libigl/external/imgui/examples/imgui_examples.sln" beforeDir="false" afterPath="$PROJECT_DIR$/libigl/external/imgui/examples/imgui_examples.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,8 +99,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.assignment2" />
       <item itemvalue="CMake Application.assignment1" />
+      <item itemvalue="CMake Application.assignment2" />
       <item itemvalue="CMake Application.glad" />
       <item itemvalue="CMake Application.glfw" />
       <item itemvalue="CMake Application.imgui" />
@@ -106,6 +133,7 @@
       <workItem from="1584119608346" duration="14000" />
       <workItem from="1584119706559" duration="353000" />
       <workItem from="1587196879763" duration="804000" />
+      <workItem from="1587456315133" duration="22000" />
     </task>
     <servers />
   </component>
