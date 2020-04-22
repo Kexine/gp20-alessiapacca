@@ -7,7 +7,7 @@ Edit this 'README.md' file to report all your results. There is no need to write
 
 * Screenshots of the parameterizations and textured (checkerboard) models for all the implemented methods and boundary conditions (models: cathead.obj, hemisphere.off, hemisphere_non_convex_boundary.off,Octo_cut2.obj)
 
-All the screenshots, for all the models, can be found in the folder ![results](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results)
+All the screenshots, for all the models, can be found in the folder [a link](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results)
 <br>
 Here I am gonna show just two of them, the `cat.off` and the `hemisphere`. 
 
