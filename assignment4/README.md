@@ -29,8 +29,9 @@ The parametrization with ARAP with free boundary outputs a better results: <br>
 * Several examples of the distortion visualizations.
 Let's see the distorsions with the same model showed before. <br>
 Let's start from the shape cat.off'.<br>
-We can visualize the angle distorsion for the uniform laplacian: <br>
+We can visualize the distorsion with angle preservation for the uniform laplacian: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat1_distA.png) <br><br>
-
+Again, we can visualize the distorsion with angle preservation for cotangent laplacian and for LSCM, in case of constrained boundary: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat2_3_distA.png) <br><br>
 
 
