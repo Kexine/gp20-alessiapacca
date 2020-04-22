@@ -37,8 +37,9 @@ The parametrization with ARAP with free boundary: <br>
 
 
 
-* Several examples of the distortion visualizations.
-Let's see the distorsions with the same model showed before. <br>
+* Several examples of the distortion visualizations.<br>
+For the distorsion measure I tried several approaches, as described in the course's slides. At the end I used the energies as the distorsion measures.<br><br>
+Let's see the results with the same model showed before. <br>
 Let's start from the shape `cat.off`.<br>
 We can visualize the distorsion with angle preservation for the uniform laplacian: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat1_distA.png) <br><br>
