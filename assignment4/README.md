@@ -33,5 +33,9 @@ We can visualize the distorsion with angle preservation for the uniform laplacia
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat1_distA.png) <br><br>
 Again, we can visualize the distorsion with angle preservation for cotangent laplacian and for LSCM, in case of constrained boundary: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat2_3_distA.png) <br><br>
+The distorsion with length preservation instead, with ARAP parametrization, is the following in case of constrained boundary: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat4_distL.png) <br><br>
+Instead, in case of free boundary, the distorsion with ARAP is: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat4_freebound_distL.png)
 
 
