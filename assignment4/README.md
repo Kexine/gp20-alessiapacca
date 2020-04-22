@@ -10,7 +10,6 @@ Edit this 'README.md' file to report all your results. There is no need to write
 <br>
 Let's see the parametrizations with the shape 'cat.off'.<br>
 By displaying the uniform laplacian, we get:<br>
-<img src="https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat1.png" alt="alt text" width="50" height="50"> <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat1.png)
 By displaying the cotangent laplacian, which is the same of LSCM in case of constrained boundary, we get:<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat2_3.png) <br><br>
