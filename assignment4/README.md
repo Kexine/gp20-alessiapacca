@@ -11,16 +11,26 @@ Edit this 'README.md' file to report all your results. There is no need to write
 Let's see the parametrizations with the shape 'cat.off'.<br>
 By displaying the uniform laplacian, we get:
 
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat1.png)
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat1.png) <br><br>
 By displaying the cotangent laplacian, which is the same of LSCM in case of constrained boundary, we get:<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat2_3.png) <br><br>
 I also computed the cotangent Laplacian without using the function 'igl::cotmatrix', and the result did not changed: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat2_3_cotlap.png) <br><br>
-The parametrization with ARAP: <br>
+The parametrization with ARAP with constrained boundary: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat4.png) <br><br>
+The parametrization with ARAP with free boundary outputs a better results: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat4_freeboundary%20.png) <br><br>
+<br>
+
 
 
 
 
 * Several examples of the distortion visualizations.
+Let's see the distorsions with the same model showed before. <br>
+Let's start from the shape cat.off'.<br>
+We can visualize the angle distorsion for the uniform laplacian: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat1_distA.png) <br><br>
+
+
 
