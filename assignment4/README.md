@@ -9,7 +9,6 @@ Edit this 'README.md' file to report all your results. There is no need to write
 
 All the screenshots, for all the models, can be found in the folder [results](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results).
 <br>
-Here I am gonna show some results for two of the models, the `cat.off` and the `hemisphere`. 
 
 <br>
 Let's see the parametrizations with the shape `cat.off`.<br>
@@ -34,6 +33,18 @@ Instead, in the case of free boundary, LSCM is different: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem3_freebound.png) <br><br>
 The parametrization with ARAP with free boundary: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem4_freebound.png) <br><br>
+
+Results for the `cow`:<br>
+Key 1:
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cow_1.png) <br><br>
+Key 2 and 3:
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cow_2_3.png) <br><br>
+Key 3, with free boundary: 
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cow_3_freebound.png) <br><br>
+Key 4: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cow_4.png) <br><br>
+Key 4, with free boundary: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cow_4_freebound.png) <br><br>
 
 
 
