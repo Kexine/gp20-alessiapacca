@@ -69,7 +69,7 @@ Key 3, with free boundary:
 Key 4: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/garg_4.png) <br><br>
 Key 4, with free boundary: <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/garg_4_freebound.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/garg_4_freebound1.png) <br><br>
 
 
 * Several examples of the distortion visualizations.<br>
