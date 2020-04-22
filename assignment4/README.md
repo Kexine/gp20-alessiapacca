@@ -8,7 +8,7 @@ Edit this 'README.md' file to report all your results. There is no need to write
 * Screenshots of the parameterizations and textured (checkerboard) models for all the implemented methods and boundary conditions (models: cathead.obj, hemisphere.off, hemisphere_non_convex_boundary.off,Octo_cut2.obj)
 
 <br>
-Let's see the parametrizations with the shape 'cat.off'.<br>
+Let's see the parametrizations with the shape `cat.off`.<br>
 By displaying the uniform laplacian, we get:
 
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat1.png) <br><br>
@@ -22,7 +22,14 @@ The parametrization with ARAP with free boundary outputs a better results: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat4_freeboundary%20.png) <br><br>
 <br>
 
-
+Let's now show the parametrizations with the `hemisphere` shape: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem1.png) <br><br>
+By displaying the cotangent laplacian, which is the same of LSCM in case of constrained boundary, we get:<br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem2_3.png) <br><br>
+Instead, in the case of free boundary, LSCM is different: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem3_freebound.png) <br><br>
+The parametrization with ARAP with free boundary: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem4_freebound.png) <br><br>
 
 
 
