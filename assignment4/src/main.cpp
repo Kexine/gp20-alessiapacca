@@ -291,6 +291,7 @@ void compute_Dijkstra(VectorXi & fixed_UV_indices, MatrixXd & fixed_UV_positions
     //cout << "max distance is" << maxGlobalDist << endl;
     igl::map_vertices_to_circle(V, fixed_UV_indices, fixed_UV_positions);
 
+    cout << "octopus vertices: " << indexMaxGlobalDist2 << "and" << indexMaxGlobalDist1 << endl;
     //cout << "positions map to circle: " << fixed_UV_positions << endl;
 }
 
@@ -529,6 +530,7 @@ void calculateDistortion(){
     for(int i = 0; i < F.rows(); i++){
         initializeJ_vi(J_vi, Dx, Dy, i);
 
+        //NOTE: i did not take the square of the distorsion measure in order to have a more closer range between the white and the red: the range is more compact, there is a better visualization.
         //conformal parametrization LCSM
         if(anglePreservation){
             J_vi = J_vi + J_vi.transpose() - J_vi.trace() * identityMatrix;
