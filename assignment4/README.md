@@ -15,14 +15,18 @@ Let's see the parametrizations with the shape `cat.off`.<br>
 By displaying the uniform laplacian, we get:
 
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat1.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat1_par.png) <br><br>
 By displaying the cotangent laplacian, which is the same of LSCM in case of constrained boundary, we get:<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat2_3.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat2_par.png) <br><br>
 I also computed the cotangent Laplacian without using the function 'igl::cotmatrix', and the result did not changed: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat2_3_cotlap.png) <br><br>
 The parametrization with ARAP with constrained boundary: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat4.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat4_par.png) <br><br>
 The parametrization with ARAP with free boundary outputs a better results: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat4_freeboundary%20.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat4_free_par.png) <br><br>
 <br>
 
 Let's now show the parametrizations with the `hemisphere` shape: <br>
