@@ -1,21 +1,18 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment4
 -- Found libtool - /usr/bin/libtool
--- Creating target: igl::core (igl)
--- Creating target: igl::opengl (igl_opengl)
--- Creating target: igl::opengl_glfw (igl_opengl_glfw)
-CMake Deprecation Warning at /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glfw/CMakeLists.txt:10 (cmake_policy):
-  The OLD behavior for policy CMP0042 will be removed from a future version
-  of CMake.
-
-  The cmake-policies(7) manual explains that the OLD behaviors of all
-  policies are deprecated and that a policy should be set to OLD only under
-  specific short-term circumstances.  Projects should be ported to the NEW
-  behavior and not rely on setting a policy to OLD.
+CMake Error at CMakeLists.txt:19:
+  Parse error.  Expected a command name, got right paren with text ")".
 
 
--- Could NOT find Vulkan (missing: VULKAN_LIBRARY VULKAN_INCLUDE_DIR) 
--- Using Cocoa for window creation
--- Creating target: igl::opengl_glfw_imgui (igl_opengl_glfw_imgui)
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment4/cmake-build-release
+CMake Error at /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/DownloadProject.cmake:171 (message):
+  CMake step for eigen failed: 1
+Call Stack (most recent call first):
+  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/LibiglDownloadExternal.cmake:14 (download_project)
+  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/LibiglDownloadExternal.cmake:52 (igl_download_project)
+  /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/libigl.cmake:100 (igl_download_eigen)
+  cmake/FindLIBIGL.cmake:36 (include)
+  CMakeLists.txt:11 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment4/cmake-build-release/CMakeFiles/CMakeOutput.log".
