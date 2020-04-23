@@ -157,8 +157,8 @@ void ConvertConstraintsToMatrixForm(VectorXi indices, MatrixXd positions, Eigen:
     //fill the sparse matrix C with a 1 in those particular indices, where we want to fix the values
     std::vector<Eigen::Triplet<double>> t;
     for (int i = 0; i < rowsIndices; i++) {
-        t.push_back(Eigen::Triplet<double>(i, indices(i),1));
-        t.push_back(Eigen::Triplet<double>(rowsIndices+i,numberVertices+indices(i),1));
+        t.emplace_back(i, indices(i),1);
+        t.emplace_back(rowsIndices+i,numberVertices+indices(i),1);
     }
     C.setFromTriplets(t.begin(), t.end());
 }
