@@ -21,6 +21,7 @@ By displaying the cotangent laplacian, which is the same of LSCM in case of cons
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat2_par.png) <br><br>
 I also computed the cotangent Laplacian without using the function 'igl::cotmatrix', and the result did not changed: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat2_3_cotlap.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat_3_cotlap_par.png) <br><br>
 The parametrization with ARAP with constrained boundary: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat4.png) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat4_par.png) <br><br>
