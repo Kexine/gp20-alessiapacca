@@ -95,12 +95,12 @@ Key 4, with free boundary: <br>
 
 
 * Several examples of the distortion visualizations.<br>
-For the distorsion measure I tried several approaches, as described in the course's slides.<br>
+For the distorsion measure I tried implementing several approaches, as described in the course's slides.<br>
 I tried with: <br> 
 1. The energies formulas of the two parametrizations. <br>
 2. The maximum between the smallest eigenvalue and the reciprocal of the biggest eigenvalue of J. <br>
-3. The square root of the sum of the squares of the biggest and the smallest eigenvalues of J. <br>
-At the end I used the energies as the distorsion measures.<br><br>
+3. The square root of the sum of the squares of the biggest and the smallest eigenvalues of J. <br><br>
+At the end I used the energies as the distorsion measures.<br>
 Let's see the results with some of the models showed before. <br>
 Let's start from the shape `cat.off`.<br>
 We can visualize the distorsion with angle preservation for the uniform laplacian: <br>
