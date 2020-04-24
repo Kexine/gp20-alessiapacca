@@ -94,19 +94,6 @@ Key 4, with free boundary: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cow_4_freebound.png) <br><br>
 
 
-Results for the `gargoyl`:<br>
-Key 1:
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/garg_1.png) <br><br>
-Key 2 and 3:
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/garg_2_3.png) <br><br>
-Key 3, with free boundary: 
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/garg_3_freebound.png) <br><br>
-Key 4: <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/garg_4.png) <br><br>
-Key 4, with free boundary: <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/garg_4_freebound1.png) <br><br>
-
-
 * Several examples of the distortion visualizations.<br>
 For the distorsion measure I tried several approaches, as described in the course's slides. At the end I used the energies as the distorsion measures.<br><br>
 Let's see the results with some of the models showed before. <br>
