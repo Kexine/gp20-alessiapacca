@@ -101,7 +101,7 @@ I tried with: <br>
 2. The maximum between the smallest eigenvalue and the reciprocal of the biggest eigenvalue of J. <br>
 3. The square root of the sum of the squares of the biggest and the smallest eigenvalues of J. <br><br>
 At the end I used the energies as the distorsion measures.<br>
-Let's see the results with some of the models showed before. <br>
+Let's see the results with some of the models and show the different features of the parameterization techniques. <br>
 Let's start from the shape `cat.off`.<br>
 We can visualize the distorsion with angle preservation for the uniform laplacian: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat1_distA.png) <br><br>
