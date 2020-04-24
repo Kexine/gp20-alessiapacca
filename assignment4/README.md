@@ -32,12 +32,16 @@ The parametrization with ARAP with free boundary outputs a better results: <br>
 
 Let's now show the parametrizations with the `hemisphere` shape: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem1.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem1_par.png) <br><br>
 By displaying the cotangent laplacian, which is the same of LSCM in case of constrained boundary, we get:<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem2_3.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem2_3_par.png) <br><br>
 Instead, in the case of free boundary, LSCM is different: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem3_freebound.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem3_free_par.png) <br><br>
 The parametrization with ARAP with free boundary: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem4_freebound.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem4_free_par.png) <br><br>
 
 Results for the `cow`:<br>
 Key 1:
