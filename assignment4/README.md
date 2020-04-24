@@ -61,6 +61,25 @@ Key 4, with free boundary: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem_nonconvex_4_freebound_par.png) <br><br>
 
 
+Results for the `Octo_cut2.obj`:<br>
+Key 1:
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_1.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_1_par.png) <br><br>
+Key 2 and 3:
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_2_3.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_2_par.png) <br><br>
+Key 3, with free boundary: 
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_3_freebound.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_3_freebound_par.png) <br><br>
+Key 4: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_4.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_4_par.png) <br><br>
+Key 4, with free boundary: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_4_freebound.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_4_freebound_par.png) <br><br>
+
+
+
 
 Results for the `cow`:<br>
 Key 1:
@@ -74,18 +93,6 @@ Key 4: <br>
 Key 4, with free boundary: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cow_4_freebound.png) <br><br>
 
-
-Results for the `octopus`:<br>
-Key 1:
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_1.png) <br><br>
-Key 2 and 3:
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_2_3.png) <br><br>
-Key 3, with free boundary: 
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_3_freebound.png) <br><br>
-Key 4: <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_4.png) <br><br>
-Key 4, with free boundary: <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_4_freebound.png) <br><br>
 
 Results for the `gargoyl`:<br>
 Key 1:
