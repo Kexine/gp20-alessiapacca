@@ -30,7 +30,7 @@ The parametrization with ARAP with free boundary outputs a better results: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/cat4_free_par.png) <br><br>
 <br>
 
-Let's now show the parametrizations with the `hemisphere` shape: <br>
+Let's now show the parametrizations with the `hemisphere_non_convex_boundary.off` shape: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem1.png) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem1_par.png) <br><br>
 By displaying the cotangent laplacian, which is the same of LSCM in case of constrained boundary, we get:<br>
@@ -42,6 +42,25 @@ Instead, in the case of free boundary, LSCM is different: <br>
 The parametrization with ARAP with free boundary: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem4_freebound.png) <br><br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem4_free_par.png) <br><br>
+
+Results for the `hemisphere.off`:<br>
+Key 1:
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem_nonconvex_1.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem_nonconvex_1_par.png) <br><br>
+Key 2 and 3:
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem_nonconvex_2.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem_nonconvex_2_par.png) <br><br>
+Key 3, with free boundary: 
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem_nonconvex_3_freebound.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem_nonconvex_3_freebound_par.png) <br><br>
+Key 4: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem_nonconvex_4.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem_nonconvex_4_par.png) <br><br>
+Key 4, with free boundary: <br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem_nonconvex_4_freebound.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/hem_nonconvex_4_freebound_par.png) <br><br>
+
+
 
 Results for the `cow`:<br>
 Key 1:
