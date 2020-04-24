@@ -512,6 +512,13 @@ void setColorsMatrix(Eigen::VectorXd & J, const Eigen::VectorXd & ones){
 // if J(i) is 1, it means that we have a bigVec    1 0 0  red
 }
 
+void computeEigens(Matrix2d & J_vi, double & eig1, double & eig2;){
+    Eigen::Matrix2d U, S, V;
+    SSVD2x2(J_vi, U, S, V);
+    eig1 = max(S(0, 0), S(1, 1));
+    eig2 = min(S(0, 0), S(1, 1));
+}
+
 
 void calculateDistortion(){
     Eigen::Matrix2d identityMatrix = Eigen::MatrixXd::Identity(2,2);
@@ -524,6 +531,7 @@ void calculateDistortion(){
     computeSurfaceGradientMatrix(Dx, Dy);
     Matrix2d J_vi;
     double distorsion;
+    double eig1, eig2;
     MatrixXd Dxy(2, V.rows());
 
     //for every face
@@ -536,6 +544,7 @@ void calculateDistortion(){
             J_vi = J_vi + J_vi.transpose() - J_vi.trace() * identityMatrix;
             distorsion = J_vi.norm();
 
+            //computeEigens(J_vi, eig1, eig2);
             //distorsion = max(eig1, 1/eig2);
         }
         //ARAP
@@ -552,10 +561,8 @@ void calculateDistortion(){
             J_vi = J_vi - R_vi;
             distorsion = J_vi.norm();
 
-            /*JacobiSVD<MatrixXd> svd(J_vi, ComputeThinU | ComputeThinV);
-            double eig1 = svd.singularValues().maxCoeff();
-            double eig2 = svd.singularValues().minCoeff();
-            distorsion = sqrt(pow(eig1,2) + pow(eig2,2));*/
+            //computeEigens(J_vi, eig1, eig2);
+            //distorsion = sqrt(pow(eig1,2) + pow(eig2,2));*/
         }
         J(i) = distorsion;
     }
