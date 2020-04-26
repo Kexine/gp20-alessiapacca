@@ -76,7 +76,7 @@ Key 4: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_4_par.png) <br><br>
 Key 4, with free boundary: <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_4_freebound.png) <br><br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_4_freebound_par.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment4/results/octo_4_freebound_par.jpg) <br><br>
 
 
 
