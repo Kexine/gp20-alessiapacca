@@ -15,7 +15,7 @@ B:<br>
 B': <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/B_prime_bar.png) <br><br>
 S': <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/B_prime_bar.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/S_prime_bar.png) <br><br>
 <br><br>
 S:<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/S_woodylo.png) <br><br>
@@ -24,7 +24,7 @@ B:<br>
 B': <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/B_prime_woodylo.png) <br><br>
 S': <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/B_prime_woodylo.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/S_prime_woodylo.png) <br><br>
 <br><br>
 S:<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/S_cactus.png) <br><br>
@@ -33,7 +33,7 @@ B:<br>
 B': <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/B_prime_cactus.png) <br><br>
 S': <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/B_prime_cactus.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/S_prime_cactus.png) <br><br>
 <br><br>
 S:<br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/S_hand.png) <br><br>
@@ -42,7 +42,7 @@ B:<br>
 B': <br>
 ![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/B_prime_hand.png) <br><br>
 S': <br>
-![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/B_prime_hand.png) <br><br>
+![alt text](https://github.com/eth-igl/gp20-alessiapacca/blob/master/assignment5/results/S_prime_hand.png) <br><br>
 ### Optional Task
 
 Discuss and show the differences to the results from the previous task. 
