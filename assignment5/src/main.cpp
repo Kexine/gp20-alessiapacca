@@ -5,6 +5,11 @@
 #include <imgui/imgui.h>
 #include <igl/slice_into.h>
 #include <igl/rotate_by_quat.h>
+#include <igl/massmatrix.h>
+#include <igl/cotmatrix.h>
+#include <igl/slice.h>
+#include <stdbool.h>
+
 
 // ...
 
@@ -53,6 +58,19 @@ Eigen::Vector4f rotation(0,0,0,1.);
 typedef Eigen::Triplet<double> T;
 //per vertex color array, #V x3
 Eigen::MatrixXd vertex_colors;
+SparseMatrix<double> Aff, Afc;
+Eigen::SimplicialCholesky<Eigen::SparseMatrix<double>, Eigen::RowMajor> solver1;
+VectorXi index_longest;
+bool preFactorization = false;
+Eigen::MatrixXd B_prime, S_prime;
+bool show_restVertices = false;
+bool show_restVertices_prime = false;
+bool show_S_prime = false;
+Eigen::MatrixXd d;
+Eigen::VectorXi rest_Vertices;
+Eigen::MatrixXd B;
+
+
 
 //function declarations (see below for implementation)
 bool solve(Viewer& viewer);
@@ -70,13 +88,190 @@ bool callback_key_down(Viewer& viewer, unsigned char key, int modifiers);
 void onNewHandleID();
 void applySelection();
 
+void compute_Aff_Afc(SparseMatrix<double> A, SparseMatrix<double> L, SparseMatrix<double> M_inv, MatrixXd & vc, MatrixXd & vf){
+    A = Eigen::SparseMatrix<double>(L * M_inv * L);
+    igl::slice(A, rest_Vertices, rest_Vertices, Aff);
+    igl::slice(A, rest_Vertices, handle_vertices, Afc);
+    igl::slice(V, handle_vertices, 1, vc); //vc are the original vertices positions of the ones we have to handle
+    solver1.compute(Aff);
+    // Aff * vf = -Afc * vf
+    MatrixXd b = -Afc * vc;
+    vf = solver1.solve(b);
+}
+
+void fill_B(MatrixXd vf){
+    B.resize(V.rows(),3);
+    /* copy V into B */
+    B = V.replicate(1, 1);
+    igl::slice_into(vf, rest_Vertices, 1, B); //the new smoothed mesh, B[rest vertices] = vf, so we modified the rest vertices
+    /* cout << "vf size is: " << vf.rows() << "and " << vf.cols() << endl;
+    cout << "vf is: " << vf <<endl;
+    cout << "B shape is: " << B.rows() << "and " << B.cols() << endl;
+    cout << "B is: " << B <<endl;
+    cout << "rest vertices are: " << rest_Vertices << endl; */
+}
+
+void compute_projection(Vector3d & projection, Vector3d vi, Vector3d vij, Vector3d ni){
+    VectorXd displacement = vij - vi;
+
+    //project them into the tangent plane orthogonal to the normal
+    projection = displacement - (displacement.dot(ni))*ni;
+}
+
+void show_Vertices(){
+    if (show_restVertices)
+    {
+        V = B;
+    }
+    else if (show_restVertices_prime)
+    {
+        V = B_prime;
+    }
+    else
+    {
+        V = S_prime;
+    }
+}
+
+void invert_M(SparseMatrix<double> & M, SparseMatrix<double> & M_inv){
+    SimplicialLLT<SparseMatrix<double>> solver;
+    solver.compute(M);
+    SparseMatrix<double> I(M.rows(),M.cols());
+    I.setIdentity();
+    M_inv = solver.solve(I);
+}
+
+void preFactor() {
+    /* initialize data structures */
+    preFactorization = false;
+    SparseMatrix<double> L, M, A;
+    MatrixXd vc;
+    MatrixXd vf;
+    B.resize(V.rows(), 3);
+    Eigen::MatrixXd N;
+    std::vector<std::vector<int>> VV;
+    index_longest.resize(V.rows());
+
+    /* we need v.transpose() * L * M.inverse() * L * v */
+    /* L is the cotangent laplacian of S */
+    igl::cotmatrix(V, F, L);
+    /* M is the mass matrix */
+    igl::massmatrix(V, F, igl::MASSMATRIX_TYPE_DEFAULT, M);
+
+    /* invert a sparse matrix */
+    SparseMatrix<double> M_inv;
+    invert_M(M, M_inv);
+
+    /* now let's compute the product of the terms following the slides, we have to find Aff and Afc */
+    compute_Aff_Afc(A, L, M_inv, vc, vf);
+
+    /* now let's fill B so that we obtain the new smoothed mesh (free of high frequency details) */
+    fill_B(vf);
+
+    //find neighbors vertices
+    igl::adjacency_list(F, VV);
+    //compute normals for the smoothed mesh B.
+    igl::per_vertex_normals(B, F, N);
+    //Write di in terms of xi, yi, ni
+    d.setZero(V.rows(), 3);
+
+    for(int i = 0; i < V.rows(); i++){
+        double longestEdge = -1;
+        Vector3d xi, yi, displacement_i;
+        Vector3d vi = B.row(i);
+        Vector3d ni = N.row(i);
+
+        displacement_i = V.row(i) - B.row(i);
+        //for every neighbor, find the longest projection
+        for(int j = 0; j < VV[i].size(); j++){
+            //take every vertex adjacent to the i-one
+            Vector3d vij = B.row(VV[i][j]);
+            Vector3d projection(3);
+
+            //project all neighboring vertices on the tangent plane
+            compute_projection(projection, vi, vij, ni);
+
+            //Find the longest projected edge, normalize it and call it xi
+            //there will for sure be an index_longest
+            if(projection.squaredNorm() > longestEdge){
+                xi = projection.normalized();
+                index_longest(i) = VV[i][j];
+                longestEdge = projection.squaredNorm();
+            }
+        }
+        //Construct yi using the cross product
+        yi = (ni.cross(xi)).normalized();
+
+        //the base d is orthonormal so you can find the coefficients using dot products
+        d(i, 0) = displacement_i.dot(xi);
+        d(i, 1) = displacement_i.dot(yi);
+        d(i, 2) = displacement_i.dot(ni);
+    }
+}
+
+
+
+
 bool solve(Viewer& viewer)
 {
   /**** Add your code for computing the deformation from handle_vertex_positions and handle_vertices here (replace following line) ****/
-  igl::slice_into(handle_vertex_positions, handle_vertices, 1, V);
+  //igl::slice_into(handle_vertex_positions, handle_vertices, 1, V);
+  MatrixXd N_prime(V.rows(), 3);
+  MatrixXd d_prime(V.rows(), 3), d_primeUAU(V.rows(), 3);
+  B_prime.resize(V.rows(), 3);
+
+  if(preFactorization)
+      preFactor();
+  /* now we have
+  - rest_Vertices
+  - d
+  - Aff, Afc initialized */
+
+  /* 1.3 */
+  MatrixXd vc, vf;
+  //cout << "afc size " << Afc.rows() << "and " << Afc.cols() << endl;
+  //cout << "handle_vertex_positions size " << handle_vertex_positions.rows() << handle_vertex_positions.cols() << endl;
+  // Aff * vf = - Afc * new_handle_vertex_positions
+  vf = solver1.solve(-Afc * handle_vertex_positions);
+
+
+  /* B_prime[rest_Vertices] = vf (new positions of the rest Vertices after the transformation) */
+  igl::slice_into(vf, rest_Vertices, 1, B_prime);
+  /* B_prime[handle_vertices] = handle_vertex_positions (new positions of the handle Vertices after the transformation) */
+  igl::slice_into(handle_vertex_positions, handle_vertices, 1, B_prime);
+
+
+  igl::per_vertex_normals(B_prime, F, N_prime);
+  S_prime = B_prime;
+
+  /* step 5 add local detail */
+    for (int i = 0; i < V.rows(); i++)
+    {
+        Vector3d vi = B_prime.row(i);
+        Vector3d vij = B_prime.row(index_longest(i));
+        Vector3d ni = N_prime.row(i);
+        Eigen::Vector3d xi, yi;
+        Vector3d projection(3);
+
+        compute_projection(projection, vi, vij, ni);
+
+        xi = projection.normalized();
+        yi = (ni.cross(xi)).normalized();
+
+        // d is the transformed displacement
+        d_prime.row(i) = d(i, 0) * xi + d(i, 1) * yi + d(i, 2) * ni;
+
+        /* d_prime(i, 0) = d(i, 0) * xi(0) + d(i, 1) * yi(0) + d(i, 2) * ni(0);
+        d_prime(i, 1) = d(i, 0) * xi(1) + d(i, 1) * yi(1) + d(i, 2) * ni(1);
+        d_prime(i, 2) = d(i, 0) * xi(2) + d(i, 1) * yi(2) + d(i, 2) * ni(2); */
+    }
+
+    /* Add transformed displacement to S' */
+    S_prime = S_prime + d_prime;
+    show_Vertices();
 
   return true;
-};
+}
 
 void get_new_handle_locations()
 {
@@ -122,7 +317,7 @@ int main(int argc, char *argv[])
 {
   if(argc != 2) {
     cout << "Usage assignment5 mesh.off>" << endl;
-    load_mesh("../data/woody-lo.off");
+    load_mesh("../data/bumpy_plane.off");
   }
   else
   {
@@ -155,12 +350,16 @@ int main(int argc, char *argv[])
           if (ImGui::Button("Apply Selection", ImVec2(-1,0)))
           {
             applySelection();
+            preFactorization = true;
           }
 
           if (ImGui::Button("Clear Constraints", ImVec2(-1,0)))
           {
             handle_id.setConstant(V.rows(),1,-1);
           }
+        ImGui::Checkbox("Show B (rest vertices)", &show_restVertices);
+        ImGui::Checkbox("Show B prime", &show_restVertices_prime);
+        ImGui::Checkbox("Show S prime (final deformed mesh)", &show_S_prime);
     }
   };
 
@@ -387,6 +586,7 @@ bool callback_key_down(Viewer& viewer, unsigned char key, int modifiers)
   if (key == 'A')
   {
     applySelection();
+    preFactorization = true;
     callback_key_down(viewer, '1', 0);
     handled = true;
   }
@@ -405,11 +605,15 @@ void onNewHandleID()
   int num_handle_vertices = V.rows() - numFree;
   handle_vertices.setZero(num_handle_vertices);
   handle_vertex_positions.setZero(num_handle_vertices,3);
+  rest_Vertices.resize(V.rows() - handle_vertices.rows());
 
   int count = 0;
+  int count_rest = 0;
   for (long vi = 0; vi<V.rows(); ++vi)
     if(handle_id[vi] >=0)
       handle_vertices[count++] = vi;
+    else //fill rest_Vertices
+        rest_Vertices[count_rest++] = vi;
 
   compute_handle_centroids();
 }
