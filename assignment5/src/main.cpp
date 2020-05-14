@@ -317,7 +317,7 @@ int main(int argc, char *argv[])
 {
   if(argc != 2) {
     cout << "Usage assignment5 mesh.off>" << endl;
-    load_mesh("../data/bumpy_plane.off");
+    load_mesh("../data/alain_normal.obj");
   }
   else
   {
