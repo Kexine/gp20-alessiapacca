@@ -170,12 +170,12 @@ void preFactor() {
     d.setZero(V.rows(), 3);
 
     for(int i = 0; i < V.rows(); i++){
-        double longestEdge = -1;
-        Vector3d xi, yi, displacement_i;
-        Vector3d vi = B.row(i);
-        Vector3d ni = N.row(i);
+        Vector3d xi, yi, displacement_i, vi, ni;
+        vi = B.row(i);
+        ni = N.row(i);
 
         displacement_i = V.row(i) - B.row(i);
+        double longestEdge = 0;
         //for every neighbor, find the longest projection
         for(int j = 0; j < VV[i].size(); j++){
             //take every vertex adjacent to the i-one
