@@ -6,7 +6,7 @@ C_FLAGS =  -fPIC -g -isysroot /Applications/Xcode.app/Contents/Developer/Platfor
 
 C_DEFINES = -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glfw/include -I/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glfw/src -I/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/glfw/src 
+C_INCLUDES = -I"/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glfw/include" -I"/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glfw/src" -I"/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/glfw/src" 
 
 # Custom flags: glfw/src/CMakeFiles/glfw.dir/context.c.o_FLAGS = -Wdeclaration-after-statement
 

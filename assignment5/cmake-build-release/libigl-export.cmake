@@ -61,7 +61,7 @@ add_library(igl::common INTERFACE IMPORTED)
 
 set_target_properties(igl::common PROPERTIES
   INTERFACE_COMPILE_FEATURES "cxx_std_11"
-  INTERFACE_INCLUDE_DIRECTORIES "/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../include;/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/cmake/../external/eigen"
+  INTERFACE_INCLUDE_DIRECTORIES "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/cmake/../include;/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/cmake/../external/eigen"
 )
 
 # This file does not depend on other imported targets which have

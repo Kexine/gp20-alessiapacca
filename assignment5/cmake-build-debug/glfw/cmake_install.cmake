@@ -1,4 +1,4 @@
-# Install script for directory: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glfw
+# Install script for directory: /Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glfw
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/glfw/src/cmake_install.cmake")
+  include("/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/glfw/src/cmake_install.cmake")
 
 endif()
 

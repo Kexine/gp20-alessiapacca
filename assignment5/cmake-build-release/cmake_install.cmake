@@ -1,4 +1,4 @@
-# Install script for directory: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5
+# Install script for directory: /Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,14 +33,14 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/libigl/cmake" TYPE FILE FILES "/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/libigl-config.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/libigl/cmake" TYPE FILE FILES "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/libigl-config.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/libigl/cmake/libigl-export.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/libigl/cmake/libigl-export.cmake"
-         "/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles/Export/share/libigl/cmake/libigl-export.cmake")
+         "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles/Export/share/libigl/cmake/libigl-export.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/libigl/cmake/libigl-export-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -49,14 +49,14 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/libigl/cmake" TYPE FILE FILES "/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles/Export/share/libigl/cmake/libigl-export.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/libigl/cmake" TYPE FILE FILES "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles/Export/share/libigl/cmake/libigl-export.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/glad/cmake_install.cmake")
-  include("/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/glfw/cmake_install.cmake")
-  include("/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/imgui/cmake_install.cmake")
+  include("/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/glad/cmake_install.cmake")
+  include("/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/glfw/cmake_install.cmake")
+  include("/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/imgui/cmake_install.cmake")
 
 endif()
 
@@ -68,5 +68,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

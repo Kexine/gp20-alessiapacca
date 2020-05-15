@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/include/KHR/khrplatform.h
+/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glad/include/KHR/khrplatform.h
 stdint.h
 -
 inttypes.h
@@ -14,7 +14,7 @@ inttypes.h
 stdint.h
 -
 
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/include/glad/glad.h
+/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glad/include/glad/glad.h
 windows.h
 -
 stddef.h
@@ -34,7 +34,7 @@ stdint.h
 inttypes.h
 -
 
-/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/src/glad.c
+/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glad/src/glad.c
 stdio.h
 -
 stdlib.h

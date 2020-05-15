@@ -120,17 +120,11 @@ void compute_projection(Vector3d & projection, Vector3d vi, Vector3d vij, Vector
 
 void show_Vertices(){
     if (show_restVertices)
-    {
         V = B;
-    }
     else if (show_restVertices_prime)
-    {
         V = B_prime;
-    }
     else
-    {
         V = S_prime;
-    }
 }
 
 void invert_M(SparseMatrix<double> & M, SparseMatrix<double> & M_inv){
@@ -605,7 +599,8 @@ void onNewHandleID()
   int num_handle_vertices = V.rows() - numFree;
   handle_vertices.setZero(num_handle_vertices);
   handle_vertex_positions.setZero(num_handle_vertices,3);
-  rest_Vertices.resize(V.rows() - handle_vertices.rows());
+  int handles = handle_vertices.rows();
+  rest_Vertices.resize(V.rows() - handles);
 
   int count = 0;
   int count_rest = 0;

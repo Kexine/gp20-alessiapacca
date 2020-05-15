@@ -1,4 +1,4 @@
-# Install script for directory: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui
+# Install script for directory: /Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/libigl-imgui
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

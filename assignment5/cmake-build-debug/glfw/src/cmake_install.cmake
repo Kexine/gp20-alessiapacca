@@ -1,4 +1,4 @@
-# Install script for directory: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glfw/src
+# Install script for directory: /Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glfw/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

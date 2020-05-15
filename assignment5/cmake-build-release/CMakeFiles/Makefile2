@@ -44,10 +44,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5
+CMAKE_SOURCE_DIR = "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release
+CMAKE_BINARY_DIR = "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -84,14 +84,14 @@ CMakeFiles/assignment5.dir/all: glfw/src/CMakeFiles/glfw.dir/all
 CMakeFiles/assignment5.dir/all: imgui/CMakeFiles/imgui.dir/all
 	$(MAKE) -f CMakeFiles/assignment5.dir/build.make CMakeFiles/assignment5.dir/depend
 	$(MAKE) -f CMakeFiles/assignment5.dir/build.make CMakeFiles/assignment5.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles --progress-num=1,2,3,4 "Built target assignment5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles" --progress-num=1,2,3,4 "Built target assignment5"
 .PHONY : CMakeFiles/assignment5.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/assignment5.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles" 28
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/assignment5.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles" 0
 .PHONY : CMakeFiles/assignment5.dir/rule
 
 # Convenience name for target.
@@ -129,14 +129,14 @@ glad/preinstall:
 glad/CMakeFiles/glad.dir/all:
 	$(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/depend
 	$(MAKE) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles --progress-num=5,6 "Built target glad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles" --progress-num=5,6 "Built target glad"
 .PHONY : glad/CMakeFiles/glad.dir/all
 
 # Build rule for subdir invocation for target.
 glad/CMakeFiles/glad.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles" 2
 	$(MAKE) -f CMakeFiles/Makefile2 glad/CMakeFiles/glad.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles" 0
 .PHONY : glad/CMakeFiles/glad.dir/rule
 
 # Convenience name for target.
@@ -192,14 +192,14 @@ glfw/src/preinstall:
 glfw/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) -f glfw/src/CMakeFiles/glfw.dir/build.make glfw/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) -f glfw/src/CMakeFiles/glfw.dir/build.make glfw/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles --progress-num=7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles" --progress-num=7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22 "Built target glfw"
 .PHONY : glfw/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
 glfw/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles" 16
 	$(MAKE) -f CMakeFiles/Makefile2 glfw/src/CMakeFiles/glfw.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles" 0
 .PHONY : glfw/src/CMakeFiles/glfw.dir/rule
 
 # Convenience name for target.
@@ -238,14 +238,14 @@ imgui/CMakeFiles/imgui.dir/all: glad/CMakeFiles/glad.dir/all
 imgui/CMakeFiles/imgui.dir/all: glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/depend
 	$(MAKE) -f imgui/CMakeFiles/imgui.dir/build.make imgui/CMakeFiles/imgui.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles --progress-num=23,24,25,26,27,28 "Built target imgui"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles" --progress-num=23,24,25,26,27,28 "Built target imgui"
 .PHONY : imgui/CMakeFiles/imgui.dir/all
 
 # Build rule for subdir invocation for target.
 imgui/CMakeFiles/imgui.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles" 24
 	$(MAKE) -f CMakeFiles/Makefile2 imgui/CMakeFiles/imgui.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release/CMakeFiles" 0
 .PHONY : imgui/CMakeFiles/imgui.dir/rule
 
 # Convenience name for target.

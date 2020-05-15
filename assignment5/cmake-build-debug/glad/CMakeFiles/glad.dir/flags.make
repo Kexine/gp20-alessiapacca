@@ -6,5 +6,5 @@ C_FLAGS =  -fPIC -g -isysroot /Applications/Xcode.app/Contents/Developer/Platfor
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/include 
+C_INCLUDES = -I"/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glad/include" 
 

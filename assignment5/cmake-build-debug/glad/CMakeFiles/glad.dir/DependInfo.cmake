@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/src/glad.c" "/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/glad/CMakeFiles/glad.dir/src/glad.c.o"
+  "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glad/src/glad.c" "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/glad/CMakeFiles/glad.dir/src/glad.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/include"
+  "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glad/include"
   )
 
 # Targets to which this target links.

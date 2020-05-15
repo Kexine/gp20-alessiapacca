@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5
+CMAKE_SOURCE_DIR = "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug
+CMAKE_BINARY_DIR = "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include glad/CMakeFiles/glad.dir/depend.make
@@ -58,17 +58,17 @@ include glad/CMakeFiles/glad.dir/progress.make
 include glad/CMakeFiles/glad.dir/flags.make
 
 glad/CMakeFiles/glad.dir/src/glad.c.o: glad/CMakeFiles/glad.dir/flags.make
-glad/CMakeFiles/glad.dir/src/glad.c.o: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/src/glad.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object glad/CMakeFiles/glad.dir/src/glad.c.o"
-	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/glad && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glad.dir/src/glad.c.o   -c /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/src/glad.c
+glad/CMakeFiles/glad.dir/src/glad.c.o: /Users/alessiapaccagnella/Desktop/Shape\ Modeling\ and\ Geometry\ Processing/libigl/external/glad/src/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object glad/CMakeFiles/glad.dir/src/glad.c.o"
+	cd "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/glad" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glad.dir/src/glad.c.o   -c "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glad/src/glad.c"
 
 glad/CMakeFiles/glad.dir/src/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glad.dir/src/glad.c.i"
-	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/glad && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/src/glad.c > CMakeFiles/glad.dir/src/glad.c.i
+	cd "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/glad" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glad/src/glad.c" > CMakeFiles/glad.dir/src/glad.c.i
 
 glad/CMakeFiles/glad.dir/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glad.dir/src/glad.c.s"
-	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/glad && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/src/glad.c -o CMakeFiles/glad.dir/src/glad.c.s
+	cd "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/glad" && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glad/src/glad.c" -o CMakeFiles/glad.dir/src/glad.c.s
 
 # Object files for target glad
 glad_OBJECTS = \
@@ -80,9 +80,9 @@ glad_EXTERNAL_OBJECTS =
 glad/libglad.a: glad/CMakeFiles/glad.dir/src/glad.c.o
 glad/libglad.a: glad/CMakeFiles/glad.dir/build.make
 glad/libglad.a: glad/CMakeFiles/glad.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
-	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/glad && $(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean_target.cmake
-	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/glad && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glad.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
+	cd "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/glad" && $(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean_target.cmake
+	cd "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/glad" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glad.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 glad/CMakeFiles/glad.dir/build: glad/libglad.a
@@ -90,10 +90,10 @@ glad/CMakeFiles/glad.dir/build: glad/libglad.a
 .PHONY : glad/CMakeFiles/glad.dir/build
 
 glad/CMakeFiles/glad.dir/clean:
-	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/glad && $(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean.cmake
+	cd "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/glad" && $(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean.cmake
 .PHONY : glad/CMakeFiles/glad.dir/clean
 
 glad/CMakeFiles/glad.dir/depend:
-	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5 /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/glad /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/glad/CMakeFiles/glad.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5" "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glad" "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug" "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/glad" "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/glad/CMakeFiles/glad.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : glad/CMakeFiles/glad.dir/depend
 

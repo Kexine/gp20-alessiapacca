@@ -1,9 +1,29 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5"
+-- The C compiler identification is AppleClang 11.0.3.11030032
+-- The CXX compiler identification is AppleClang 11.0.3.11030032
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
+-- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
 -- Found libtool - /usr/bin/libtool
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
 -- Creating target: igl::core (igl)
+-- Found OpenGL: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework   
 -- Creating target: igl::opengl (igl_opengl)
 -- Creating target: igl::opengl_glfw (igl_opengl_glfw)
-CMake Deprecation Warning at /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glfw/CMakeLists.txt:10 (cmake_policy):
+CMake Deprecation Warning at /Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glfw/CMakeLists.txt:10 (cmake_policy):
   The OLD behavior for policy CMP0042 will be removed from a future version
   of CMake.
 
@@ -18,4 +38,4 @@ CMake Deprecation Warning at /Users/alessiapaccagnella/Desktop/gp20-alessiapacca
 -- Creating target: igl::opengl_glfw_imgui (igl_opengl_glfw_imgui)
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-release
+-- Build files have been written to: /Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-release

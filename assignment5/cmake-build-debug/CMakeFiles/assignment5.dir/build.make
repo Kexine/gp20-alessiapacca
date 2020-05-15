@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5
+CMAKE_SOURCE_DIR = "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug
+CMAKE_BINARY_DIR = "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/assignment5.dir/depend.make
@@ -59,42 +59,42 @@ include CMakeFiles/assignment5.dir/flags.make
 
 CMakeFiles/assignment5.dir/src/Colors.cpp.o: CMakeFiles/assignment5.dir/flags.make
 CMakeFiles/assignment5.dir/src/Colors.cpp.o: ../src/Colors.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/assignment5.dir/src/Colors.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment5.dir/src/Colors.cpp.o -c /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/src/Colors.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/assignment5.dir/src/Colors.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment5.dir/src/Colors.cpp.o -c "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/src/Colors.cpp"
 
 CMakeFiles/assignment5.dir/src/Colors.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/assignment5.dir/src/Colors.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/src/Colors.cpp > CMakeFiles/assignment5.dir/src/Colors.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/src/Colors.cpp" > CMakeFiles/assignment5.dir/src/Colors.cpp.i
 
 CMakeFiles/assignment5.dir/src/Colors.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/assignment5.dir/src/Colors.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/src/Colors.cpp -o CMakeFiles/assignment5.dir/src/Colors.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/src/Colors.cpp" -o CMakeFiles/assignment5.dir/src/Colors.cpp.s
 
 CMakeFiles/assignment5.dir/src/Lasso.cpp.o: CMakeFiles/assignment5.dir/flags.make
 CMakeFiles/assignment5.dir/src/Lasso.cpp.o: ../src/Lasso.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/assignment5.dir/src/Lasso.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment5.dir/src/Lasso.cpp.o -c /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/src/Lasso.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/assignment5.dir/src/Lasso.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment5.dir/src/Lasso.cpp.o -c "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/src/Lasso.cpp"
 
 CMakeFiles/assignment5.dir/src/Lasso.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/assignment5.dir/src/Lasso.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/src/Lasso.cpp > CMakeFiles/assignment5.dir/src/Lasso.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/src/Lasso.cpp" > CMakeFiles/assignment5.dir/src/Lasso.cpp.i
 
 CMakeFiles/assignment5.dir/src/Lasso.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/assignment5.dir/src/Lasso.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/src/Lasso.cpp -o CMakeFiles/assignment5.dir/src/Lasso.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/src/Lasso.cpp" -o CMakeFiles/assignment5.dir/src/Lasso.cpp.s
 
 CMakeFiles/assignment5.dir/src/main.cpp.o: CMakeFiles/assignment5.dir/flags.make
 CMakeFiles/assignment5.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/assignment5.dir/src/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment5.dir/src/main.cpp.o -c /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/assignment5.dir/src/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment5.dir/src/main.cpp.o -c "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/src/main.cpp"
 
 CMakeFiles/assignment5.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/assignment5.dir/src/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/src/main.cpp > CMakeFiles/assignment5.dir/src/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/src/main.cpp" > CMakeFiles/assignment5.dir/src/main.cpp.i
 
 CMakeFiles/assignment5.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/assignment5.dir/src/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/src/main.cpp -o CMakeFiles/assignment5.dir/src/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/src/main.cpp" -o CMakeFiles/assignment5.dir/src/main.cpp.s
 
 # Object files for target assignment5
 assignment5_OBJECTS = \
@@ -113,7 +113,7 @@ assignment5: imgui/libimgui.a
 assignment5: glfw/src/libglfw3.a
 assignment5: glad/libglad.a
 assignment5: CMakeFiles/assignment5.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable assignment5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable assignment5"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/assignment5.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -126,6 +126,6 @@ CMakeFiles/assignment5.dir/clean:
 .PHONY : CMakeFiles/assignment5.dir/clean
 
 CMakeFiles/assignment5.dir/depend:
-	cd /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5 /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5 /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug /Users/alessiapaccagnella/Desktop/gp20-alessiapacca/assignment5/cmake-build-debug/CMakeFiles/assignment5.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5" "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5" "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug" "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug" "/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/assignment5/cmake-build-debug/CMakeFiles/assignment5.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/assignment5.dir/depend
 

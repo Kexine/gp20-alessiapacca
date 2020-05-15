@@ -6,5 +6,5 @@ CXX_FLAGS =  -fPIC -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Devel
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/../imgui -I/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/. -I/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/.. -I/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/libigl-imgui/../imgui/examples -I/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glad/include -I/Users/alessiapaccagnella/Desktop/gp20-alessiapacca/libigl/external/glfw/include 
+CXX_INCLUDES = -I"/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/libigl-imgui/../imgui" -I"/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/libigl-imgui/." -I"/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/libigl-imgui/.." -I"/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/libigl-imgui/../imgui/examples" -I"/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glad/include" -I"/Users/alessiapaccagnella/Desktop/Shape Modeling and Geometry Processing/libigl/external/glfw/include" 
 
