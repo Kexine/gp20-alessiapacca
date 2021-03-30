@@ -3,7 +3,6 @@
 ## Student data
 
 Name: Alessia Paccagnella
-Legi-Nr: 19-945-567
 
 Follow the [instructions](#workflow) to updated your private repository.
 
